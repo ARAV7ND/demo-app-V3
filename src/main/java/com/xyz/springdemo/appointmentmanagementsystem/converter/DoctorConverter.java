@@ -6,8 +6,6 @@ import org.mapstruct.Mapper;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
-import javax.print.Doc;
-
 @Component
 @Mapper
 public class DoctorConverter {

@@ -23,20 +23,27 @@ import java.util.Optional;
 @Transactional
 public class DoctorServiceImpl implements DoctorService{
 
-    @Autowired
-    private DoctorRepository doctorRepository;
+    private final DoctorRepository doctorRepository;
+
+    private final UserService userService;
+
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
+
+    private final AppointmentRepository appointmentRepository;
+
+    private final DoctorConverter doctorConverter;
 
     @Autowired
-    private UserService userService;
-
-    @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
-
-    @Autowired
-    private AppointmentRepository appointmentRepository;
-
-    @Autowired
-    private DoctorConverter doctorConverter;
+    public DoctorServiceImpl(DoctorRepository doctorRepository, UserService userService,
+                                     BCryptPasswordEncoder bCryptPasswordEncoder,
+                                     AppointmentRepository appointmentRepository,
+                                     DoctorConverter doctorConverter) {
+        this.doctorRepository = doctorRepository;
+        this.userService = userService;
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+        this.appointmentRepository = appointmentRepository;
+        this.doctorConverter = doctorConverter;
+    }
 
     @Override
     @Transactional
@@ -49,14 +56,12 @@ public class DoctorServiceImpl implements DoctorService{
         doctorRepository.save(doctor);
     }
 
-
-
     @Override
     public void deleteById(Integer integer) {
         Doctor doctor = findById(integer);
 
         if(!doctor.getAppointments().isEmpty()){
-            throw new RuntimeException("can't delete doctor when there is an appointment");
+            throw new UnsupportedOperationException("can't delete doctor when there is an appointment");
         }
         User user = userService.findByUsername(doctor.getEmail());
         userService.deleteById(user.getId());
@@ -75,7 +80,7 @@ public class DoctorServiceImpl implements DoctorService{
         if(result.isPresent()){
             doctor = result.get();
         }else{
-            throw new RuntimeException("Doctor not found with id "+id);
+            throw new NullPointerException("Doctor not found with id "+id);
         }
         return doctor;
     }
@@ -97,11 +102,6 @@ public class DoctorServiceImpl implements DoctorService{
         doctorRepository.save(doctor);
     }
 
-//    public DoctorDto updateNew(int id){
-//        Doctor doctor = findById(id);
-//        return doctorConverter.entityToDto(doctor);
-//    }
-
     @Override
     @Transactional
     public void addAppointment(int doctorId, Appointment appointment) {
@@ -110,7 +110,7 @@ public class DoctorServiceImpl implements DoctorService{
         if(result.isPresent()){
             doctor = result.get();
         }else{
-            throw new RuntimeException("404 no doctor found with id "+doctorId);
+            throw new NullPointerException("404 no doctor found with id "+doctorId);
         }
         doctor.addAppointment(appointment);
     }
@@ -133,7 +133,6 @@ public class DoctorServiceImpl implements DoctorService{
     @Override
     public Doctor findLoggedInUser() {
         Object obj = userService.findLoggedInUserDetails();
-        Doctor doctor = findByUsername(((UserDetails)obj).getUsername());
-        return doctor;
+        return findByUsername(((UserDetails)obj).getUsername());
     }
 }

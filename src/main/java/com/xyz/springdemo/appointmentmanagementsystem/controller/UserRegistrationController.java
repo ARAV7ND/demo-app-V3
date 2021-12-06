@@ -18,11 +18,15 @@ import javax.validation.Valid;
 @RequestMapping("/registration")
 public class UserRegistrationController {
 
-    @Autowired
-    private PatientService patientService;
+    private final PatientService patientService;
+
+    private final UserService userService;
 
     @Autowired
-    private UserService userService;
+    public UserRegistrationController(PatientService patientService, UserService userService) {
+        this.patientService = patientService;
+        this.userService = userService;
+    }
 
     @InitBinder
     public void initBinder(WebDataBinder dataBinder){

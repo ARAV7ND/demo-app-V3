@@ -20,23 +20,31 @@ import java.util.*;
 @Transactional
 public class PatientServiceImpl implements PatientService{
 
-    @Autowired
-    private PatientRepository patientRepository;
+
+    private final PatientRepository patientRepository;
+
+    private final UserService userService;
+
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
+
+
+    private final PatientConverter patientConverter;
 
     @Autowired
-    private UserService userService;
-
-    @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
-
-    @Autowired
-    private PatientConverter patientConverter;
+    public PatientServiceImpl(PatientRepository patientRepository,
+                                    UserService userService,
+                                    BCryptPasswordEncoder bCryptPasswordEncoder,
+                                    PatientConverter patientConverter) {
+        this.patientRepository = patientRepository;
+        this.userService = userService;
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+        this.patientConverter = patientConverter;
+    }
 
     public Patient loggedInUser() {
         Object obj = userService.findLoggedInUserDetails();
         String username = ((UserDetails)obj).getUsername();
-        Patient patient = findByUsername(username);
-        return patient;
+        return findByUsername(username);
     }
 
     @Override
@@ -53,8 +61,8 @@ public class PatientServiceImpl implements PatientService{
     @Override
     public void deleteById(Integer id) {
         Patient patient = findById(id);
-        if(patient.getAppointments().size()>0){
-            throw new RuntimeException("Can't delete when there is an active appointment booked");
+        if(!patient.getAppointments().isEmpty()){
+            throw new UnsupportedOperationException("Can't delete when there is an active appointment booked");
         }
         User user = userService.findByUsername(patient.getEmail());
         userService.deleteById(user.getId());
@@ -69,7 +77,7 @@ public class PatientServiceImpl implements PatientService{
         if(result.isPresent()){
             patient = result.get();
         }else{
-            throw new RuntimeException("Patient not found with id "+id);
+            throw new NullPointerException("Patient not found with id "+id);
         }
         return patient;
     }

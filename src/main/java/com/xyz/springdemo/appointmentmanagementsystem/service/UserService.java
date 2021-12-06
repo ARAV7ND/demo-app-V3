@@ -11,6 +11,6 @@ public interface UserService extends UserDetailsService {
     User findByUsername(String username);
     void deleteById(int id);
     void deleteByUsername(String username);
-    public boolean usernameAlreadyExists(String email);
+    boolean usernameAlreadyExists(String email);
     Object findLoggedInUserDetails();
 }

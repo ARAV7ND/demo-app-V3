@@ -38,7 +38,6 @@ class AppointmentManagementSystemApplicationTests {
 	private final UserRepository userRepository;
 
 	private final RoleRepository roleRepository;
-
 	@Autowired
 	public AppointmentManagementSystemApplicationTests(PatientService patientService, PatientRepository patientRepository,
 													   AppointmentService appointmentService, DoctorRepository doctorRepository,

@@ -2,10 +2,8 @@ package com.xyz.springdemo.appointmentmanagementsystem.service;
 
 import com.xyz.springdemo.appointmentmanagementsystem.dao.AppointmentRepository;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.Appointment;
-import com.xyz.springdemo.appointmentmanagementsystem.entity.Doctor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -14,10 +12,12 @@ import java.util.List;
 @Service
 public class AppointmentServiceImpl implements AppointmentService{
 
-    @Autowired
     private AppointmentRepository appointmentRepository;
 
-    //constr
+    @Autowired
+    public AppointmentServiceImpl(AppointmentRepository appointmentRepository) {
+        this.appointmentRepository = appointmentRepository;
+    }
 
     @Override
     public Appointment save(Appointment appointment) {

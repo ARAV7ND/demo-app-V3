@@ -1,7 +1,7 @@
 package com.xyz.springdemo.appointmentmanagementsystem.entity;
 
 import javax.persistence.*;
-import java.util.List;
+
 
 @Entity
 @Table(name = "appointment")
@@ -93,5 +93,19 @@ public class Appointment {
         this.doctorId = doctorId;
     }
 
+    public Patient getPatient() {
+        return patient;
+    }
 
+    public void setPatient(Patient patient) {
+        this.patient = patient;
+    }
+
+    public Doctor getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
+    }
 }

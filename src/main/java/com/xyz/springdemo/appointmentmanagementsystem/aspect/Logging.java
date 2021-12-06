@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class Logging {
-    private static Logger logger = LoggerFactory.getLogger(Logging.class);
+    private static final Logger logger = LoggerFactory.getLogger(Logging.class);
 
     @Before("com.xyz.springdemo.appointmentmanagementsystem.aspect.PointCutExpression.find()")
     public void beforeFinding(){

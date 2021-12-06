@@ -26,28 +26,4 @@ public class MainController {
         model.addAttribute("user",user);
        return "/home";
     }
-    @GetMapping("/admin")
-    public String admin(Model model, Principal principal) {
-        User user = userRepository.findByUsername(principal.getName());
-        model.addAttribute("user",user);
-        return "admin/admin-home";
-    }
-    @GetMapping("/doctor")
-    public String doctor(Model model, Principal principal) {
-        User user = userRepository.findByUsername(principal.getName());
-        model.addAttribute("user",user);
-        return "doctor/doctor-home";
-    }
-    @GetMapping("/user")
-    public String user(Model model, Principal principal) {
-        User user = userRepository.findByUsername(principal.getName());
-        model.addAttribute("user",user);
-        return "redirect:/patient/home";
-    }
-
-    @GetMapping("/access-denied")
-    public String accessDenied(){
-        return "access-denied";
-    }
-
 }

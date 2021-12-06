@@ -68,7 +68,7 @@ public class PatientController {
         patientService.addAppointment(patientId,appointment);
         doctorService.addAppointment(appointment.getDoctorId(),appointment);
         if(!appointmentService.isSlotAvailable(appointment)){
-            throw new RuntimeException("Sorry slot is already booked..!");
+            throw new UnsupportedOperationException("Sorry slot is already booked..!");
         }
         appointmentService.save(appointment);
         return "redirect:/patient/home";

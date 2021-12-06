@@ -26,22 +26,25 @@ import java.util.List;
 @RequestMapping("/admin")
 public class AdminController {
 
-    @Autowired
-    private DoctorService doctorService;
+
+    private final DoctorService doctorService;
+
+    private final PatientService patientService;
+
+    private final UserService userService;
+
+    private final DoctorConverter doctorConverter;
+
+    private final PatientConverter patientConverter;
 
     @Autowired
-    private PatientService patientService;
-
-    @Autowired
-    private UserService userService;
-
-    @Autowired
-    private DoctorConverter doctorConverter;
-
-    @Autowired
-    private PatientConverter patientConverter;
-
-
+    public AdminController(DoctorService doctorService, PatientService patientService, UserService userService, DoctorConverter doctorConverter, PatientConverter patientConverter) {
+        this.doctorService = doctorService;
+        this.patientService = patientService;
+        this.userService = userService;
+        this.doctorConverter = doctorConverter;
+        this.patientConverter = patientConverter;
+    }
 
     @InitBinder
     public void initBinder(WebDataBinder dataBinder){
@@ -50,7 +53,7 @@ public class AdminController {
     }
 
     @GetMapping("/home")
-    public String home(Model model, Principal principal){
+    public String home(Model model){
         model.addAttribute("user",new Patient("Admin","site","admin@gmail.com","123456"));
         return "admin/admin-home";
     }

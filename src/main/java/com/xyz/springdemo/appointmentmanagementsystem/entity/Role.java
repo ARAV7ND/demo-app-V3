@@ -1,7 +1,6 @@
 package com.xyz.springdemo.appointmentmanagementsystem.entity;
 
 import javax.persistence.*;
-import java.util.*;
 @Entity
 @Table(name = "roles")
 public class Role {

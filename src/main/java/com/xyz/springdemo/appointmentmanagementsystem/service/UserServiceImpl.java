@@ -4,7 +4,6 @@ import com.xyz.springdemo.appointmentmanagementsystem.dao.RoleRepository;
 import com.xyz.springdemo.appointmentmanagementsystem.dao.UserRepository;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.Role;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.User;
-import com.xyz.springdemo.appointmentmanagementsystem.exception.MyRuntimeException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -22,11 +21,15 @@ import java.util.stream.Collectors;
 @Transactional
 public class UserServiceImpl implements UserService{
 
-    @Autowired
-    private UserRepository userRepository;
+
+    private final UserRepository userRepository;
+    private final RoleRepository roleRepository;
 
     @Autowired
-    private RoleRepository roleRepository;
+    public UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository) {
+        this.userRepository = userRepository;
+        this.roleRepository = roleRepository;
+    }
 
     @Override
     public void save(User user) {
@@ -85,7 +88,7 @@ public class UserServiceImpl implements UserService{
     public void deleteByUsername(String username) {
             User user = findByUsername(username);
             if(user==null){
-                throw new RuntimeException("User not found with username"+username);
+                throw new NullPointerException("User not found with username"+username);
             }
             userRepository.deleteByUsername(username);
     }
