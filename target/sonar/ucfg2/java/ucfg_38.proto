@@ -1,0 +1,23 @@
+
+lcom.xyz.springdemo.appointmentmanagementsystem.controller.AdminController#deletePatient(I)Ljava/lang/String;§
+ó/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/AdminController.javaå å("1*Ò
+1§
+ó/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/AdminController.javaç ç(‡
+›
+§
+ó/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/AdminController.javaç ç(K
+%0Ecom.xyz.springdemo.appointmentmanagementsystem.service.PatientService"__id*a*_K
+Icom.xyz.springdemo.appointmentmanagementsystem.controller.AdminController"
+patientServiceñì
+§
+ó/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/AdminController.javaç ç()
+
+%1void"fcom.xyz.springdemo.appointmentmanagementsystem.service.PatientService#deleteById(Ljava/lang/Integer;)V*M
+K
+%0Ecom.xyz.springdemo.appointmentmanagementsystem.service.PatientService*
+""2deleteById(Ljava/lang/Integer;)"»
+§
+ó/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/AdminController.javaé é(-
+redirect:/admin/patientList:
+""BMK
+Icom.xyz.springdemo.appointmentmanagementsystem.controller.AdminController

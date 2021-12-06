@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SecurityConfiguration.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">appointment-management-system</a> &gt; <a href="index.source.html" class="el_package">com.xyz.springdemo.appointmentmanagementsystem.config</a> &gt; <span class="el_source">SecurityConfiguration.java</span></div><h1>SecurityConfiguration.java</h1><pre class="source lang-java linenums">package com.xyz.springdemo.appointmentmanagementsystem.config;
+
+import com.xyz.springdemo.appointmentmanagementsystem.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+
+import javax.sql.DataSource;
+
+@Configuration
+@EnableWebSecurity
+<span class="fc" id="L19">public class SecurityConfiguration extends WebSecurityConfigurerAdapter {</span>
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private CustomLoginSuccessHandler successHandler;
+
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+<span class="fc" id="L29">        return new BCryptPasswordEncoder();</span>
+    }
+
+    @Autowired
+    private DataSource dataSource;
+
+    @Bean
+    public DaoAuthenticationProvider authenticationProvider() {
+<span class="fc" id="L37">        DaoAuthenticationProvider auth = new DaoAuthenticationProvider();</span>
+<span class="fc" id="L38">        auth.setUserDetailsService(userService);</span>
+<span class="fc" id="L39">        auth.setPasswordEncoder(passwordEncoder());</span>
+<span class="fc" id="L40">        return auth;</span>
+    }
+
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+<span class="fc" id="L45">        auth.inMemoryAuthentication()</span>
+<span class="fc" id="L46">                .withUser(&quot;admin&quot;)</span>
+<span class="fc" id="L47">                        .password(passwordEncoder().encode(&quot;admin123&quot;))</span>
+<span class="fc" id="L48">                                .roles(&quot;ADMIN&quot;);</span>
+
+<span class="fc" id="L50">        auth.authenticationProvider(authenticationProvider());</span>
+<span class="fc" id="L51">    }</span>
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+<span class="fc" id="L55">        http.authorizeRequests()</span>
+<span class="fc" id="L56">                .antMatchers(&quot;/registration&quot;).permitAll()</span>
+<span class="fc" id="L57">                .antMatchers(&quot;/login&quot;).permitAll()</span>
+<span class="fc" id="L58">                .antMatchers(&quot;/resources/**&quot;).permitAll()</span>
+<span class="fc" id="L59">                .antMatchers(&quot;/admin/**&quot;,&quot;/doctor/**&quot;,&quot;/patient/**&quot;).hasRole(&quot;ADMIN&quot;)</span>
+<span class="fc" id="L60">                .antMatchers(&quot;/patient/**&quot;).hasRole(&quot;USER&quot;)</span>
+<span class="fc" id="L61">                .antMatchers(&quot;/doctor/**&quot;).hasRole(&quot;DOCTOR&quot;)</span>
+<span class="fc" id="L62">                .anyRequest().authenticated()</span>
+<span class="fc" id="L63">                .and()</span>
+<span class="fc" id="L64">                .formLogin()</span>
+<span class="fc" id="L65">                .loginPage(&quot;/login&quot;)</span>
+<span class="fc" id="L66">                .loginProcessingUrl(&quot;/authenticateTheUser&quot;)</span>
+<span class="fc" id="L67">                .successHandler(successHandler)</span>
+<span class="fc" id="L68">                .permitAll()</span>
+<span class="fc" id="L69">                .and()</span>
+<span class="fc" id="L70">                .logout()</span>
+<span class="fc" id="L71">                .logoutRequestMatcher(new AntPathRequestMatcher(&quot;/logout&quot;))</span>
+<span class="fc" id="L72">                .permitAll()</span>
+<span class="fc" id="L73">                .and().exceptionHandling().accessDeniedPage(&quot;/access-denied&quot;);</span>
+<span class="fc" id="L74">    }</span>
+
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

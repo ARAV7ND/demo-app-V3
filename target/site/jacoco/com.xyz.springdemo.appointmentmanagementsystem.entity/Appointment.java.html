@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Appointment.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">appointment-management-system</a> &gt; <a href="index.source.html" class="el_package">com.xyz.springdemo.appointmentmanagementsystem.entity</a> &gt; <span class="el_source">Appointment.java</span></div><h1>Appointment.java</h1><pre class="source lang-java linenums">package com.xyz.springdemo.appointmentmanagementsystem.entity;
+
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
+@Table(name = &quot;appointment&quot;)
+public class Appointment {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = &quot;id&quot;)
+    private int id;
+    @Column(name = &quot;date&quot;)
+    private String date;
+
+    @Column(name = &quot;appointment_start_time&quot;)
+    private String startTime;
+
+    @Column(name = &quot;appointment_end_time&quot;)
+    private String endTime;
+
+    @Column(name = &quot;patient_id&quot;)
+    private int patientId;
+    @Column(name = &quot;doctor_Id&quot;)
+    private int doctorId;
+
+
+    @ManyToOne
+    @JoinColumn(name = &quot;patient_id&quot;,insertable = false,updatable = false)
+    private Patient patient;
+
+    @ManyToOne
+    @JoinColumn(name = &quot;doctor_id&quot;,insertable = false,updatable = false)
+    private Doctor doctor;
+
+<span class="fc" id="L37">    public Appointment() {</span>
+<span class="fc" id="L38">    }</span>
+
+<span class="nc" id="L40">    public Appointment(String date, String startTime, String endTime, int patientId, int doctorId) {</span>
+<span class="nc" id="L41">        this.date = date;</span>
+<span class="nc" id="L42">        this.startTime = startTime;</span>
+<span class="nc" id="L43">        this.endTime = endTime;</span>
+<span class="nc" id="L44">        this.patientId = patientId;</span>
+<span class="nc" id="L45">        this.doctorId = doctorId;</span>
+<span class="nc" id="L46">    }</span>
+
+    public int getId() {
+<span class="nc" id="L49">        return id;</span>
+    }
+
+    public void setId(int id) {
+<span class="nc" id="L53">        this.id = id;</span>
+<span class="nc" id="L54">    }</span>
+
+    public String getDate() {
+<span class="nc" id="L57">        return date;</span>
+    }
+
+    public void setDate(String date) {
+<span class="nc" id="L61">        this.date = date;</span>
+<span class="nc" id="L62">    }</span>
+
+    public String getStartTime() {
+<span class="nc" id="L65">        return startTime;</span>
+    }
+
+    public void setStartTime(String startTime) {
+<span class="nc" id="L69">        this.startTime = startTime;</span>
+<span class="nc" id="L70">    }</span>
+
+    public String getEndTime() {
+<span class="nc" id="L73">        return endTime;</span>
+    }
+
+    public void setEndTime(String endTime) {
+<span class="nc" id="L77">        this.endTime = endTime;</span>
+<span class="nc" id="L78">    }</span>
+
+    public int getPatientId() {
+<span class="nc" id="L81">        return patientId;</span>
+    }
+
+    public void setPatientId(int patientId) {
+<span class="nc" id="L85">        this.patientId = patientId;</span>
+<span class="nc" id="L86">    }</span>
+
+    public int getDoctorId() {
+<span class="nc" id="L89">        return doctorId;</span>
+    }
+
+    public void setDoctorId(int doctorId) {
+<span class="nc" id="L93">        this.doctorId = doctorId;</span>
+<span class="nc" id="L94">    }</span>
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

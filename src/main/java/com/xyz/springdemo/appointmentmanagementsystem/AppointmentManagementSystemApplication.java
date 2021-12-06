@@ -10,5 +10,4 @@ public class AppointmentManagementSystemApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AppointmentManagementSystemApplication.class, args);
 	}
-
 }

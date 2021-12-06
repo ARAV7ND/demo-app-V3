@@ -55,7 +55,7 @@ public class DoctorServiceImpl implements DoctorService{
     public void deleteById(Integer integer) {
         Doctor doctor = findById(integer);
 
-        if(doctor.getAppointments().size()>0){
+        if(!doctor.getAppointments().isEmpty()){
             throw new RuntimeException("can't delete doctor when there is an appointment");
         }
         User user = userService.findByUsername(doctor.getEmail());
@@ -97,10 +97,10 @@ public class DoctorServiceImpl implements DoctorService{
         doctorRepository.save(doctor);
     }
 
-    public DoctorDto updateNew(int id){
-        Doctor doctor = findById(id);
-        return doctorConverter.entityToDto(doctor);
-    }
+//    public DoctorDto updateNew(int id){
+//        Doctor doctor = findById(id);
+//        return doctorConverter.entityToDto(doctor);
+//    }
 
     @Override
     @Transactional

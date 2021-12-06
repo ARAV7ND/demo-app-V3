@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DoctorManager.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">appointment-management-system</a> &gt; <a href="index.source.html" class="el_package">com.xyz.springdemo.appointmentmanagementsystem.entity</a> &gt; <span class="el_source">DoctorManager.java</span></div><h1>DoctorManager.java</h1><pre class="source lang-java linenums">package com.xyz.springdemo.appointmentmanagementsystem.entity;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
+public class DoctorManager {
+    private int id;
+
+    @NotNull
+    @Size(min = 4,message = &quot;is required&quot;)
+    @Pattern(regexp = &quot;[^0-9]*&quot;,message = &quot;numbers are not allowed&quot;)
+    private String firstName;
+
+    @NotNull
+    @Size(min = 1,message = &quot;is required&quot;)
+    @Pattern(regexp = &quot;[^0-9]*&quot;,message = &quot;numbers are not allowed&quot;)
+    private String lastName;
+
+    @Email
+    private String username;
+
+    @NotNull(message = &quot;password is required&quot;)
+    @Size(min = 4,message = &quot;password length should be greater than 3&quot;)
+    private String password;
+
+    @NotNull(message = &quot;address is required&quot;)
+    @Size(min = 5,max = 25)
+    private String address;
+
+    @NotNull(message = &quot;address is required&quot;)
+    @Size(min = 5,max=25)
+    @Pattern(regexp = &quot;[^0-9]*&quot;,message = &quot;numbers are not allowed&quot;)
+    private String specialist;
+
+
+    private int temp;
+
+<span class="nc" id="L40">    public DoctorManager() {</span>
+<span class="nc" id="L41">    }</span>
+
+<span class="fc" id="L43">    public DoctorManager(String firstName, String lastName, String username, String password, String address, String specialist) {</span>
+<span class="fc" id="L44">        this.firstName = firstName;</span>
+<span class="fc" id="L45">        this.lastName = lastName;</span>
+<span class="fc" id="L46">        this.username = username;</span>
+<span class="fc" id="L47">        this.password = password;</span>
+<span class="fc" id="L48">        this.address = address;</span>
+<span class="fc" id="L49">        this.specialist = specialist;</span>
+<span class="fc" id="L50">    }</span>
+
+    public int getId() {
+<span class="fc" id="L53">        return id;</span>
+    }
+
+    public void setId(int id) {
+<span class="nc" id="L57">        this.id = id;</span>
+<span class="nc" id="L58">    }</span>
+
+    public String getFirstName() {
+<span class="fc" id="L61">        return firstName;</span>
+    }
+
+    public void setFirstName(String firstName) {
+<span class="nc" id="L65">        this.firstName = firstName;</span>
+<span class="nc" id="L66">    }</span>
+
+    public String getLastName() {
+<span class="fc" id="L69">        return lastName;</span>
+    }
+
+    public void setLastName(String lastName) {
+<span class="nc" id="L73">        this.lastName = lastName;</span>
+<span class="nc" id="L74">    }</span>
+
+    public String getUsername() {
+<span class="fc" id="L77">        return username;</span>
+    }
+
+    public void setUsername(String username) {
+<span class="nc" id="L81">        this.username = username;</span>
+<span class="nc" id="L82">    }</span>
+
+    public String getPassword() {
+<span class="fc" id="L85">        return password;</span>
+    }
+
+    public void setPassword(String password) {
+<span class="nc" id="L89">        this.password = password;</span>
+<span class="nc" id="L90">    }</span>
+
+    public String getAddress() {
+<span class="fc" id="L93">        return address;</span>
+    }
+
+    public void setAddress(String address) {
+<span class="nc" id="L97">        this.address = address;</span>
+<span class="nc" id="L98">    }</span>
+
+    public String getSpecialist() {
+<span class="fc" id="L101">        return specialist;</span>
+    }
+
+    public void setSpecialist(String specialist) {
+<span class="nc" id="L105">        this.specialist = specialist;</span>
+<span class="nc" id="L106">    }</span>
+
+    public int getTemp() {
+<span class="fc" id="L109">        return temp;</span>
+    }
+
+    public void setTemp(int temp) {
+<span class="nc" id="L113">        this.temp = temp;</span>
+<span class="nc" id="L114">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

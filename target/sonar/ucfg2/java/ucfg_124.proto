@@ -1,0 +1,27 @@
+
+W__sonar_lambda_0$com.xyz.springdemo.appointmentmanagementsystem.service.UserServiceImplŸ
+”/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.javaN" N(Y"1*³
+1Ÿ
+”/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.javaNE N(Iðí
+Ÿ
+”/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.javaNE N(X
+%2java.lang.String"[com.xyz.springdemo.appointmentmanagementsystem.entity.Role#getAuthority()Ljava/lang/String;*D
+B
+role:com.xyz.springdemo.appointmentmanagementsystem.entity.Role2getAuthority()³°
+Ÿ
+”/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.javaN. N(DH
+%3Borg.springframework.security.core.authority.SimpleGrantedAuthority"Borg.springframework.security.core.authority.SimpleGrantedAuthorityñ
+î
+Ÿ
+”/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.javaN* N(Y
+%4"^org.springframework.security.core.authority.SimpleGrantedAuthority#<init>(Ljava/lang/String;)V*J
+H
+%3Borg.springframework.security.core.authority.SimpleGrantedAuthority*
+
+%2java.lang.String"î
+Ÿ
+”/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.javaN* N(YJ
+H
+%3Borg.springframework.security.core.authority.SimpleGrantedAuthority:B
+role:com.xyz.springdemo.appointmentmanagementsystem.entity.RoleB
+java.util.function.Function

@@ -1,0 +1,41 @@
+
+›com.xyz.springdemo.appointmentmanagementsystem.controller.UserRegistrationController#showRegistrationForm(Lorg/springframework/ui/Model;)Ljava/lang/String;­
+¢/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/UserRegistrationController.java% %(&"startingBlock*´
+startingBlock­
+¢/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/UserRegistrationController.java%& %(3íê
+­
+¢/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/UserRegistrationController.java%' %(2%
+modelorg.springframework.ui.Model"java.util.HashMap*
+1*Õ
+1­
+¢/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/UserRegistrationController.java& &(ÅÂ
+­
+¢/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/UserRegistrationController.java&' &(5J
+%0Dcom.xyz.springdemo.appointmentmanagementsystem.entity.PatientManager"Dcom.xyz.springdemo.appointmentmanagementsystem.entity.PatientManager×
+Ô
+­
+¢/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/UserRegistrationController.java&# &(7
+%1"Ncom.xyz.springdemo.appointmentmanagementsystem.entity.PatientManager#<init>()V*L
+J
+%0Dcom.xyz.springdemo.appointmentmanagementsystem.entity.PatientManagerâ
+ß
+­
+¢/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/UserRegistrationController.java& &(8"
+%2org.springframework.ui.Model"__mapSet*'
+%
+modelorg.springframework.ui.Model*
+user*L
+J
+%0Dcom.xyz.springdemo.appointmentmanagementsystem.entity.PatientManagerÓ
+Ð
+­
+¢/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/UserRegistrationController.java' '(
+%3"template!registration*X"V
+Tcom.xyz.springdemo.appointmentmanagementsystem.controller.UserRegistrationController*'
+%
+modelorg.springframework.ui.Model"Â
+­
+¢/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/UserRegistrationController.java' '(
+registration:%
+modelorg.springframework.ui.ModelBXV
+Tcom.xyz.springdemo.appointmentmanagementsystem.controller.UserRegistrationController

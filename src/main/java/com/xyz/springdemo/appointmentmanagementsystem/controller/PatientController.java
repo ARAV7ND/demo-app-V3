@@ -21,17 +21,21 @@ import java.util.List;
 @RequestMapping("/patient")
 public class PatientController {
 
-    @Autowired
-    private PatientService patientService;
+    private final PatientService patientService;
+
+    private final DoctorService doctorService;
+
+    private final AppointmentService appointmentService;
+
+    private final PatientConverter patientConverter;
 
     @Autowired
-    private DoctorService doctorService;
-
-    @Autowired
-    private AppointmentService appointmentService;
-
-    @Autowired
-    private PatientConverter patientConverter;
+    public PatientController(PatientService patientService, DoctorService doctorService, AppointmentService appointmentService, PatientConverter patientConverter) {
+        this.patientService = patientService;
+        this.doctorService = doctorService;
+        this.appointmentService = appointmentService;
+        this.patientConverter = patientConverter;
+    }
 
     @GetMapping("/home")
     public String home(Model model){

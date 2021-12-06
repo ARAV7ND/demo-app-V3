@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PatientServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">appointment-management-system</a> &gt; <a href="index.source.html" class="el_package">com.xyz.springdemo.appointmentmanagementsystem.service</a> &gt; <span class="el_source">PatientServiceImpl.java</span></div><h1>PatientServiceImpl.java</h1><pre class="source lang-java linenums">package com.xyz.springdemo.appointmentmanagementsystem.service;
+
+import com.xyz.springdemo.appointmentmanagementsystem.converter.PatientConverter;
+import com.xyz.springdemo.appointmentmanagementsystem.dao.PatientRepository;
+import com.xyz.springdemo.appointmentmanagementsystem.dto.PatientDto;
+import com.xyz.springdemo.appointmentmanagementsystem.entity.PatientManager;
+import com.xyz.springdemo.appointmentmanagementsystem.entity.Appointment;
+import com.xyz.springdemo.appointmentmanagementsystem.entity.Patient;
+import com.xyz.springdemo.appointmentmanagementsystem.entity.Role;
+import com.xyz.springdemo.appointmentmanagementsystem.entity.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.*;
+
+@Service
+@Transactional
+<span class="fc" id="L21">public class PatientServiceImpl implements PatientService{</span>
+
+    @Autowired
+    private PatientRepository patientRepository;
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+
+    @Autowired
+    private PatientConverter patientConverter;
+
+    public Patient loggedInUser() {
+<span class="nc" id="L36">        Object obj = userService.findLoggedInUserDetails();</span>
+<span class="nc" id="L37">        String username = ((UserDetails)obj).getUsername();</span>
+<span class="nc" id="L38">        Patient patient = findByUsername(username);</span>
+<span class="nc" id="L39">        return patient;</span>
+    }
+
+    @Override
+    public void save(PatientManager patientDto) {
+<span class="fc" id="L44">        Patient patient = new Patient(patientDto.getFirstName(),patientDto.getLastName(),patientDto.getUsername(),patientDto.getPhone());</span>
+<span class="fc" id="L45">        patient.setPatientId(patientDto.getId());</span>
+<span class="fc" id="L46">        User user = new User(patientDto.getUsername(), bCryptPasswordEncoder.encode(patientDto.getPassword()),Arrays.asList(new Role(&quot;ROLE_USER&quot;, patientDto.getUsername())));</span>
+<span class="fc" id="L47">        user.setId(patientDto.getTemp());</span>
+<span class="fc" id="L48">        userService.save(user);</span>
+<span class="fc" id="L49">        patientRepository.save(patient);</span>
+
+<span class="fc" id="L51">    }</span>
+
+    @Override
+    public void deleteById(Integer id) {
+<span class="fc" id="L55">        Patient patient = findById(id);</span>
+<span class="pc bpc" id="L56" title="1 of 2 branches missed.">        if(patient.getAppointments().size()&gt;0){</span>
+<span class="nc" id="L57">            throw new RuntimeException(&quot;Can't delete when there is an active appointment booked&quot;);</span>
+        }
+<span class="fc" id="L59">        User user = userService.findByUsername(patient.getEmail());</span>
+<span class="fc" id="L60">        userService.deleteById(user.getId());</span>
+<span class="fc" id="L61">        patientRepository.deleteById(id);</span>
+
+<span class="fc" id="L63">    }</span>
+
+    @Override
+    public Patient findById(int id) {
+<span class="fc" id="L67">        Optional&lt;Patient&gt; result = patientRepository.findById(id);</span>
+<span class="fc" id="L68">        Patient patient = null ;</span>
+<span class="pc bpc" id="L69" title="1 of 2 branches missed.">        if(result.isPresent()){</span>
+<span class="fc" id="L70">            patient = result.get();</span>
+        }else{
+<span class="nc" id="L72">            throw new RuntimeException(&quot;Patient not found with id &quot;+id);</span>
+        }
+<span class="fc" id="L74">        return patient;</span>
+    }
+
+    @Override
+    public List&lt;Patient&gt; findAll() {
+<span class="fc" id="L79">        return patientRepository.findAll();</span>
+    }
+
+    @Override
+    public PatientManager update(int id) {
+<span class="nc" id="L84">        Patient patient = findById(id);</span>
+<span class="nc" id="L85">        User user = userService.findByUsername(patient.getEmail());</span>
+<span class="nc" id="L86">        PatientManager patientManager = new PatientManager(patient.getFirstName(),patient.getLastName(),</span>
+<span class="nc" id="L87">                                     patient.getPhone(),user.getUsername(), user.getPassword());</span>
+<span class="nc" id="L88">            patientManager.setId(patient.getPatientId());</span>
+<span class="nc" id="L89">        patientManager.setTemp(user.getId());</span>
+<span class="nc" id="L90">        return patientManager;</span>
+    }
+
+    @Override
+    public Patient findByUsername(String username) {
+<span class="fc" id="L95">        return patientRepository.findByEmail(username);</span>
+    }
+
+    @Override
+    public void addAppointment(int patientId,Appointment appointment) {
+<span class="nc" id="L100">        Optional&lt;Patient&gt; patient = patientRepository.findById(patientId);</span>
+<span class="nc" id="L101">        Patient patientObj = null;</span>
+<span class="nc bnc" id="L102" title="All 2 branches missed.">        if(patient.isPresent()){</span>
+<span class="nc" id="L103">            patientObj = patient.get();</span>
+<span class="nc" id="L104">            patientObj.addAppointment(appointment);</span>
+        }
+<span class="nc" id="L106">    }</span>
+    @Override
+    public void save(PatientDto patientDto){
+<span class="nc" id="L109">        Patient patient = patientConverter.dtoToEntity(patientDto);</span>
+<span class="nc" id="L110">        patientRepository.save(patient);</span>
+<span class="nc" id="L111">    }</span>
+
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

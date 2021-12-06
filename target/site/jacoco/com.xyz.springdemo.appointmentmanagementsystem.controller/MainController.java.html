@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MainController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">appointment-management-system</a> &gt; <a href="index.source.html" class="el_package">com.xyz.springdemo.appointmentmanagementsystem.controller</a> &gt; <span class="el_source">MainController.java</span></div><h1>MainController.java</h1><pre class="source lang-java linenums">package com.xyz.springdemo.appointmentmanagementsystem.controller;
+
+import com.xyz.springdemo.appointmentmanagementsystem.dao.UserRepository;
+import com.xyz.springdemo.appointmentmanagementsystem.entity.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import java.security.Principal;
+
+@Controller
+<span class="fc" id="L13">public class MainController {</span>
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @GetMapping(&quot;/login&quot;)
+    public String login(){
+<span class="nc" id="L20">        return &quot;login&quot;;</span>
+    }
+
+    @GetMapping(&quot;/&quot;)
+    public String home(Model model,Principal principal){
+<span class="nc" id="L25">        User user = userRepository.findByUsername(principal.getName());</span>
+<span class="nc" id="L26">        model.addAttribute(&quot;user&quot;,user);</span>
+<span class="nc" id="L27">       return &quot;/home&quot;;</span>
+    }
+    @GetMapping(&quot;/admin&quot;)
+    public String admin(Model model, Principal principal) {
+<span class="nc" id="L31">        User user = userRepository.findByUsername(principal.getName());</span>
+<span class="nc" id="L32">        model.addAttribute(&quot;user&quot;,user);</span>
+<span class="nc" id="L33">        return &quot;admin/admin-home&quot;;</span>
+    }
+    @GetMapping(&quot;/doctor&quot;)
+    public String doctor(Model model, Principal principal) {
+<span class="nc" id="L37">        User user = userRepository.findByUsername(principal.getName());</span>
+<span class="nc" id="L38">        model.addAttribute(&quot;user&quot;,user);</span>
+<span class="nc" id="L39">        return &quot;doctor/doctor-home&quot;;</span>
+    }
+    @GetMapping(&quot;/user&quot;)
+    public String user(Model model, Principal principal) {
+<span class="nc" id="L43">        User user = userRepository.findByUsername(principal.getName());</span>
+<span class="nc" id="L44">        model.addAttribute(&quot;user&quot;,user);</span>
+<span class="nc" id="L45">        return &quot;redirect:/patient/home&quot;;</span>
+    }
+
+    @GetMapping(&quot;/access-denied&quot;)
+    public String accessDenied(){
+<span class="nc" id="L50">        return &quot;access-denied&quot;;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

@@ -7,8 +7,6 @@ import com.xyz.springdemo.appointmentmanagementsystem.service.DoctorService;
 import com.xyz.springdemo.appointmentmanagementsystem.service.PatientService;
 import com.xyz.springdemo.appointmentmanagementsystem.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -53,7 +51,8 @@ public class DoctorController {
     @GetMapping("/appointmentList")
     public String appointmentList(@RequestParam("id") int id,Model model){
         List<Appointment> appointmentList = doctorService.appointmentList(id);
+        model.addAttribute("size",appointmentList.size());
         model.addAttribute("appointmentList",appointmentList);
-        return "doctor/list";
+        return "doctor/appointment-list";
     }
 }

@@ -46,19 +46,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.AppointmentManagementSystemApplicationTests">
-    <configuration name="AppointmentManagementSystemApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.xyz.springdemo.appointmentmanagementsystem.AppointmentManagementSystemApplication" />
-      <module name="demo-app-v3" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.xyz.springdemo.appointmentmanagementsystem.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="AppointmentManagementSystemApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo-app-v3" />
       <extension name="coverage">
@@ -74,7 +61,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppointmentManagementSystemApplicationTests.deleteById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AppointmentManagementSystemApplicationTests.deleteAppointmentById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo-app-v3" />
       <extension name="coverage">
         <pattern>
@@ -84,13 +71,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.xyz.springdemo.appointmentmanagementsystem" />
       <option name="MAIN_CLASS_NAME" value="com.xyz.springdemo.appointmentmanagementsystem.AppointmentManagementSystemApplicationTests" />
-      <option name="METHOD_NAME" value="deleteById" />
+      <option name="METHOD_NAME" value="deleteAppointmentById" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DoctorTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AppointmentManagementSystemApplicationTests.deleteDoctorById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo-app-v3" />
       <extension name="coverage">
         <pattern>
@@ -99,13 +86,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.xyz.springdemo.appointmentmanagementsystem" />
-      <option name="MAIN_CLASS_NAME" value="com.xyz.springdemo.appointmentmanagementsystem.DoctorTests" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="com.xyz.springdemo.appointmentmanagementsystem.AppointmentManagementSystemApplicationTests" />
+      <option name="METHOD_NAME" value="deleteDoctorById" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DoctorTests.delete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AppointmentManagementSystemApplicationTests.deletePatientById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo-app-v3" />
       <extension name="coverage">
         <pattern>
@@ -114,8 +102,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.xyz.springdemo.appointmentmanagementsystem" />
-      <option name="MAIN_CLASS_NAME" value="com.xyz.springdemo.appointmentmanagementsystem.DoctorTests" />
-      <option name="METHOD_NAME" value="delete" />
+      <option name="MAIN_CLASS_NAME" value="com.xyz.springdemo.appointmentmanagementsystem.AppointmentManagementSystemApplicationTests" />
+      <option name="METHOD_NAME" value="deletePatientById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppointmentManagementSystemApplicationTests.savePatient" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo-app-v3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xyz.springdemo.appointmentmanagementsystem.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xyz.springdemo.appointmentmanagementsystem" />
+      <option name="MAIN_CLASS_NAME" value="com.xyz.springdemo.appointmentmanagementsystem.AppointmentManagementSystemApplicationTests" />
+      <option name="METHOD_NAME" value="savePatient" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -124,10 +128,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.AppointmentManagementSystemApplicationTests" />
-        <item itemvalue="JUnit.AppointmentManagementSystemApplicationTests.deleteById" />
-        <item itemvalue="Application.AppointmentManagementSystemApplication" />
-        <item itemvalue="JUnit.DoctorTests.delete" />
-        <item itemvalue="JUnit.DoctorTests" />
+        <item itemvalue="JUnit.AppointmentManagementSystemApplicationTests.deleteDoctorById" />
+        <item itemvalue="JUnit.AppointmentManagementSystemApplicationTests.deletePatientById" />
+        <item itemvalue="JUnit.AppointmentManagementSystemApplicationTests.savePatient" />
+        <item itemvalue="JUnit.AppointmentManagementSystemApplicationTests.deleteAppointmentById" />
       </list>
     </recent_temporary>
   </component>

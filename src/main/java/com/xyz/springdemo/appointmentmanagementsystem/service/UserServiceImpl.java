@@ -52,10 +52,9 @@ public class UserServiceImpl implements UserService{
     @Override
     public void deleteById(int id) {
         User user = findById(id);
-        roleRepository.deleteById(user.getId());
+        Role role = roleRepository.findByEmail(user.getUsername());
+        roleRepository.deleteById(role.getId());
         userRepository.delete(user);
-
-//        userRepository.deleteById(id);
     }
 
     @Override

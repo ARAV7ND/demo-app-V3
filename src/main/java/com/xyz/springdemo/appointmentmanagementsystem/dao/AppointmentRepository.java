@@ -10,4 +10,9 @@ public interface AppointmentRepository extends JpaRepository<Appointment,Integer
     @Query(value = "select * from appointment where doctor_id = ?1",nativeQuery = true)
     List<Appointment> findAllByDoctorId(int doctorId);
 
+    @Override
+    List<Appointment> findAll();
+
+    @Override
+    void deleteById(Integer integer);
 }

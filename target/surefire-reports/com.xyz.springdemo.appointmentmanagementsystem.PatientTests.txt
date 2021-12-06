@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: com.xyz.springdemo.appointmentmanagementsystem.PatientTests
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 10.901 s <<< FAILURE! - in com.xyz.springdemo.appointmentmanagementsystem.PatientTests
+findAllPatients  Time elapsed: 0.593 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expecting actual:
+  0
+to be greater than:
+  0
+
+	at com.xyz.springdemo.appointmentmanagementsystem.PatientTests.findAllPatients(PatientTests.java:32)
+
+findById  Time elapsed: 0.032 s  <<< ERROR!
+java.lang.RuntimeException: Patient not found with id 3
+	at com.xyz.springdemo.appointmentmanagementsystem.PatientTests.findById(PatientTests.java:37)
+

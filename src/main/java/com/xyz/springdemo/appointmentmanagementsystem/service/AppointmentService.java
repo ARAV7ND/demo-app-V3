@@ -9,4 +9,7 @@ public interface AppointmentService {
     Appointment save(Appointment appointment);
     boolean isSlotAvailable(Appointment appointment) throws ParseException;
     List<Appointment> findAllByDoctorId(int doctorId);
+    List<Appointment> findAll();
+    void deleteById(Integer integer);
+
 }

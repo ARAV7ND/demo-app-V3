@@ -42,4 +42,14 @@ public class AppointmentServiceImpl implements AppointmentService{
         }
         return true;
     }
+
+    @Override
+    public List<Appointment> findAll() {
+        return appointmentRepository.findAll();
+    }
+
+    @Override
+    public void deleteById(Integer integer) {
+        appointmentRepository.deleteById(integer);
+    }
 }

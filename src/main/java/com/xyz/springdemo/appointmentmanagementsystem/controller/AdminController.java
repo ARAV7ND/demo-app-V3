@@ -41,6 +41,8 @@ public class AdminController {
     @Autowired
     private PatientConverter patientConverter;
 
+
+
     @InitBinder
     public void initBinder(WebDataBinder dataBinder){
         StringTrimmerEditor trimmerEditor = new StringTrimmerEditor(true);
@@ -61,7 +63,6 @@ public class AdminController {
     @PostMapping("/saveDoctor")
     public String saveDoctor(@Valid @ModelAttribute("user") DoctorManager doctorDto, BindingResult bindingResult){
         if(userService.usernameAlreadyExists(doctorDto.getUsername())){
-//            throw new MyRuntimeException("User already Exists");
             bindingResult.addError(new FieldError("user","username","username already exists"));
         }
         if(bindingResult.hasErrors()){
@@ -112,13 +113,6 @@ public class AdminController {
         return "admin/patient-list";
     }
 
-//    @GetMapping("/updatePatient")
-//    public String updatePatient(@RequestParam("id") int id,Model model){
-//        PatientManager patientManager = null;
-//        patientManager = patientService.update(id);
-//        model.addAttribute("user",patientManager);
-//        return "admin/patient-registration";
-//    }
 
     @GetMapping("/updatePatient")
     public String updatePatient(@RequestParam("id") int id,Model model){
