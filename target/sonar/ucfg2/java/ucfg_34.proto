@@ -1,63 +1,30 @@
 
-ácom.xyz.springdemo.appointmentmanagementsystem.controller.AdminController#patientList(Lorg/springframework/ui/Model;)Ljava/lang/String;¢
-ó/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/AdminController.javam m("startingBlock*û
-startingBlock¢
-ó/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/AdminController.javam m(*‚ﬂ
-¢
-ó/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/AdminController.javam m()%
-modelorg.springframework.ui.Model"java.util.HashMap*
-1*±
+kcom.xyz.springdemo.appointmentmanagementsystem.controller.AdminController#deleteDoctor(I)Ljava/lang/String;¢
+ó/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/AdminController.javaY Y("1*ì
 1¢
-ó/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/AdminController.javan$ n(2ﬁ
-€
+ó/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/AdminController.javaZ Z(‹
+Ÿ
 ¢
-ó/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/AdminController.javan$ n(2K
-%0Ecom.xyz.springdemo.appointmentmanagementsystem.service.PatientService"__id*a*_K
-Icom.xyz.springdemo.appointmentmanagementsystem.controller.AdminController"
-patientService˘ˆ
+ó/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/AdminController.javaZ Z(J
+%0Dcom.xyz.springdemo.appointmentmanagementsystem.service.DoctorService"__id*`*^K
+Icom.xyz.springdemo.appointmentmanagementsystem.controller.AdminController"
+doctorServiceíè
 ¢
-ó/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/AdminController.javan$ n(<
-%1java.util.List"_com.xyz.springdemo.appointmentmanagementsystem.service.PatientService#findAll()Ljava/util/List;*M
-K
-%0Ecom.xyz.springdemo.appointmentmanagementsystem.service.PatientService2	findAll()Â
-‚
+ó/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/AdminController.javaZ Z($
+
+%1void"ecom.xyz.springdemo.appointmentmanagementsystem.service.DoctorService#deleteById(Ljava/lang/Integer;)V*L
+J
+%0Dcom.xyz.springdemo.appointmentmanagementsystem.service.DoctorService*
+""2deleteById(Ljava/lang/Integer;)≤
+Ø
 ¢
-ó/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/AdminController.javan n(=
-patientListjava.util.List"__id*
-
-%1java.util.List´
-®
+ó/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/AdminController.java[ [(&
+%2java.lang.String"__id*j*hK
+Icom.xyz.springdemo.appointmentmanagementsystem.controller.AdminController"
+doctorListControllerUrl"ø
 ¢
-ó/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/AdminController.javao o(/"
-%2org.springframework.ui.Model"__mapSet*'
-%
-modelorg.springframework.ui.Model*	
-users*
-
-patientListjava.util.ListÙÒ
-¢
-ó/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/AdminController.javap" p(4	
-%3int"java.util.List#size()I*
-
-patientListjava.util.List2size()ñ
-ì
-¢
-ó/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/AdminController.javap p(5"
-%4org.springframework.ui.Model"__mapSet*'
-%
-modelorg.springframework.ui.Model*
-size*
-	
-%3int√
-¿
-¢
-ó/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/AdminController.javaq q(#
-%5"template!admin/patient-list*M"K
-Icom.xyz.springdemo.appointmentmanagementsystem.controller.AdminController*'
-%
-modelorg.springframework.ui.Model"Ω
-¢
-ó/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/AdminController.javaq q($
-admin/patient-list:%
-modelorg.springframework.ui.ModelBMK
+ó/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/AdminController.java[ [('
+
+%2java.lang.String:
+""BMK
 Icom.xyz.springdemo.appointmentmanagementsystem.controller.AdminController

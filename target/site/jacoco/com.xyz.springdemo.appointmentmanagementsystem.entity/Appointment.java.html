@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Appointment.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">appointment-management-system</a> &gt; <a href="index.source.html" class="el_package">com.xyz.springdemo.appointmentmanagementsystem.entity</a> &gt; <span class="el_source">Appointment.java</span></div><h1>Appointment.java</h1><pre class="source lang-java linenums">package com.xyz.springdemo.appointmentmanagementsystem.entity;
 
 import javax.persistence.*;
-import java.util.List;
+
 
 @Entity
 @Table(name = &quot;appointment&quot;)
@@ -37,16 +37,16 @@ public class Appointment {
 <span class="fc" id="L37">    public Appointment() {</span>
 <span class="fc" id="L38">    }</span>
 
-<span class="nc" id="L40">    public Appointment(String date, String startTime, String endTime, int patientId, int doctorId) {</span>
-<span class="nc" id="L41">        this.date = date;</span>
-<span class="nc" id="L42">        this.startTime = startTime;</span>
-<span class="nc" id="L43">        this.endTime = endTime;</span>
-<span class="nc" id="L44">        this.patientId = patientId;</span>
-<span class="nc" id="L45">        this.doctorId = doctorId;</span>
-<span class="nc" id="L46">    }</span>
+<span class="fc" id="L40">    public Appointment(String date, String startTime, String endTime, int patientId, int doctorId) {</span>
+<span class="fc" id="L41">        this.date = date;</span>
+<span class="fc" id="L42">        this.startTime = startTime;</span>
+<span class="fc" id="L43">        this.endTime = endTime;</span>
+<span class="fc" id="L44">        this.patientId = patientId;</span>
+<span class="fc" id="L45">        this.doctorId = doctorId;</span>
+<span class="fc" id="L46">    }</span>
 
     public int getId() {
-<span class="nc" id="L49">        return id;</span>
+<span class="fc" id="L49">        return id;</span>
     }
 
     public void setId(int id) {
@@ -93,6 +93,20 @@ public class Appointment {
 <span class="nc" id="L93">        this.doctorId = doctorId;</span>
 <span class="nc" id="L94">    }</span>
 
+    public Patient getPatient() {
+<span class="nc" id="L97">        return patient;</span>
+    }
 
+    public void setPatient(Patient patient) {
+<span class="nc" id="L101">        this.patient = patient;</span>
+<span class="nc" id="L102">    }</span>
+
+    public Doctor getDoctor() {
+<span class="nc" id="L105">        return doctor;</span>
+    }
+
+    public void setDoctor(Doctor doctor) {
+<span class="nc" id="L109">        this.doctor = doctor;</span>
+<span class="nc" id="L110">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

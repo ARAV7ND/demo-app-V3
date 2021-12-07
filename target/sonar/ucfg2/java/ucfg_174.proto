@@ -1,65 +1,71 @@
 
-çcom.xyz.springdemo.appointmentmanagementsystem.controller.DoctorController#appointmentList(ILorg/springframework/ui/Model;)Ljava/lang/String;£
-ò/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/DoctorController.java4 4(!"startingBlock*†
-startingBlock£
-ò/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/DoctorController.java4! 4(I„‡
-£
-ò/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/DoctorController.java4= 4(H%
+òcom.xyz.springdemo.appointmentmanagementsystem.controller.MainController#home(Lorg/springframework/ui/Model;Ljava/security/Principal;)Ljava/lang/String;°
+ñ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/MainController.java ("startingBlock*û
+startingBlock°
+ñ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/MainController.java (7ô
+ñ
+°
+ñ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/MainController.java (
+%5"
+__annotate*64
+2org.springframework.web.bind.annotation.GetMapping*&
+$
+	principaljava.security.Principal„
+‡
+°
+ñ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/MainController.java- (6$
+	principaljava.security.Principal"__annotation*
+
+%5·ﬁ
+°
+ñ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/MainController.java (#%
 modelorg.springframework.ui.Model"java.util.HashMap*
-1*Ú
-1£
-ò/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/DoctorController.java5, 5(9ﬁ
-€
-£
-ò/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/DoctorController.java5, 5(9J
-%0Dcom.xyz.springdemo.appointmentmanagementsystem.service.DoctorService"__id*a*_L
-Jcom.xyz.springdemo.appointmentmanagementsystem.controller.DoctorController"
-doctorServiceíè
-£
-ò/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/DoctorController.java5, 5(M
-%1java.util.List"gcom.xyz.springdemo.appointmentmanagementsystem.service.DoctorService#appointmentList(I)Ljava/util/List;*L
-J
-%0Dcom.xyz.springdemo.appointmentmanagementsystem.service.DoctorService*
-""2appointmentList(I)Í
-Á
-£
-ò/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/DoctorController.java5 5(N!
-appointmentListjava.util.List"__id*
-
-%1java.util.List˘ˆ
-£
-ò/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/DoctorController.java6" 6(8	
-%2int"java.util.List#size()I*#
-!
-appointmentListjava.util.List2size()ó
-î
-£
-ò/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/DoctorController.java6 6(9"
+1*∂
+1°
+ñ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/MainController.java ("ÿ
+’
+°
+ñ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/MainController.java ("G
+%0Acom.xyz.springdemo.appointmentmanagementsystem.dao.UserRepository"__id*`*^J
+Hcom.xyz.springdemo.appointmentmanagementsystem.controller.MainController"
+userRepositoryß§
+°
+ñ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/MainController.java2 (E
+%1java.lang.String"3java.security.Principal#getName()Ljava/lang/String;*&
+$
+	principaljava.security.Principal2	getName()ïí
+°
+ñ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/MainController.java (F@
+%2:com.xyz.springdemo.appointmentmanagementsystem.entity.User"†com.xyz.springdemo.appointmentmanagementsystem.dao.UserRepository#findByUsername(Ljava/lang/String;)Lcom/xyz/springdemo/appointmentmanagementsystem/entity/User;*I
+G
+%0Acom.xyz.springdemo.appointmentmanagementsystem.dao.UserRepository*
+
+%1java.lang.String2"findByUsername(Ljava/lang/String;)µ
+≤
+°
+ñ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/MainController.java (GB
+user:com.xyz.springdemo.appointmentmanagementsystem.entity.User"__id*B
+@
+%2:com.xyz.springdemo.appointmentmanagementsystem.entity.UserŒ
+À
+°
+ñ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/MainController.java ('"
 %3org.springframework.ui.Model"__mapSet*'
 %
 modelorg.springframework.ui.Model*
-size*
-	
-%2int∫
-∑
-£
-ò/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/DoctorController.java7 7(="
-%4org.springframework.ui.Model"__mapSet*'
+user*D
+B
+user:com.xyz.springdemo.appointmentmanagementsystem.entity.User¥
+±
+°
+ñ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/MainController.java (
+%4"template!/home*L"J
+Hcom.xyz.springdemo.appointmentmanagementsystem.controller.MainController*'
 %
-modelorg.springframework.ui.Model*
-appointmentList*#
-!
-appointmentListjava.util.List 
-«
-£
-ò/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/DoctorController.java8 8((
-%5" template!doctor/appointment-list*N"L
-Jcom.xyz.springdemo.appointmentmanagementsystem.controller.DoctorController*'
-%
-modelorg.springframework.ui.Model"√
-£
-ò/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/DoctorController.java8 8()
-doctor/appointment-list:
-"":%
-modelorg.springframework.ui.ModelBNL
-Jcom.xyz.springdemo.appointmentmanagementsystem.controller.DoctorController
+modelorg.springframework.ui.Model"Ø
+°
+ñ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/MainController.java (	
+/home:%
+modelorg.springframework.ui.Model:$
+	principaljava.security.PrincipalBLJ
+Hcom.xyz.springdemo.appointmentmanagementsystem.controller.MainController

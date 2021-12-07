@@ -2,31 +2,31 @@
 
 import com.xyz.springdemo.appointmentmanagementsystem.dao.AppointmentRepository;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.Appointment;
-import com.xyz.springdemo.appointmentmanagementsystem.entity.Doctor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
 @Service
-<span class="fc" id="L15">public class AppointmentServiceImpl implements AppointmentService{</span>
+public class AppointmentServiceImpl implements AppointmentService{
 
-    @Autowired
     private AppointmentRepository appointmentRepository;
 
-    //constr
+    @Autowired
+<span class="fc" id="L18">    public AppointmentServiceImpl(AppointmentRepository appointmentRepository) {</span>
+<span class="fc" id="L19">        this.appointmentRepository = appointmentRepository;</span>
+<span class="fc" id="L20">    }</span>
 
     @Override
     public Appointment save(Appointment appointment) {
-<span class="nc" id="L24">        return appointmentRepository.save(appointment);</span>
+<span class="fc" id="L24">        return appointmentRepository.save(appointment);</span>
     }
 
     @Override
     public List&lt;Appointment&gt; findAllByDoctorId(int doctorId) {
-<span class="nc" id="L29">        return appointmentRepository.findAllByDoctorId(doctorId);</span>
+<span class="fc" id="L29">        return appointmentRepository.findAllByDoctorId(doctorId);</span>
     }
 
     @Override
@@ -38,9 +38,21 @@ import java.util.List;
 <span class="nc" id="L38">            String tempDate = appointmentObj.getDate()+&quot; &quot;+appointmentObj.getEndTime();</span>
 <span class="nc" id="L39">            Date before =  sdf.parse(tempDate);</span>
 <span class="nc" id="L40">            Date after = sdf.parse(appointment.getDate()+&quot; &quot;+appointment.getEndTime());</span>
-<span class="nc bnc" id="L41" title="All 2 branches missed.">            return before.getTime() &gt;  after.getTime();</span>
-        }
-<span class="nc" id="L43">        return true;</span>
+<span class="nc bnc" id="L41" title="All 2 branches missed.">            if(before.getTime() &gt;  after.getTime()){</span>
+<span class="nc" id="L42">                return false;</span>
+            }
+<span class="nc" id="L44">        }</span>
+<span class="nc" id="L45">        return true;</span>
     }
+
+    @Override
+    public List&lt;Appointment&gt; findAll() {
+<span class="fc" id="L50">        return appointmentRepository.findAll();</span>
+    }
+
+    @Override
+    public void deleteById(Integer integer) {
+<span class="nc" id="L55">        appointmentRepository.deleteById(integer);</span>
+<span class="nc" id="L56">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

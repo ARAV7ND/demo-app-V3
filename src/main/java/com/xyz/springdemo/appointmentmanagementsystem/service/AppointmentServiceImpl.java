@@ -30,15 +30,21 @@ public class AppointmentServiceImpl implements AppointmentService{
     }
 
     @Override
-    public boolean isSlotAvailable(Appointment appointment) throws ParseException {
+    public boolean isSlotAvailable(Appointment appointment){
         List<Appointment> appointments = findAllByDoctorId(appointment.getDoctorId());
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm");
 
-        for(Appointment appointmentObj : appointments){
-            String tempDate = appointmentObj.getDate()+" "+appointmentObj.getEndTime();
-            Date before =  sdf.parse(tempDate);
-            Date after = sdf.parse(appointment.getDate()+" "+appointment.getEndTime());
-            return before.getTime() >  after.getTime();
+        try {
+            for (Appointment appointmentObj : appointments) {
+                String tempDate = appointmentObj.getDate() + " " + appointmentObj.getEndTime();
+                Date before = sdf.parse(tempDate);
+                Date after = sdf.parse(appointment.getDate() + " " + appointment.getEndTime());
+                if (before.getTime() > after.getTime()) {
+                    return false;
+                }
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
         return true;
     }

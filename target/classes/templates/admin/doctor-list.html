@@ -35,7 +35,7 @@
         <td th:text="${user.specialist}"/>
         <td>
           <a th:href="@{/admin/updateDoctor(id=${user.id})}" class="btn btn-info btn-sm">Update</a>
-          <a th:href="@{/admin/deleteDoctor(id=${user.id})}" class="btn btn-info btn-sm">Delete</a>
+          <a th:href="@{/admin/deleteDoctor(id=${user.id})}" class="btn btn-info btn-sm" onclick="if (!(confirm('Are you sure..! wanna delete this doctor?'))) return false">Delete</a>
         </td>
       </tr>
       </tbody>

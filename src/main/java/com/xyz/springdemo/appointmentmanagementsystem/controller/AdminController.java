@@ -20,7 +20,6 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
-import java.security.Principal;
 import java.util.List;
 @Controller
 @RequestMapping("/admin")
@@ -36,6 +35,9 @@ public class AdminController {
     private final DoctorConverter doctorConverter;
 
     private final PatientConverter patientConverter;
+
+    private String patientListControllerUrl = "redirect:/admin/patientList";
+    private String doctorListControllerUrl = "redirect:/admin/doctorList";
 
     @Autowired
     public AdminController(DoctorService doctorService, PatientService patientService, UserService userService, DoctorConverter doctorConverter, PatientConverter patientConverter) {
@@ -72,7 +74,7 @@ public class AdminController {
             return "admin/doctor-registration";
         }
         doctorService.save(doctorDto);
-        return "redirect:/admin/doctorList";
+        return doctorListControllerUrl;
     }
 
     @GetMapping("/doctorList")
@@ -86,7 +88,7 @@ public class AdminController {
     @GetMapping("/deleteDoctor")
     public String deleteDoctor(@RequestParam("id") int id){
         doctorService.deleteById(id);
-        return "redirect:/admin/doctorList";
+        return doctorListControllerUrl;
     }
 
     @GetMapping("/updateDoctor")
@@ -105,7 +107,7 @@ public class AdminController {
         }
 
         doctorService.saveNew(doctorDto);
-        return "redirect:/admin/doctorList";
+        return doctorListControllerUrl;
     }
 
     @GetMapping("/patientList")
@@ -132,16 +134,16 @@ public class AdminController {
             return "admin/patient-update-form";
         }
         patientService.save(patientDto);
-        return "redirect:/admin/patientList";
+        return patientListControllerUrl;
     }
     @PostMapping("/savePatient")
     public String savePatient(@ModelAttribute("user") PatientManager patientDto){
         patientService.save(patientDto);
-        return "redirect:/admin/patientList";
+        return patientListControllerUrl;
     }
     @GetMapping("/deletePatient")
     public String deletePatient(@RequestParam("id") int id){
             patientService.deleteById(id);
-        return "redirect:/admin/patientList";
+        return patientListControllerUrl;
     }
 }

@@ -12,25 +12,25 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import javax.sql.DataSource;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
+
+    private final CustomLoginSuccessHandler successHandler;
 
     @Autowired
-    private CustomLoginSuccessHandler successHandler;
+    public SecurityConfiguration(UserService userService, CustomLoginSuccessHandler successHandler) {
+        this.userService = userService;
+        this.successHandler = successHandler;
+    }
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
-    @Autowired
-    private DataSource dataSource;
 
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {
@@ -56,7 +56,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/registration").permitAll()
                 .antMatchers("/login").permitAll()
                 .antMatchers("/resources/**").permitAll()
-                .antMatchers("/admin/**","/doctor/**","/patient/**").hasRole("ADMIN")
+                .antMatchers("/admin/**").hasRole("ADMIN")
                 .antMatchers("/doctor/**").hasRole("DOCTOR")
                 .antMatchers("/patient/**").hasRole("USER")
                 .anyRequest().authenticated()

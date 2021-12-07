@@ -1,71 +1,16 @@
 
-òcom.xyz.springdemo.appointmentmanagementsystem.controller.MainController#user(Lorg/springframework/ui/Model;Ljava/security/Principal;)Ljava/lang/String;°
-ñ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/MainController.java* *("startingBlock*û
-startingBlock°
-ñ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/MainController.java* *(8ô
-ñ
-°
-ñ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/MainController.java) )(
-%5"
-__annotate*64
-2org.springframework.web.bind.annotation.GetMapping*&
-$
-	principaljava.security.Principal„
-‡
-°
-ñ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/MainController.java*. *(7$
-	principaljava.security.Principal"__annotation*
-
-%5·ﬁ
-°
-ñ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/MainController.java* *(#%
-modelorg.springframework.ui.Model"java.util.HashMap*
-1*ÿ
-1°
-ñ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/MainController.java+ +("ÿ
-’
-°
-ñ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/MainController.java+ +("G
-%0Acom.xyz.springdemo.appointmentmanagementsystem.dao.UserRepository"__id*`*^J
-Hcom.xyz.springdemo.appointmentmanagementsystem.controller.MainController"
-userRepositoryß§
-°
-ñ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/MainController.java+2 +(E
-%1java.lang.String"3java.security.Principal#getName()Ljava/lang/String;*&
-$
-	principaljava.security.Principal2	getName()ïí
-°
-ñ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/MainController.java+ +(F@
-%2:com.xyz.springdemo.appointmentmanagementsystem.entity.User"†com.xyz.springdemo.appointmentmanagementsystem.dao.UserRepository#findByUsername(Ljava/lang/String;)Lcom/xyz/springdemo/appointmentmanagementsystem/entity/User;*I
-G
-%0Acom.xyz.springdemo.appointmentmanagementsystem.dao.UserRepository*
-
-%1java.lang.String2"findByUsername(Ljava/lang/String;)µ
-≤
-°
-ñ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/MainController.java+ +(GB
-user:com.xyz.springdemo.appointmentmanagementsystem.entity.User"__id*B
-@
-%2:com.xyz.springdemo.appointmentmanagementsystem.entity.UserŒ
-À
-°
-ñ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/MainController.java, ,('"
-%3org.springframework.ui.Model"__mapSet*'
-%
-modelorg.springframework.ui.Model*
-user*D
-B
-user:com.xyz.springdemo.appointmentmanagementsystem.entity.User≈
-¬
-°
-ñ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/MainController.java- -('
-%4"template!redirect:/patient/home*L"J
-Hcom.xyz.springdemo.appointmentmanagementsystem.controller.MainController*'
-%
-modelorg.springframework.ui.Model"¿
-°
-ñ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/MainController.java- -((
-redirect:/patient/home:%
-modelorg.springframework.ui.Model:$
-	principaljava.security.PrincipalBLJ
-Hcom.xyz.springdemo.appointmentmanagementsystem.controller.MainController
+_com.xyz.springdemo.appointmentmanagementsystem.entity.Patient#getAppointments()Ljava/util/List;ñ
+ã/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/Patient.javaH H(,"1*‡
+1ñ
+ã/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/Patient.javaI I(ç
+ä
+ñ
+ã/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/Patient.javaI I(
+%0java.util.List"__id*S*Q?
+=com.xyz.springdemo.appointmentmanagementsystem.entity.Patient"
+appointments"±
+ñ
+ã/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/Patient.javaI I(
+
+%0java.util.ListBA?
+=com.xyz.springdemo.appointmentmanagementsystem.entity.Patient

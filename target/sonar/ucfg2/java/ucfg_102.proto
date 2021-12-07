@@ -1,110 +1,17 @@
 
-Wcom.xyz.springdemo.appointmentmanagementsystem.entity.User#toString()Ljava/lang/String;“
-ˆ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/User.javaJ J("1*Æ
+Zcom.xyz.springdemo.appointmentmanagementsystem.entity.User#getPassword()Ljava/lang/String;“
+ˆ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/User.java9 9("1*Ô
 1“
-ˆ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/User.javaK K(Ï
-Ì
-“
-ˆ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/User.javaK L(
-%0java.lang.String"__concat*	
-User{*
-id=Ý
-Ú
-“
-ˆ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/User.javaK L(
-%1java.lang.String"__concat*
-
-%0java.lang.String*
-""ç
-ä
-“
-ˆ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/User.javaK M(
-%2java.lang.String"__concat*
-
-%1java.lang.String*
-, username='…
+ˆ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/User.java: :(…
 ‚
 “
-ˆ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/User.javaM! M()
-%3java.lang.String"__id*L*J<
+ˆ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/User.java: :(
+%0java.lang.String"__id*L*J<
 :com.xyz.springdemo.appointmentmanagementsystem.entity.User"
 
-usernameï
-ì
+password"°
 “
-ˆ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/User.javaK M()
-%4java.lang.String"__concat*
+ˆ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/User.java: :(
 
-%2java.lang.String*
-
-%3java.lang.StringÝ
-Ú
-“
-ˆ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/User.javaK M(0
-%5java.lang.String"__concat*
-
-%4java.lang.String*
-\'ç
-ä
-“
-ˆ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/User.javaK N(
-%6java.lang.String"__concat*
-
-%5java.lang.String*
-, password='…
-‚
-“
-ˆ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/User.javaN! N()
-%7java.lang.String"__id*L*J<
-:com.xyz.springdemo.appointmentmanagementsystem.entity.User"
-
-passwordï
-ì
-“
-ˆ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/User.javaK N()
-%8java.lang.String"__concat*
-
-%6java.lang.String*
-
-%7java.lang.StringÝ
-Ú
-“
-ˆ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/User.javaK N(0
-%9java.lang.String"__concat*
-
-%8java.lang.String*
-\'ä
-á
-“
-ˆ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/User.javaK O(
-%10java.lang.String"__concat*
-
-%9java.lang.String*
-
-, roles=
-þ
-“
-ˆ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/User.javaO O("
-%11java.util.List"__id*I*G<
-:com.xyz.springdemo.appointmentmanagementsystem.entity.User"
-rolesð
-í
-“
-ˆ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/User.javaK O("
-%12java.lang.String"__concat*
-
-%10java.lang.String*
-
-%11java.util.ListÞ
-Û
-“
-ˆ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/User.javaK P(
-%13java.lang.String"__concat*
-
-%12java.lang.String*
-}"±
-“
-ˆ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/User.javaK P(
-
-%13java.lang.StringB><
+%0java.lang.StringB><
 :com.xyz.springdemo.appointmentmanagementsystem.entity.User

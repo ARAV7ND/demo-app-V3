@@ -1,6 +1,12 @@
 package com.xyz.springdemo.appointmentmanagementsystem.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 
 @Entity
@@ -11,12 +17,22 @@ public class Appointment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
+
+
     @Column(name = "date")
+    @NotBlank(message = "date cannot be null")
+//    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @Pattern(regexp = "^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\\d\\d$",message = "input should in dd/MM/yyyy format")
     private String date;
 
+    @NotBlank(message = "startTime cannot be null")
+    @Pattern(regexp = "^(0?[1-9]|1[0-2]):[0-5][0-9]$",message = "format is hh:mm")
     @Column(name = "appointment_start_time")
     private String startTime;
 
+    @NotBlank(message = "endTime cannot be null")
+    @DateTimeFormat(pattern = "hh:mm")
+    @Pattern(regexp = "^(0?[1-9]|1[0-2]):[0-5][0-9]$",message = "format is hh:mm")
     @Column(name = "appointment_end_time")
     private String endTime;
 

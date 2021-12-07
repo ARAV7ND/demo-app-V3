@@ -12,25 +12,25 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import javax.sql.DataSource;
 
 @Configuration
 @EnableWebSecurity
-<span class="fc" id="L19">public class SecurityConfiguration extends WebSecurityConfigurerAdapter {</span>
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+
+    private final UserService userService;
+
+    private final CustomLoginSuccessHandler successHandler;
 
     @Autowired
-    private UserService userService;
-
-    @Autowired
-    private CustomLoginSuccessHandler successHandler;
+<span class="fc" id="L25">    public SecurityConfiguration(UserService userService, CustomLoginSuccessHandler successHandler) {</span>
+<span class="fc" id="L26">        this.userService = userService;</span>
+<span class="fc" id="L27">        this.successHandler = successHandler;</span>
+<span class="fc" id="L28">    }</span>
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
-<span class="fc" id="L29">        return new BCryptPasswordEncoder();</span>
+<span class="fc" id="L32">        return new BCryptPasswordEncoder();</span>
     }
-
-    @Autowired
-    private DataSource dataSource;
 
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {
@@ -56,9 +56,9 @@ import javax.sql.DataSource;
 <span class="fc" id="L56">                .antMatchers(&quot;/registration&quot;).permitAll()</span>
 <span class="fc" id="L57">                .antMatchers(&quot;/login&quot;).permitAll()</span>
 <span class="fc" id="L58">                .antMatchers(&quot;/resources/**&quot;).permitAll()</span>
-<span class="fc" id="L59">                .antMatchers(&quot;/admin/**&quot;,&quot;/doctor/**&quot;,&quot;/patient/**&quot;).hasRole(&quot;ADMIN&quot;)</span>
-<span class="fc" id="L60">                .antMatchers(&quot;/patient/**&quot;).hasRole(&quot;USER&quot;)</span>
-<span class="fc" id="L61">                .antMatchers(&quot;/doctor/**&quot;).hasRole(&quot;DOCTOR&quot;)</span>
+<span class="fc" id="L59">                .antMatchers(&quot;/admin/**&quot;).hasRole(&quot;ADMIN&quot;)</span>
+<span class="fc" id="L60">                .antMatchers(&quot;/doctor/**&quot;).hasRole(&quot;DOCTOR&quot;)</span>
+<span class="fc" id="L61">                .antMatchers(&quot;/patient/**&quot;).hasRole(&quot;USER&quot;)</span>
 <span class="fc" id="L62">                .anyRequest().authenticated()</span>
 <span class="fc" id="L63">                .and()</span>
 <span class="fc" id="L64">                .formLogin()</span>

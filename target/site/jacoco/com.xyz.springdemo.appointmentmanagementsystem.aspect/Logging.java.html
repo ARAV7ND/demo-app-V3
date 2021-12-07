@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 <span class="fc" id="L12">public class Logging {</span>
-<span class="fc" id="L13">    private static Logger logger = LoggerFactory.getLogger(Logging.class);</span>
+<span class="fc" id="L13">    private static final Logger logger = LoggerFactory.getLogger(Logging.class);</span>
 
     @Before(&quot;com.xyz.springdemo.appointmentmanagementsystem.aspect.PointCutExpression.find()&quot;)
     public void beforeFinding(){
@@ -29,8 +29,8 @@ import org.springframework.stereotype.Component;
 
     @Before(&quot;com.xyz.springdemo.appointmentmanagementsystem.aspect.PointCutExpression.delete()&quot;)
     public void beforeDelete(){
-<span class="fc" id="L32">        logger.info(&quot;\n=====&gt; Deleting from the database&quot;);</span>
-<span class="fc" id="L33">    }</span>
+<span class="nc" id="L32">        logger.info(&quot;\n=====&gt; Deleting from the database&quot;);</span>
+<span class="nc" id="L33">    }</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

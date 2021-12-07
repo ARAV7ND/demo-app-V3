@@ -1,5 +1,7 @@
 package com.xyz.springdemo.appointmentmanagementsystem;
 
+import com.xyz.springdemo.appointmentmanagementsystem.controller.MainController;
+import com.xyz.springdemo.appointmentmanagementsystem.controller.UserRegistrationController;
 import com.xyz.springdemo.appointmentmanagementsystem.dao.DoctorRepository;
 import com.xyz.springdemo.appointmentmanagementsystem.dao.PatientRepository;
 import com.xyz.springdemo.appointmentmanagementsystem.dao.RoleRepository;
@@ -9,6 +11,7 @@ import com.xyz.springdemo.appointmentmanagementsystem.service.AppointmentService
 import com.xyz.springdemo.appointmentmanagementsystem.service.DoctorService;
 import com.xyz.springdemo.appointmentmanagementsystem.service.PatientService;
 import org.assertj.core.api.Assertions;
+import org.junit.Assert;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -18,6 +21,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.print.Doc;
 import java.util.*;
 
 @SpringBootTest
@@ -38,6 +42,10 @@ class AppointmentManagementSystemApplicationTests {
 	private final UserRepository userRepository;
 
 	private final RoleRepository roleRepository;
+
+	@Autowired
+	private UserRegistrationController controller;
+
 	@Autowired
 	public AppointmentManagementSystemApplicationTests(PatientService patientService, PatientRepository patientRepository,
 													   AppointmentService appointmentService, DoctorRepository doctorRepository,
@@ -126,6 +134,20 @@ class AppointmentManagementSystemApplicationTests {
 
 	@Test
 	@Order(12)
+	void findDoctorByEmail(){
+		String doctorEmail = doctorService.findByUsername("priya@gmail.com").getEmail();
+
+		Assert.assertEquals("priya@gmail.com",doctorEmail);
+	}
+
+	@Test
+	@Order(13)
+	void findPatientByEmail(){
+		Patient patient = patientService.findByUsername("zakir@gmail.com");
+		Assertions.assertThat(patient).isNotNull();
+	}
+	@Test
+	@Order(14)
 	void deleteDoctorById(){
 		Doctor doctor = doctorService.findByUsername("priya@gmail.com");
 		doctorRepository.deleteById(doctor.getId());
@@ -141,7 +163,7 @@ class AppointmentManagementSystemApplicationTests {
 	}
 
 	@Test
-	@Order(13)
+	@Order(14)
 	void deletePatientById(){
 		Patient patient = patientService.findByUsername("zakir@gmail.com");
 		patientRepository.deleteById(patient.getPatientId());
@@ -156,5 +178,19 @@ class AppointmentManagementSystemApplicationTests {
 		Assertions.assertThat(patient1).isNull();
 	}
 
+
+	@Test
+	@Order(14)
+	void loginPage(){
+		MainController mainController = new MainController();
+		String response = mainController.login();
+		Assert.assertEquals("login",response);
+	}
+
+	@Test
+	void registrationPage(){
+		String home = controller.home();
+		Assert.assertEquals("/home",home);
+	}
 
 }

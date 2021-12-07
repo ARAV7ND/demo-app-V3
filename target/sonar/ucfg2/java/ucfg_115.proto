@@ -1,17 +1,16 @@
 
-dcom.xyz.springdemo.appointmentmanagementsystem.entity.PatientManager#getPassword()Ljava/lang/String;ù
-í/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/PatientManager.javaT T("1*¸
+acom.xyz.springdemo.appointmentmanagementsystem.entity.PatientManager#getPhone()Ljava/lang/String;ù
+í/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/PatientManager.javaD D("1*˘
 1ù
-í/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/PatientManager.javaU U(ô
-ñ
+í/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/PatientManager.javaE E(ñ
+ì
 ù
-í/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/PatientManager.javaU U(
-%0java.lang.String"__id*V*TF
-Dcom.xyz.springdemo.appointmentmanagementsystem.entity.PatientManager"
-
-password"∫
+í/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/PatientManager.javaE E(
+%0java.lang.String"__id*S*QF
+Dcom.xyz.springdemo.appointmentmanagementsystem.entity.PatientManager"
+phone"∫
 ù
-í/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/PatientManager.javaU U(
+í/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/PatientManager.javaE E(
 
 %0java.lang.StringBHF
 Dcom.xyz.springdemo.appointmentmanagementsystem.entity.PatientManager

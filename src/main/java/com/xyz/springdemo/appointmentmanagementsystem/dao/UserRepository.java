@@ -1,7 +1,6 @@
 package com.xyz.springdemo.appointmentmanagementsystem.dao;
 
 import com.xyz.springdemo.appointmentmanagementsystem.entity.User;
-import org.springframework.data.domain.Example;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

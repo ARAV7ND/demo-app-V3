@@ -1,40 +1,57 @@
 
-~com.xyz.springdemo.appointmentmanagementsystem.service.UserServiceImpl#mapRolesToAuthorities(Ljava/util/List;)Ljava/util/List;ü
-î/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.javaM- M(B"1*Ô
+écom.xyz.springdemo.appointmentmanagementsystem.service.UserServiceImpl#findById(I)Lcom/xyz/springdemo/appointmentmanagementsystem/entity/User;ü
+î/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.java. .("3*ù
+2ü
+î/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.java2 2(∫∑
+ü
+î/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.java2 2(@
+%3:com.xyz.springdemo.appointmentmanagementsystem.entity.User"*java.util.Optional#get()Ljava/lang/Object;*
+
+resultjava.util.Optional2get()≥
+∞
+ü
+î/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.java2 2(B
+user:com.xyz.springdemo.appointmentmanagementsystem.entity.User"__id*B
+@
+%3:com.xyz.springdemo.appointmentmanagementsystem.entity.User*
+1*î
+3ü
+î/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.java/  /(.‘
+—
+ü
+î/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.java/  /(.G
+%0Acom.xyz.springdemo.appointmentmanagementsystem.dao.UserRepository"__id*^*\H
+Fcom.xyz.springdemo.appointmentmanagementsystem.service.UserServiceImpl"
+userRepository¶£
+ü
+î/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.java/  /(;
+%1java.util.Optional"scom.xyz.springdemo.appointmentmanagementsystem.dao.UserRepository#findById(Ljava/lang/Integer;)Ljava/util/Optional;*I
+G
+%0Acom.xyz.springdemo.appointmentmanagementsystem.dao.UserRepository*
+""2findById(Ljava/lang/Integer;)Â
+‚
+ü
+î/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.java/ /(<
+resultjava.util.Optional"__id*
+
+%1java.util.Optional˜
+Ù
+ü
+î/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.java0 0(B
+user:com.xyz.springdemo.appointmentmanagementsystem.entity.User"__id*
+""Çˇ
+ü
+î/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.java1 1(
+%2boolean"java.util.Optional#isPresent()Z*
+
+resultjava.util.Optional2isPresent()*
+2
+1*ê
 1ü
-î/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.javaN N(°û
+î/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.java4 4("Ë
 ü
-î/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.javaN N(
-%0java.util.stream.Stream"6java.util.Collection#stream()Ljava/util/stream/Stream;*
-
-rolesjava.util.List2stream()∏
-µ
-ü
-î/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.javaN" N(Y!
-%1java.util.function.Function"__declareFunction*[Y
-W__sonar_lambda_0$com.xyz.springdemo.appointmentmanagementsystem.service.UserServiceImplÉÄ
-ü
-î/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.javaN N(Z
-%5java.util.stream.Stream"Sjava.util.stream.Stream#map(Ljava/util/function/Function;)Ljava/util/stream/Stream;*
-
-%0java.util.stream.Stream*#
-!
-%1java.util.function.Function2"map(Ljava/util/function/Function;)™
-ß
-ü
-î/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.javaNc N(v 
-%6java.util.stream.Collector"@java.util.stream.Collectors#toList()Ljava/util/stream/Collector;*"
-java.util.stream.Collectors¯ı
-ü
-î/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.javaN N(w
-%7java.util.List"Ojava.util.stream.Stream#collect(Ljava/util/stream/Collector;)Ljava/lang/Object;*
-
-%5java.util.stream.Stream*"
- 
-%6java.util.stream.Collector2%collect(Ljava/util/stream/Collector;)"∫
-ü
-î/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.javaN N(x
-
-%7java.util.List:
-rolesjava.util.ListBJH
+î/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.java4 4(D
+B
+user:com.xyz.springdemo.appointmentmanagementsystem.entity.User:
+""BJH
 Fcom.xyz.springdemo.appointmentmanagementsystem.service.UserServiceImpl

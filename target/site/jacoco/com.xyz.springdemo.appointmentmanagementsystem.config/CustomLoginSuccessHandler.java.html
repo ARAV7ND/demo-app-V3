@@ -4,29 +4,28 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Set;
 
 @Configuration
-<span class="fc" id="L14">public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler {</span>
+<span class="fc" id="L13">public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler {</span>
 @Override
 public void onAuthenticationSuccess(HttpServletRequest httpServletRequest,
                                     HttpServletResponse httpServletResponse,
-                                    Authentication authentication) throws IOException, ServletException {
+                                    Authentication authentication) throws IOException {
 
-<span class="nc" id="L20">    Set&lt;String&gt; roles = AuthorityUtils.authorityListToSet(authentication.getAuthorities());</span>
+<span class="nc" id="L19">    Set&lt;String&gt; roles = AuthorityUtils.authorityListToSet(authentication.getAuthorities());</span>
 
-<span class="nc bnc" id="L22" title="All 2 branches missed.">    if (roles.contains(&quot;ROLE_ADMIN&quot;)) {</span>
-<span class="nc" id="L23">        httpServletResponse.sendRedirect(&quot;/admin/home&quot;);</span>
-<span class="nc bnc" id="L24" title="All 2 branches missed.">    } else if(roles.contains(&quot;ROLE_DOCTOR&quot;)){</span>
-<span class="nc" id="L25">        httpServletResponse.sendRedirect(&quot;/doctor/home&quot;);</span>
+<span class="nc bnc" id="L21" title="All 2 branches missed.">    if (roles.contains(&quot;ROLE_ADMIN&quot;)) {</span>
+<span class="nc" id="L22">        httpServletResponse.sendRedirect(&quot;/admin/home&quot;);</span>
+<span class="nc bnc" id="L23" title="All 2 branches missed.">    } else if(roles.contains(&quot;ROLE_DOCTOR&quot;)){</span>
+<span class="nc" id="L24">        httpServletResponse.sendRedirect(&quot;/doctor/home&quot;);</span>
     }else{
-<span class="nc" id="L27">        httpServletResponse.sendRedirect(&quot;/patient/home&quot;);</span>
+<span class="nc" id="L26">        httpServletResponse.sendRedirect(&quot;/patient/home&quot;);</span>
     }
-<span class="nc" id="L29">}</span>
+<span class="nc" id="L28">}</span>
 
 
 }

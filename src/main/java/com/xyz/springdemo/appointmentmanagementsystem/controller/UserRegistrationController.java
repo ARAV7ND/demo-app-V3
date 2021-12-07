@@ -3,6 +3,7 @@ package com.xyz.springdemo.appointmentmanagementsystem.controller;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.PatientManager;
 import com.xyz.springdemo.appointmentmanagementsystem.service.PatientService;
 import com.xyz.springdemo.appointmentmanagementsystem.service.UserService;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;

@@ -68,7 +68,7 @@ public class PatientController {
 <span class="nc" id="L68">        patientService.addAppointment(patientId,appointment);</span>
 <span class="nc" id="L69">        doctorService.addAppointment(appointment.getDoctorId(),appointment);</span>
 <span class="nc bnc" id="L70" title="All 2 branches missed.">        if(!appointmentService.isSlotAvailable(appointment)){</span>
-<span class="nc" id="L71">            throw new RuntimeException(&quot;Sorry slot is already booked..!&quot;);</span>
+<span class="nc" id="L71">            throw new UnsupportedOperationException(&quot;Sorry slot is already booked..!&quot;);</span>
         }
 <span class="nc" id="L73">        appointmentService.save(appointment);</span>
 <span class="nc" id="L74">        return &quot;redirect:/patient/home&quot;;</span>

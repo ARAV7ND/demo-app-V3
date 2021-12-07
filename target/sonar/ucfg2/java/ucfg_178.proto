@@ -1,65 +1,70 @@
 
-Ùcom.xyz.springdemo.appointmentmanagementsystem.exception.ExceptionHandler#exceptionHandler(Lcom/xyz/springdemo/appointmentmanagementsystem/exception/MyRuntimeException;Lorg/springframework/ui/Model;)Ljava/lang/String;¢
-—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java
- 
-(""startingBlock*§
-
-startingBlock¢
-—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java
-" 
-(EÌ
+„com.xyz.springdemo.appointmentmanagementsystem.controller.DoctorController#update(ILorg/springframework/ui/Model;)Ljava/lang/String;£
+˜/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/DoctorController.java& &("startingBlock* 
+startingBlock£
+˜/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/DoctorController.java& &(@ãà
+£
+˜/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/DoctorController.java&4 &(?%
+modelorg.springframework.ui.Model"java.util.HashMap*
+1*÷
+1£
+˜/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/DoctorController.java' '($Þ
+Û
+£
+˜/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/DoctorController.java' '($J
+%0Dcom.xyz.springdemo.appointmentmanagementsystem.service.DoctorService"__id*a*_L
+Jcom.xyz.springdemo.appointmentmanagementsystem.controller.DoctorController"
+doctorServiceáÞ
+£
+˜/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/DoctorController.java' '(1B
+%1<com.xyz.springdemo.appointmentmanagementsystem.entity.Doctor"Žcom.xyz.springdemo.appointmentmanagementsystem.service.DoctorService#findById(I)Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Doctor;*L
+J
+%0Dcom.xyz.springdemo.appointmentmanagementsystem.service.DoctorService*
+""2findById(I)½
+º
+£
+˜/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/DoctorController.java' '(2F
+doctor<com.xyz.springdemo.appointmentmanagementsystem.entity.Doctor"__id*D
+B
+%1<com.xyz.springdemo.appointmentmanagementsystem.entity.Doctorä
+á
+£
+˜/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/DoctorController.java( ((-N
+%2Hcom.xyz.springdemo.appointmentmanagementsystem.converter.DoctorConverter"__id*c*aL
+Jcom.xyz.springdemo.appointmentmanagementsystem.controller.DoctorController"
+doctorConverter«¨
+£
+˜/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/DoctorController.java( ((AB
+%3<com.xyz.springdemo.appointmentmanagementsystem.dto.DoctorDto"Òcom.xyz.springdemo.appointmentmanagementsystem.converter.DoctorConverter#entityToDto(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Doctor;)Lcom/xyz/springdemo/appointmentmanagementsystem/dto/DoctorDto;*P
+N
+%2Hcom.xyz.springdemo.appointmentmanagementsystem.converter.DoctorConverter*H
+F
+doctor<com.xyz.springdemo.appointmentmanagementsystem.entity.Doctor2KentityToDto(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Doctor;)À
+½
+£
+˜/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/DoctorController.java( ((BI
+	doctorDto<com.xyz.springdemo.appointmentmanagementsystem.dto.DoctorDto"__id*D
+B
+%3<com.xyz.springdemo.appointmentmanagementsystem.dto.DoctorDto×
+Ô
+£
+˜/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/DoctorController.java) )(,"
+%4org.springframework.ui.Model"__mapSet*'
+%
+modelorg.springframework.ui.Model*
+user*K
+I
+	doctorDto<com.xyz.springdemo.appointmentmanagementsystem.dto.DoctorDtoÌ
 É
-¢
-—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java	 	(=
-%2"
-__annotate*<:
-8org.springframework.web.bind.annotation.ExceptionHandler*R
-P
-eKcom.xyz.springdemo.appointmentmanagementsystem.exception.MyRuntimeException
-
-¢
-—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java
-6 
-(7P
-eKcom.xyz.springdemo.appointmentmanagementsystem.exception.MyRuntimeException"__annotation*
-
-%2¡
-ž
-¢
-—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java	 	(=
-%3"
-__annotate*<:
-8org.springframework.web.bind.annotation.ExceptionHandler*'
+£
+˜/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/DoctorController.java* *(*
+%5""template!doctor/doctor-update-form*N"L
+Jcom.xyz.springdemo.appointmentmanagementsystem.controller.DoctorController*'
 %
-modelorg.springframework.ui.Modelå
-â
-¢
-—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java
-? 
-(D%
-modelorg.springframework.ui.Model"__annotation*
-
-%3*
-1*è
-1¢
-—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java (ÖÓ
-¢
-—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java& (4
-%0java.lang.String"2java.lang.Throwable#getMessage()Ljava/lang/String;*R
-P
-eKcom.xyz.springdemo.appointmentmanagementsystem.exception.MyRuntimeException2getMessage()¦
-£
-¢
-—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java (5"
-%1org.springframework.ui.Model"__mapSet*'
-%
-modelorg.springframework.ui.Model*	
-message*
-
-%0java.lang.String"»
-¢
-—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java ("
-error/error-page:P
-eKcom.xyz.springdemo.appointmentmanagementsystem.exception.MyRuntimeException:%
-modelorg.springframework.ui.ModelBMK
-Icom.xyz.springdemo.appointmentmanagementsystem.exception.ExceptionHandler
+modelorg.springframework.ui.Model"Å
+£
+˜/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/DoctorController.java* *(+
+doctor/doctor-update-form:
+"":%
+modelorg.springframework.ui.ModelBNL
+Jcom.xyz.springdemo.appointmentmanagementsystem.controller.DoctorController

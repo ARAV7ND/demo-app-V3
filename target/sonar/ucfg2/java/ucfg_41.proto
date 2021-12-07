@@ -1,9 +1,30 @@
 
-Lcom.xyz.springdemo.appointmentmanagementsystem.entity.DoctorManager#getId()Iœ
-‘/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/DoctorManager.java4 4("1*Ì
-1œ
-‘/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/DoctorManager.java5 5("§
-œ
-‘/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/DoctorManager.java5 5(
-""BGE
-Ccom.xyz.springdemo.appointmentmanagementsystem.entity.DoctorManager
+lcom.xyz.springdemo.appointmentmanagementsystem.controller.AdminController#deletePatient(I)Ljava/lang/String;¤
+—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/AdminController.java‘ ‘("1*¢
+1¤
+—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/AdminController.java’ ’(à
+Ý
+¤
+—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/AdminController.java’ ’(K
+%0Ecom.xyz.springdemo.appointmentmanagementsystem.service.PatientService"__id*a*_K
+Icom.xyz.springdemo.appointmentmanagementsystem.controller.AdminController"
+patientService–“
+¤
+—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/AdminController.java’ ’()
+
+%1void"fcom.xyz.springdemo.appointmentmanagementsystem.service.PatientService#deleteById(Ljava/lang/Integer;)V*M
+K
+%0Ecom.xyz.springdemo.appointmentmanagementsystem.service.PatientService*
+""2deleteById(Ljava/lang/Integer;)µ
+²
+¤
+—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/AdminController.java“ “('
+%2java.lang.String"__id*k*iK
+Icom.xyz.springdemo.appointmentmanagementsystem.controller.AdminController"
+patientListControllerUrl"Á
+¤
+—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/AdminController.java“ “((
+
+%2java.lang.String:
+""BMK
+Icom.xyz.springdemo.appointmentmanagementsystem.controller.AdminController

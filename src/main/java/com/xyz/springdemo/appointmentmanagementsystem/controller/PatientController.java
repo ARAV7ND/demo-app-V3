@@ -61,14 +61,22 @@ public class PatientController {
     }
 
     @PostMapping("/addAppointment")
-    public String addAppointment(@ModelAttribute("appointment") Appointment appointment) throws ParseException {
+    public String addAppointment(@Valid @ModelAttribute("appointment") Appointment appointment,BindingResult bindingResult) {
+
+        if (bindingResult.hasErrors()){
+            return "patient/appointment-form";
+        }
         Patient patient = patientService.loggedInUser();
         int patientId = patient.getPatientId();
         appointment.setPatientId(patientId);
         patientService.addAppointment(patientId,appointment);
         doctorService.addAppointment(appointment.getDoctorId(),appointment);
-        if(!appointmentService.isSlotAvailable(appointment)){
-            throw new UnsupportedOperationException("Sorry slot is already booked..!");
+        try {
+            if(!appointmentService.isSlotAvailable(appointment)){
+                throw new UnsupportedOperationException("Sorry slot is already booked..!");
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
         appointmentService.save(appointment);
         return "redirect:/patient/home";
