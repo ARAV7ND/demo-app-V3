@@ -1,240 +1,308 @@
 
-±com.xyz.springdemo.appointmentmanagementsystem.controller.PatientController#addAppointment(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;)Ljava/lang/String;§
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.java@ @( "startingBlock*Ö
-2§
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaG4 G(UÉÄ
-§
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaG G(3.
-%11'java.lang.UnsupportedOperationException"'java.lang.UnsupportedOperationExceptionÕ
- 
-§
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaG G(V
-%12"Cjava.lang.UnsupportedOperationException#<init>(Ljava/lang/String;)V*0
-.
-%11'java.lang.UnsupportedOperationException*#!
-Sorry slot is already booked..!*
-0*–)
-3§
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaA A((‚
-ﬂ
-§
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaA A((K
-%0Ecom.xyz.springdemo.appointmentmanagementsystem.service.PatientService"__id*c*aM
-Kcom.xyz.springdemo.appointmentmanagementsystem.controller.PatientController"
-patientService‰·
-§
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaA A(7C
-%1=com.xyz.springdemo.appointmentmanagementsystem.entity.Patient"ìcom.xyz.springdemo.appointmentmanagementsystem.service.PatientService#loggedInUser()Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Patient;*M
-K
-%0Ecom.xyz.springdemo.appointmentmanagementsystem.service.PatientService2loggedInUser()¡
-æ
-§
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaA A(8H
-patient=com.xyz.springdemo.appointmentmanagementsystem.entity.Patient"__id*E
-C
-%1=com.xyz.springdemo.appointmentmanagementsystem.entity.Patient‡›
-§
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaB B(.	
-%2int"Mcom.xyz.springdemo.appointmentmanagementsystem.entity.Patient#getPatientId()I*J
-H
-patient=com.xyz.springdemo.appointmentmanagementsystem.entity.Patient2getPatientId()˜Ù
-§
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaC C(+
-
-%3void"Rcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#setPatientId(I)V*R
-P
-appointmentAcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment*
-""2setPatientId(I)‚
-ﬂ
-§
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaD D(K
-%4Ecom.xyz.springdemo.appointmentmanagementsystem.service.PatientService"__id*c*aM
-Kcom.xyz.springdemo.appointmentmanagementsystem.controller.PatientController"
-patientService’“
-§
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaD D(<
-
-%5void"õcom.xyz.springdemo.appointmentmanagementsystem.service.PatientService#addAppointment(ILcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;)V*M
-K
-%4Ecom.xyz.springdemo.appointmentmanagementsystem.service.PatientService*
-""*R
-P
-appointmentAcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment2TaddAppointment(ILcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;)‡
-›
-§
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaE E(J
-%6Dcom.xyz.springdemo.appointmentmanagementsystem.service.DoctorService"__id*b*`M
-Kcom.xyz.springdemo.appointmentmanagementsystem.controller.PatientController"
-doctorServiceÍÁ
-§
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaE% E(>	
-%7int"Pcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#getDoctorId()I*R
-P
-appointmentAcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment2getDoctorId()ÿ’
-§
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaE E(K
-
-%8void"öcom.xyz.springdemo.appointmentmanagementsystem.service.DoctorService#addAppointment(ILcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;)V*L
-J
-%6Dcom.xyz.springdemo.appointmentmanagementsystem.service.DoctorService*
-	
-%7int*R
-P
-appointmentAcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment2TaddAppointment(ILcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;)Í
-Á
-§
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaF F(O
-%9Icom.xyz.springdemo.appointmentmanagementsystem.service.AppointmentService"__id*g*eM
-Kcom.xyz.springdemo.appointmentmanagementsystem.controller.PatientController"
-appointmentServiceŸ÷
-§
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaF F(;
-%10boolean"ücom.xyz.springdemo.appointmentmanagementsystem.service.AppointmentService#isSlotAvailable(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;)Z*Q
-O
-%9Icom.xyz.springdemo.appointmentmanagementsystem.service.AppointmentService*R
-P
-appointmentAcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment2TisSlotAvailable(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;)*
-2
-1*≈
+ﬂcom.xyz.springdemo.appointmentmanagementsystem.controller.PatientController#addAppointment(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;Lorg/springframework/validation/BindingResult;)Ljava/lang/String;§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.java@ @( "startingBlock*Î%
 startingBlock§
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.java@  @(Xà
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.java@  @({à
 Ö
 
 __unknown_file (
-%15"__id*\*Z
+%17"__id*\*Z
 P
 appointmentAcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment"
 dateä
 á
 
 __unknown_file (
-%16"__id*^*\
+%18"__id*^*\
 P
 appointmentAcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment"
 doctorã
 à
 
 __unknown_file (
-%17"__id*_*]
+%19"__id*_*]
 P
 appointmentAcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment"	
 endTimeã
 à
 
 __unknown_file (
-%18"__id*_*]
+%20"__id*_*]
 P
 appointmentAcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment"	
 patientç
 ä
 
 __unknown_file (
-%19"__id*a*_
+%21"__id*a*_
 P
 appointmentAcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment"
-	startTimeÇ
-ˇ
+	startTime‚
+ﬂ
 §
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.java@! @(?
-%20"
-__annotate*:8
-6org.springframework.web.bind.annotation.ModelAttribute*
-
-%19¢
-ü
-§
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.java@L @(W_
-P
-appointmentAcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment"
-	startTime"__annotation*
-
-%20Ç
-ˇ
-§
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.java@! @(?
-%21"
-__annotate*:8
-6org.springframework.web.bind.annotation.ModelAttribute*
-
-%17†
-ù
-§
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.java@L @(W]
-P
-appointmentAcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment"	
-endTime"__annotation*
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.java@! @('
+%22"
+__annotate*
+javax.validation.Valid*
 
 %21Ç
 ˇ
 §
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.java@! @(?
-%22"
-__annotate*:8
-6org.springframework.web.bind.annotation.ModelAttribute*
-
-%18†
-ù
-§
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.java@L @(W]
-P
-appointmentAcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment"	
-patient"__annotation*
-
-%22Ç
-ˇ
-§
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.java@! @(?
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.java@( @(F
 %23"
 __annotate*:8
 6org.springframework.web.bind.annotation.ModelAttribute*
 
-%15ù
-ö
+%21´
+®
 §
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.java@L @(WZ
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.java@S @(^_
+P
+appointmentAcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment"
+	startTime"__annotation*
+
+%22*
+
+%23‚
+ﬂ
+§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.java@! @('
+%24"
+__annotate*
+javax.validation.Valid*
+
+%19Ç
+ˇ
+§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.java@( @(F
+%25"
+__annotate*:8
+6org.springframework.web.bind.annotation.ModelAttribute*
+
+%19©
+¶
+§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.java@S @(^]
+P
+appointmentAcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment"	
+endTime"__annotation*
+
+%24*
+
+%25‚
+ﬂ
+§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.java@! @('
+%26"
+__annotate*
+javax.validation.Valid*
+
+%20Ç
+ˇ
+§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.java@( @(F
+%27"
+__annotate*:8
+6org.springframework.web.bind.annotation.ModelAttribute*
+
+%20©
+¶
+§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.java@S @(^]
+P
+appointmentAcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment"	
+patient"__annotation*
+
+%26*
+
+%27‚
+ﬂ
+§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.java@! @('
+%28"
+__annotate*
+javax.validation.Valid*
+
+%17Ç
+ˇ
+§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.java@( @(F
+%29"
+__annotate*:8
+6org.springframework.web.bind.annotation.ModelAttribute*
+
+%17¶
+£
+§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.java@S @(^Z
 P
 appointmentAcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment"
 date"__annotation*
 
-%23Ç
+%28*
+
+%29‚
+ﬂ
+§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.java@! @('
+%30"
+__annotate*
+javax.validation.Valid*
+
+%18Ç
 ˇ
 §
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.java@! @(?
-%24"
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.java@( @(F
+%31"
 __annotate*:8
 6org.springframework.web.bind.annotation.ModelAttribute*
 
-%16ü
-ú
+%18®
+•
 §
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.java@L @(W\
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.java@S @(^\
 P
 appointmentAcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment"
 doctor"__annotation*
 
-%24*
-3*ƒ
-0 "º
+%30*
+
+%31*
+9*Ö
+4§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaL8 L(YÉÄ
 §
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaK K(
-implicit return*°
-1§
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaI I(Î
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaL L(7.
+%12'java.lang.UnsupportedOperationException"'java.lang.UnsupportedOperationExceptionÕ
+ 
+§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaL L(Z
+%13"Cjava.lang.UnsupportedOperationException#<init>(Ljava/lang/String;)V*0
+.
+%12'java.lang.UnsupportedOperationException*#!
+Sorry slot is already booked..!*
+0*˝
+6§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaK K("Î
 Ë
 §
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaI I(P
-%13Icom.xyz.springdemo.appointmentmanagementsystem.service.AppointmentService"__id*g*eM
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaK K("P
+%10Icom.xyz.springdemo.appointmentmanagementsystem.service.AppointmentService"__id*g*eM
+Kcom.xyz.springdemo.appointmentmanagementsystem.controller.PatientController"
+appointmentService⁄◊
+§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaK K(?
+%11boolean"ücom.xyz.springdemo.appointmentmanagementsystem.service.AppointmentService#isSlotAvailable(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;)Z*R
+P
+%10Icom.xyz.springdemo.appointmentmanagementsystem.service.AppointmentService*R
+P
+appointmentAcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment2TisSlotAvailable(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;)*
+4
+1*Ñ"
+7§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaE E((‚
+ﬂ
+§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaE E((K
+%1Ecom.xyz.springdemo.appointmentmanagementsystem.service.PatientService"__id*c*aM
+Kcom.xyz.springdemo.appointmentmanagementsystem.controller.PatientController"
+patientService‰·
+§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaE E(7C
+%2=com.xyz.springdemo.appointmentmanagementsystem.entity.Patient"ìcom.xyz.springdemo.appointmentmanagementsystem.service.PatientService#loggedInUser()Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Patient;*M
+K
+%1Ecom.xyz.springdemo.appointmentmanagementsystem.service.PatientService2loggedInUser()¡
+æ
+§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaE E(8H
+patient=com.xyz.springdemo.appointmentmanagementsystem.entity.Patient"__id*E
+C
+%2=com.xyz.springdemo.appointmentmanagementsystem.entity.Patient‡›
+§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaF F(.	
+%3int"Mcom.xyz.springdemo.appointmentmanagementsystem.entity.Patient#getPatientId()I*J
+H
+patient=com.xyz.springdemo.appointmentmanagementsystem.entity.Patient2getPatientId()˜Ù
+§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaG G(+
+
+%4void"Rcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#setPatientId(I)V*R
+P
+appointmentAcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment*
+""2setPatientId(I)‚
+ﬂ
+§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaH H(K
+%5Ecom.xyz.springdemo.appointmentmanagementsystem.service.PatientService"__id*c*aM
+Kcom.xyz.springdemo.appointmentmanagementsystem.controller.PatientController"
+patientService’“
+§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaH H(<
+
+%6void"õcom.xyz.springdemo.appointmentmanagementsystem.service.PatientService#addAppointment(ILcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;)V*M
+K
+%5Ecom.xyz.springdemo.appointmentmanagementsystem.service.PatientService*
+""*R
+P
+appointmentAcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment2TaddAppointment(ILcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;)‡
+›
+§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaI I(J
+%7Dcom.xyz.springdemo.appointmentmanagementsystem.service.DoctorService"__id*b*`M
+Kcom.xyz.springdemo.appointmentmanagementsystem.controller.PatientController"
+doctorServiceÍÁ
+§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaI% I(>	
+%8int"Pcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#getDoctorId()I*R
+P
+appointmentAcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment2getDoctorId()ÿ’
+§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaI I(K
+
+%9void"öcom.xyz.springdemo.appointmentmanagementsystem.service.DoctorService#addAppointment(ILcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;)V*L
+J
+%7Dcom.xyz.springdemo.appointmentmanagementsystem.service.DoctorService*
+	
+%8int*R
+P
+appointmentAcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment2TaddAppointment(ILcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;)*
+6*Ú
+8§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaC C(-"≈
+§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaC C(.
+patient/appointment-form*
+9§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaB B(ª∏
+§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaB B(%
+%0boolean"2org.springframework.validation.Errors#hasErrors()Z*?
+=
+bindingResult,org.springframework.validation.BindingResult2hasErrors()*
+7
+8*ƒ
+0 "º
+§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaS S(
+implicit return*°
+1§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaQ Q(Î
+Ë
+§
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaQ Q(P
+%15Icom.xyz.springdemo.appointmentmanagementsystem.service.AppointmentService"__id*g*eM
 Kcom.xyz.springdemo.appointmentmanagementsystem.controller.PatientController"
 appointmentService¿Ω
 §
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaI I(,H
-%14Acom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment"÷com.xyz.springdemo.appointmentmanagementsystem.service.AppointmentService#save(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;)Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;*R
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaQ Q(,H
+%16Acom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment"÷com.xyz.springdemo.appointmentmanagementsystem.service.AppointmentService#save(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;)Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;*R
 P
-%13Icom.xyz.springdemo.appointmentmanagementsystem.service.AppointmentService*R
+%15Icom.xyz.springdemo.appointmentmanagementsystem.service.AppointmentService*R
 P
 appointmentAcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment2Isave(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;)"√
 §
-ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaJ J((
+ô/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/PatientController.javaR R((
 redirect:/patient/home:P
-appointmentAcom.xyz.springdemo.appointmentmanagementsystem.entity.AppointmentBOM
+appointmentAcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment:=
+bindingResult,org.springframework.validation.BindingResultBOM
 Kcom.xyz.springdemo.appointmentmanagementsystem.controller.PatientController

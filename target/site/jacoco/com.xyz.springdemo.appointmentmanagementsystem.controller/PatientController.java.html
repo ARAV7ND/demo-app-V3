@@ -61,34 +61,42 @@ public class PatientController {
     }
 
     @PostMapping(&quot;/addAppointment&quot;)
-    public String addAppointment(@ModelAttribute(&quot;appointment&quot;) Appointment appointment) throws ParseException {
-<span class="nc" id="L65">        Patient patient = patientService.loggedInUser();</span>
-<span class="nc" id="L66">        int patientId = patient.getPatientId();</span>
-<span class="nc" id="L67">        appointment.setPatientId(patientId);</span>
-<span class="nc" id="L68">        patientService.addAppointment(patientId,appointment);</span>
-<span class="nc" id="L69">        doctorService.addAppointment(appointment.getDoctorId(),appointment);</span>
-<span class="nc bnc" id="L70" title="All 2 branches missed.">        if(!appointmentService.isSlotAvailable(appointment)){</span>
-<span class="nc" id="L71">            throw new UnsupportedOperationException(&quot;Sorry slot is already booked..!&quot;);</span>
+    public String addAppointment(@Valid @ModelAttribute(&quot;appointment&quot;) Appointment appointment,BindingResult bindingResult) {
+
+<span class="nc bnc" id="L66" title="All 2 branches missed.">        if (bindingResult.hasErrors()){</span>
+<span class="nc" id="L67">            return &quot;patient/appointment-form&quot;;</span>
         }
-<span class="nc" id="L73">        appointmentService.save(appointment);</span>
-<span class="nc" id="L74">        return &quot;redirect:/patient/home&quot;;</span>
+<span class="nc" id="L69">        Patient patient = patientService.loggedInUser();</span>
+<span class="nc" id="L70">        int patientId = patient.getPatientId();</span>
+<span class="nc" id="L71">        appointment.setPatientId(patientId);</span>
+<span class="nc" id="L72">        patientService.addAppointment(patientId,appointment);</span>
+<span class="nc" id="L73">        doctorService.addAppointment(appointment.getDoctorId(),appointment);</span>
+        try {
+<span class="nc bnc" id="L75" title="All 2 branches missed.">            if(!appointmentService.isSlotAvailable(appointment)){</span>
+<span class="nc" id="L76">                throw new UnsupportedOperationException(&quot;Sorry slot is already booked..!&quot;);</span>
+            }
+<span class="nc" id="L78">        } catch (ParseException e) {</span>
+<span class="nc" id="L79">            e.printStackTrace();</span>
+<span class="nc" id="L80">        }</span>
+<span class="nc" id="L81">        appointmentService.save(appointment);</span>
+<span class="nc" id="L82">        return &quot;redirect:/patient/home&quot;;</span>
     }
 
     @GetMapping(&quot;/update&quot;)
     public String update(@RequestParam(&quot;id&quot;) int id,Model model){
-<span class="nc" id="L79">        Patient patient = patientService.findById(id);</span>
-<span class="nc" id="L80">        PatientDto patientDto = patientConverter.entityToDto(patient);</span>
-<span class="nc" id="L81">        model.addAttribute(&quot;user&quot;,patientDto);</span>
-<span class="nc" id="L82">        return &quot;patient/patient-update-form&quot;;</span>
+<span class="nc" id="L87">        Patient patient = patientService.findById(id);</span>
+<span class="nc" id="L88">        PatientDto patientDto = patientConverter.entityToDto(patient);</span>
+<span class="nc" id="L89">        model.addAttribute(&quot;user&quot;,patientDto);</span>
+<span class="nc" id="L90">        return &quot;patient/patient-update-form&quot;;</span>
     }
 
     @PostMapping(&quot;/save&quot;)
     public String save(@Valid @ModelAttribute(&quot;user&quot;) PatientDto patientDto, BindingResult bindingResult){
-<span class="nc bnc" id="L87" title="All 2 branches missed.">        if(bindingResult.hasErrors()){</span>
-<span class="nc" id="L88">           return &quot;patient/patient-update-form&quot;;</span>
+<span class="nc bnc" id="L95" title="All 2 branches missed.">        if(bindingResult.hasErrors()){</span>
+<span class="nc" id="L96">           return &quot;patient/patient-update-form&quot;;</span>
         }
-<span class="nc" id="L90">        patientService.save(patientDto);</span>
-<span class="nc" id="L91">        return &quot;redirect:/patient/home&quot;;</span>
+<span class="nc" id="L98">        patientService.save(patientDto);</span>
+<span class="nc" id="L99">        return &quot;redirect:/patient/home&quot;;</span>
     }
 }
 
