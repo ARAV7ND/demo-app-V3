@@ -21,8 +21,8 @@ public interface UserRepository extends JpaRepository<User,Integer> {
     @Override
     void deleteById(Integer integer);
 
-//    @Modifying
-//    @Query(value = "delete from users where username = ?1 ",nativeQuery = true)
+    @Modifying
+    @Query(value = "delete from users where username = ?1 ",nativeQuery = true)
     void deleteByUsername(String username);
 
     @Modifying

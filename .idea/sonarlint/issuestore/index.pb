@@ -11,11 +11,7 @@ bsrc/main/java/com/xyz/springdemo/appointmentmanagementsystem/config/CustomLogin
 Vsrc/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/DoctorManager.java,1/4/14d257288ce5d358de7f2219daad3dc276428b5e
 å
 \src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/AppointmentService.java,6/8/68e25e2de7be8650c748e1d6beb94e6baa90b903
-ó
-gsrc/main/java/com/xyz/springdemo/appointmentmanagementsystem/controller/UserRegistrationController.java,4/1/417041b55b038f0224e4711733b5ec2ecb44cb5f
 ê
 `src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/AppointmentServiceImpl.java,c/1/c1499a04744676c48339adae1b448976ec53d594
-Ö
-Usrc/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserService.java,7/6/76c98b189407a1048576dcc37e51c00271cc7a36
 Ü
 Vsrc/main/java/com/xyz/springdemo/appointmentmanagementsystem/dao/DoctorRepository.java,d/f/dff556ace9424d9eff826a3ad80020497ddd4860

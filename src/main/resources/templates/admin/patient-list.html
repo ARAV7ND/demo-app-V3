@@ -12,11 +12,10 @@
 <body>
 <hr>
 <div class="container">
-<!--    <a th:href="@{/admin/add}" class="btn btn-primary btn-sm mb-3">Add Doctor</a>-->
     <a th:href="@{/admin/home}" class="btn btn-primary btn-sm">Home</a>
     <a th:href="@{/logout}" class="btn btn-danger btn-sm">Logout</a>
     <br>
-
+    <br>
     <div th:if="${size}!=0">
         <table class="table table-bordered table-striped">
             <thead class="table-dark">
@@ -46,9 +45,6 @@
     <div th:if="${size}==0">
         <h2>Patient List is empty</h2>
     </div>
-<!--    <div class="form-group">-->
-<!--        <a href="/" th:href="@{/logout}" class="btn btn-danger btn-sm">Logout</a>-->
-<!--    </div>-->
 
 </div>
 

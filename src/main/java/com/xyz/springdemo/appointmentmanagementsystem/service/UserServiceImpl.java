@@ -1,6 +1,5 @@
 package com.xyz.springdemo.appointmentmanagementsystem.service;
 
-import com.xyz.springdemo.appointmentmanagementsystem.dao.RoleRepository;
 import com.xyz.springdemo.appointmentmanagementsystem.dao.UserRepository;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.Role;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.User;
@@ -21,14 +20,12 @@ import java.util.stream.Collectors;
 @Transactional
 public class UserServiceImpl implements UserService{
 
-
     private final UserRepository userRepository;
-    private final RoleRepository roleRepository;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository) {
+    public UserServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
-        this.roleRepository = roleRepository;
+
     }
 
     @Override
@@ -55,9 +52,8 @@ public class UserServiceImpl implements UserService{
     @Override
     public void deleteById(int id) {
         User user = findById(id);
-        Role role = roleRepository.findByEmail(user.getUsername());
-        roleRepository.deleteById(role.getId());
         userRepository.delete(user);
+
     }
 
     @Override

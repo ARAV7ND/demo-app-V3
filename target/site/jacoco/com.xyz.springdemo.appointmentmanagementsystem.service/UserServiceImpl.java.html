@@ -34,10 +34,10 @@ public class UserServiceImpl implements UserService{
     @Override
     public void save(User user) {
 <span class="fc" id="L36">            User theUser = findById(user.getId());</span>
-<span class="fc bfc" id="L37" title="All 2 branches covered.">            if (theUser!=null) {</span>
+<span class="pc bpc" id="L37" title="1 of 2 branches missed.">            if (theUser!=null) {</span>
 <span class="fc" id="L38">                userRepository.setUserInfoById(user.getUsername(),user.getPassword(), user.getId());</span>
             }else {
-<span class="fc" id="L40">                userRepository.save(user);</span>
+<span class="nc" id="L40">                userRepository.save(user);</span>
             }
 <span class="fc" id="L42">    }</span>
 
@@ -46,7 +46,7 @@ public class UserServiceImpl implements UserService{
     public User findById(int id) {
 <span class="fc" id="L47">        Optional&lt;User&gt; result = userRepository.findById(id);</span>
 <span class="fc" id="L48">        User user=null;</span>
-<span class="fc bfc" id="L49" title="All 2 branches covered.">        if(result.isPresent()){</span>
+<span class="pc bpc" id="L49" title="1 of 2 branches missed.">        if(result.isPresent()){</span>
 <span class="fc" id="L50">            user = result.get();</span>
         }
 <span class="fc" id="L52">        return user;</span>
@@ -55,9 +55,9 @@ public class UserServiceImpl implements UserService{
     @Override
     public void deleteById(int id) {
 <span class="nc" id="L57">        User user = findById(id);</span>
-<span class="nc" id="L58">        Role role = roleRepository.findByEmail(user.getUsername());</span>
-<span class="nc" id="L59">        roleRepository.deleteById(role.getId());</span>
-<span class="nc" id="L60">        userRepository.delete(user);</span>
+//        Role role = roleRepository.findByEmail(user.getUsername());
+//        roleRepository.deleteById(role.getId());
+//        userRepository.delete(user);
 <span class="nc" id="L61">    }</span>
 
     @Override
