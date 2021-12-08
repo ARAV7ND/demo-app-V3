@@ -9,6 +9,7 @@ import com.xyz.springdemo.appointmentmanagementsystem.entity.Patient;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.Role;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.querydsl.binding.OptionalValueBinding;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -44,18 +45,24 @@ public class PatientServiceImpl implements PatientService{
     public Patient loggedInUser() {
         Object obj = userService.findLoggedInUserDetails();
         String username = ((UserDetails)obj).getUsername();
-        return findByUsername(username);
+        User user = userService.findByUsername(username);
+        return patientRepository.findByUserId(user.getId());
     }
 
     @Override
     public void save(PatientManager patientDto) {
-        Patient patient = new Patient(patientDto.getFirstName(),patientDto.getLastName(),patientDto.getUsername(),patientDto.getPhone());
-        patient.setPatientId(patientDto.getId());
-        User user = new User(patientDto.getUsername(), bCryptPasswordEncoder.encode(patientDto.getPassword()),Arrays.asList(new Role("ROLE_USER", patientDto.getUsername())));
-        user.setId(patientDto.getTemp());
-        userService.save(user);
-        patientRepository.save(patient);
+//        Patient patient = new Patient(patientDto.getFirstName(),patientDto.getLastName(),patientDto.getUsername(),patientDto.getPhone());
+//        patient.setPatientId(patientDto.getId());
+//        User user = new User(patientDto.getUsername(), bCryptPasswordEncoder.encode(patientDto.getPassword()),Arrays.asList(new Role("ROLE_USER", patientDto.getUsername())));
+//        user.setId(patientDto.getTemp());
+//        userService.save(user);
+//        patientRepository.save(patient);
 
+        Patient patient = new Patient(patientDto.getFirstName(),patientDto.getLastName(),patientDto.getPhone());
+        User user = new User(patientDto.getUsername(),bCryptPasswordEncoder.encode(patientDto.getPassword()),Arrays.asList(new Role("ROLE_USER")));
+        patient.setUser(user);
+        patientRepository.save(patient);
+        userService.save(user);
     }
 
     @Override
@@ -64,7 +71,7 @@ public class PatientServiceImpl implements PatientService{
         if(!patient.getAppointments().isEmpty()){
             throw new UnsupportedOperationException("Can't delete when there is an active appointment booked");
         }
-        User user = userService.findByUsername(patient.getEmail());
+        User user = userService.findById(patient.getUser().getId());
         userService.deleteById(user.getId());
         patientRepository.deleteById(id);
 
@@ -90,7 +97,7 @@ public class PatientServiceImpl implements PatientService{
     @Override
     public PatientManager update(int id) {
         Patient patient = findById(id);
-        User user = userService.findByUsername(patient.getEmail());
+        User user = userService.findById(patient.getUser().getId());
         PatientManager patientManager = new PatientManager(patient.getFirstName(),patient.getLastName(),
                                      patient.getPhone(),user.getUsername(), user.getPassword());
             patientManager.setId(patient.getPatientId());
@@ -100,24 +107,26 @@ public class PatientServiceImpl implements PatientService{
 
     @Override
     public Patient findByUsername(String username) {
-        return patientRepository.findByEmail(username);
+        User user = userService.findByUsername(username);
+        Patient patient = patientRepository.findByUserId(user.getId());
+        if(patient==null){
+            throw new RuntimeException("No user find with id : "+user.getId());
+        }
+        return patient;
     }
 
-    @Override
-    public void addAppointment(int patientId,Appointment appointment) {
-        Optional<Patient> patient = patientRepository.findById(patientId);
-        Patient patientObj = null;
-        if(patient.isPresent()){
-            patientObj = patient.get();
-            patientObj.addAppointment(appointment);
-        }
-    }
     @Override
     public void save(PatientDto patientDto){
         Patient patient = patientConverter.dtoToEntity(patientDto);
         patientRepository.save(patient);
     }
 
+    @Override
+    public void addAppointment(Appointment appointment){
+        Patient patient = findById(appointment.getPatient().getPatientId());
+        patient.addAppointment(appointment);
+        patientRepository.save(patient);
+    }
 
 
 }

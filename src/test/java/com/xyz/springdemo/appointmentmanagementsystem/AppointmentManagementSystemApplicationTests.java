@@ -112,7 +112,11 @@ class AppointmentManagementSystemApplicationTests {
 	void saveAnAppointment(){
 		Doctor doctor = doctorService.findByUsername("priya@gmail.com");
 		Patient patient = patientService.findByUsername("zakir@gmail.com");
-		Appointment appointment = new Appointment("28/01/2020","12:00","01:30",doctor.getId(),patient.getPatientId());
+		Appointment appointment = new Appointment("28/01/2020","12:00","01:30");
+        appointment.setDoctor(doctor);
+        appointment.setPatient(patient);
+        doctorService.addAppointment(appointment);
+        patientService.addAppointment(appointment);
 		appointmentService.save(appointment);
 		Assertions.assertThat(appointmentService.findAllByDoctorId(doctor.getId())).isNotNull();
 	}
@@ -135,9 +139,8 @@ class AppointmentManagementSystemApplicationTests {
 	@Test
 	@Order(12)
 	void findDoctorByEmail(){
-		String doctorEmail = doctorService.findByUsername("priya@gmail.com").getEmail();
-
-		Assert.assertEquals("priya@gmail.com",doctorEmail);
+        Doctor doctor = doctorService.findByUsername("priya@gmail.com");
+		Assertions.assertThat(doctor).isNotNull();
 	}
 
 	@Test
@@ -151,9 +154,7 @@ class AppointmentManagementSystemApplicationTests {
 	void deleteDoctorById(){
 		Doctor doctor = doctorService.findByUsername("priya@gmail.com");
 		doctorRepository.deleteById(doctor.getId());
-		userRepository.deleteByUsername(doctor.getEmail());
-		Role role = roleRepository.findByEmail(doctor.getEmail());
-		roleRepository.deleteById(role.getId());
+		userRepository.deleteByUsername(doctor.getUser().getUsername());
 		Doctor doctor1 = null;
 		Optional<Doctor> result = doctorRepository.findById(doctor.getId());
 		if(result.isPresent()){
@@ -167,9 +168,7 @@ class AppointmentManagementSystemApplicationTests {
 	void deletePatientById(){
 		Patient patient = patientService.findByUsername("zakir@gmail.com");
 		patientRepository.deleteById(patient.getPatientId());
-		userRepository.deleteByUsername(patient.getEmail());
-		Role role = roleRepository.findByEmail(patient.getEmail());
-		roleRepository.deleteById(role.getId());
+		userRepository.deleteByUsername(patient.getUser().getUsername());
 		Patient patient1 = null;
 		Optional<Patient> patientOptional = patientRepository.findById(patient.getPatientId());
 		if(patientOptional.isPresent()){

@@ -48,12 +48,17 @@ public class DoctorServiceImpl implements DoctorService{
     @Override
     @Transactional
     public void save(DoctorManager doctorManager) {
-        Doctor doctor = new Doctor(doctorManager.getFirstName(),doctorManager.getLastName(),doctorManager.getUsername(),doctorManager.getSpecialist(),doctorManager.getAddress());
-        doctor.setId(doctorManager.getId());
-        User user = new User(doctorManager.getUsername(), bCryptPasswordEncoder.encode(doctorManager.getPassword()), Arrays.asList(new Role("ROLE_DOCTOR",doctorManager.getUsername())));
-        user.setId(doctorManager.getTemp());
-        userService.save(user);
-        doctorRepository.save(doctor);
+//        Doctor doctor = new Doctor(doctorManager.getFirstName(),doctorManager.getLastName(),doctorManager.getUsername(),doctorManager.getSpecialist(),doctorManager.getAddress());
+//        doctor.setId(doctorManager.getId());
+//        User user = new User(doctorManager.getUsername(), bCryptPasswordEncoder.encode(doctorManager.getPassword()), Arrays.asList(new Role("ROLE_DOCTOR",doctorManager.getUsername())));
+//        user.setId(doctorManager.getTemp());
+//        userService.save(user);
+//        doctorRepository.save(doctor);
+            Doctor doctor = new Doctor(doctorManager.getFirstName(),doctorManager.getLastName(),doctorManager.getSpecialist(),doctorManager.getAddress());
+            User user = new User(doctorManager.getUsername(),bCryptPasswordEncoder.encode(doctorManager.getPassword()),Arrays.asList(new Role("ROLE_DOCTOR")));
+            doctor.setUser(user);
+            doctorRepository.save(doctor);
+            userService.save(user);
     }
 
     @Override
@@ -63,7 +68,7 @@ public class DoctorServiceImpl implements DoctorService{
         if(!doctor.getAppointments().isEmpty()){
             throw new UnsupportedOperationException("can't delete doctor when there is an appointment");
         }
-        User user = userService.findByUsername(doctor.getEmail());
+        User user = userService.findById(doctor.getUser().getId());
         userService.deleteById(user.getId());
         doctorRepository.deleteById(doctor.getId());
     }
@@ -89,7 +94,7 @@ public class DoctorServiceImpl implements DoctorService{
     @Transactional
     public DoctorManager update(int id) {
         Doctor doctor = findById(id);
-        User user = userService.findByUsername(doctor.getEmail());
+        User user = userService.findById(doctor.getUser().getId());
         DoctorManager doctorManager = new DoctorManager(doctor.getFirstName(),doctor.getLastName(),
                                             user.getUsername(),user.getPassword(),doctor.getAddress(),doctor.getSpecialist());
         doctorManager.setId(doctor.getId());
@@ -104,20 +109,16 @@ public class DoctorServiceImpl implements DoctorService{
 
     @Override
     @Transactional
-    public void addAppointment(int doctorId, Appointment appointment) {
-        Optional<Doctor> result = doctorRepository.findById(doctorId);
-        Doctor doctor=null;
-        if(result.isPresent()){
-            doctor = result.get();
-        }else{
-            throw new NullPointerException("404 no doctor found with id "+doctorId);
-        }
+    public void addAppointment(Appointment appointment) {
+        Doctor doctor = findById(appointment.getDoctor().getId());
         doctor.addAppointment(appointment);
+        doctorRepository.save(doctor);
     }
 
     @Override
     public Doctor findByUsername(String username) {
-        return doctorRepository.findByUsername(username);
+        User user = userService.findByUsername(username);
+        return doctorRepository.findByUserId(user.getId());
     }
 
     @Override
@@ -133,6 +134,9 @@ public class DoctorServiceImpl implements DoctorService{
     @Override
     public Doctor findLoggedInUser() {
         Object obj = userService.findLoggedInUserDetails();
-        return findByUsername(((UserDetails)obj).getUsername());
+        String username = ((UserDetails)obj).getUsername();
+        User user = userService.findByUsername(username);
+        return doctorRepository.findByUserId(user.getId());
     }
+
 }

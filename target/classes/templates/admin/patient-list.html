@@ -23,7 +23,6 @@
             <tr>
                 <th>First Name</th>
                 <th>Last Name</th>
-                <th>Email</th>
                 <th>Action</th>
             </tr>
             </thead>
@@ -33,7 +32,6 @@
 
                 <td th:text="${user.firstName}" />
                 <td th:text="${user.lastName}" />
-                <td th:text="${user.email}" />
                 <td>
                     <a th:href="@{/admin/updatePatient(id=${user.patientId})}" class="btn btn-info btn-sm">Update</a>
                     <a th:href="@{/admin/deletePatient(id=${user.patientId})}" class="btn btn-info btn-sm">Delete</a>

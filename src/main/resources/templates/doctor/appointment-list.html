@@ -16,7 +16,7 @@
         <table class="table table-bordered table-striped">
             <thead class="table-dark">
             <tr>
-                <th>Patient ID</th>
+                <th>Patient Name</th>
                 <th>Date</th>
                 <th>start time</th>
                 <th>end time</th>
@@ -27,7 +27,7 @@
             <tr th:each="user : ${appointmentList}">
 
                 <td>
-                    <span th:text="${user.patientId}"></span>
+                    <span th:text="${user.patient.firstName}"></span>
                 </td>
                 <td>
                     <span th:text="${user.date}"></span>

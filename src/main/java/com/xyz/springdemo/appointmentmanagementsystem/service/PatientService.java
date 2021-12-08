@@ -12,7 +12,7 @@ public interface PatientService {
     List<Patient> findAll();
     PatientManager update(int id);
     Patient findByUsername(String username);
-    void addAppointment(int doctorId, Appointment appointment);
+    void addAppointment(Appointment appointment);
     Patient loggedInUser();
     void save(PatientDto patientDto);
 

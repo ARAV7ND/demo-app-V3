@@ -26,4 +26,9 @@ public class MainController {
         model.addAttribute("user",user);
        return "/home";
     }
+
+    @GetMapping("/access-denied")
+    public String error(){
+        return "access-denied";
+    }
 }

@@ -13,17 +13,16 @@ public class Role {
     @Column(name = "authority")
     private String authority;
 
-    @Column(name = "username")
-    private String username;
+//    @Column(name = "username")
+//    private String username;
 
     public Role() {
 
     }
 
 
-    public Role(String authority, String username) {
+    public Role(String authority) {
         this.authority = authority;
-        this.username = username;
     }
 
     public int getId() {
@@ -42,11 +41,5 @@ public class Role {
         this.authority = authority;
     }
 
-    public String getUsername() {
-        return username;
-    }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
 }

@@ -56,7 +56,7 @@ public class AdminController {
 
     @GetMapping("/home")
     public String home(Model model){
-        model.addAttribute("user",new Patient("Admin","site","admin@gmail.com","123456"));
+        model.addAttribute("user",new Patient("Admin","site","123456"));
         return "admin/admin-home";
     }
     @GetMapping("/add")

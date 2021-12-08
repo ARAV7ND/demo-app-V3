@@ -15,8 +15,7 @@ public class Doctor {
     private String firstName;
     @Column(name = "last_name")
     private String lastName;
-    @Column(name = "email")
-    private String email;
+
     @Column(name = "specialist")
     private String specialist;
     @Column(name = "address")
@@ -25,13 +24,16 @@ public class Doctor {
     @OneToMany(mappedBy = "doctor")
     private List<Appointment> appointments;
 
+    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+    private User user;
+
     public Doctor() {
     }
 
-    public Doctor(String firstName, String lastName, String email, String specialist, String address) {
+    public Doctor(String firstName, String lastName, String specialist, String address) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.email = email;
         this.specialist = specialist;
         this.address = address;
     }
@@ -90,11 +92,11 @@ public class Doctor {
         this.id = id;
     }
 
-    public String getEmail() {
-        return email;
+    public User getUser() {
+        return user;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

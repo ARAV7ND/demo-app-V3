@@ -4,9 +4,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
 
 
 @Entity
@@ -50,79 +48,79 @@ public class Appointment {
     @JoinColumn(name = &quot;doctor_id&quot;,insertable = false,updatable = false)
     private Doctor doctor;
 
-<span class="fc" id="L53">    public Appointment() {</span>
-<span class="fc" id="L54">    }</span>
+<span class="fc" id="L51">    public Appointment() {</span>
+<span class="fc" id="L52">    }</span>
 
-<span class="fc" id="L56">    public Appointment(String date, String startTime, String endTime, int patientId, int doctorId) {</span>
-<span class="fc" id="L57">        this.date = date;</span>
-<span class="fc" id="L58">        this.startTime = startTime;</span>
-<span class="fc" id="L59">        this.endTime = endTime;</span>
-<span class="fc" id="L60">        this.patientId = patientId;</span>
-<span class="fc" id="L61">        this.doctorId = doctorId;</span>
-<span class="fc" id="L62">    }</span>
+<span class="fc" id="L54">    public Appointment(String date, String startTime, String endTime, int patientId, int doctorId) {</span>
+<span class="fc" id="L55">        this.date = date;</span>
+<span class="fc" id="L56">        this.startTime = startTime;</span>
+<span class="fc" id="L57">        this.endTime = endTime;</span>
+<span class="fc" id="L58">        this.patientId = patientId;</span>
+<span class="fc" id="L59">        this.doctorId = doctorId;</span>
+<span class="fc" id="L60">    }</span>
 
     public int getId() {
-<span class="fc" id="L65">        return id;</span>
+<span class="fc" id="L63">        return id;</span>
     }
 
     public void setId(int id) {
-<span class="nc" id="L69">        this.id = id;</span>
-<span class="nc" id="L70">    }</span>
+<span class="nc" id="L67">        this.id = id;</span>
+<span class="nc" id="L68">    }</span>
 
     public String getDate() {
-<span class="nc" id="L73">        return date;</span>
+<span class="nc" id="L71">        return date;</span>
     }
 
     public void setDate(String date) {
-<span class="nc" id="L77">        this.date = date;</span>
-<span class="nc" id="L78">    }</span>
+<span class="nc" id="L75">        this.date = date;</span>
+<span class="nc" id="L76">    }</span>
 
     public String getStartTime() {
-<span class="nc" id="L81">        return startTime;</span>
+<span class="nc" id="L79">        return startTime;</span>
     }
 
     public void setStartTime(String startTime) {
-<span class="nc" id="L85">        this.startTime = startTime;</span>
-<span class="nc" id="L86">    }</span>
+<span class="nc" id="L83">        this.startTime = startTime;</span>
+<span class="nc" id="L84">    }</span>
 
     public String getEndTime() {
-<span class="nc" id="L89">        return endTime;</span>
+<span class="nc" id="L87">        return endTime;</span>
     }
 
     public void setEndTime(String endTime) {
-<span class="nc" id="L93">        this.endTime = endTime;</span>
-<span class="nc" id="L94">    }</span>
+<span class="nc" id="L91">        this.endTime = endTime;</span>
+<span class="nc" id="L92">    }</span>
 
     public int getPatientId() {
-<span class="nc" id="L97">        return patientId;</span>
+<span class="nc" id="L95">        return patientId;</span>
     }
 
     public void setPatientId(int patientId) {
-<span class="nc" id="L101">        this.patientId = patientId;</span>
-<span class="nc" id="L102">    }</span>
+<span class="nc" id="L99">        this.patientId = patientId;</span>
+<span class="nc" id="L100">    }</span>
 
     public int getDoctorId() {
-<span class="nc" id="L105">        return doctorId;</span>
+<span class="nc" id="L103">        return doctorId;</span>
     }
 
     public void setDoctorId(int doctorId) {
-<span class="nc" id="L109">        this.doctorId = doctorId;</span>
-<span class="nc" id="L110">    }</span>
+<span class="nc" id="L107">        this.doctorId = doctorId;</span>
+<span class="nc" id="L108">    }</span>
 
     public Patient getPatient() {
-<span class="nc" id="L113">        return patient;</span>
+<span class="nc" id="L111">        return patient;</span>
     }
 
     public void setPatient(Patient patient) {
-<span class="nc" id="L117">        this.patient = patient;</span>
-<span class="nc" id="L118">    }</span>
+<span class="nc" id="L115">        this.patient = patient;</span>
+<span class="nc" id="L116">    }</span>
 
     public Doctor getDoctor() {
-<span class="nc" id="L121">        return doctor;</span>
+<span class="nc" id="L119">        return doctor;</span>
     }
 
     public void setDoctor(Doctor doctor) {
-<span class="nc" id="L125">        this.doctor = doctor;</span>
-<span class="nc" id="L126">    }</span>
+<span class="nc" id="L123">        this.doctor = doctor;</span>
+<span class="nc" id="L124">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

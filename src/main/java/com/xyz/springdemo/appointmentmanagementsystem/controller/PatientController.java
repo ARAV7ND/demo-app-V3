@@ -1,9 +1,14 @@
 package com.xyz.springdemo.appointmentmanagementsystem.controller;
+import com.xyz.springdemo.appointmentmanagementsystem.converter.AppointmentConverter;
 import com.xyz.springdemo.appointmentmanagementsystem.converter.PatientConverter;
+import com.xyz.springdemo.appointmentmanagementsystem.dao.DoctorRepository;
+import com.xyz.springdemo.appointmentmanagementsystem.dao.PatientRepository;
+import com.xyz.springdemo.appointmentmanagementsystem.dto.AppointmentDto;
 import com.xyz.springdemo.appointmentmanagementsystem.dto.PatientDto;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.Appointment;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.Doctor;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.Patient;
+import com.xyz.springdemo.appointmentmanagementsystem.exception.AppointmentNotPossibleException;
 import com.xyz.springdemo.appointmentmanagementsystem.service.AppointmentService;
 import com.xyz.springdemo.appointmentmanagementsystem.service.DoctorService;
 import com.xyz.springdemo.appointmentmanagementsystem.service.PatientService;
@@ -30,6 +35,14 @@ public class PatientController {
     private final PatientConverter patientConverter;
 
     @Autowired
+    private PatientRepository patientRepository;
+    @Autowired
+    private DoctorRepository doctorRepository;
+
+    @Autowired
+    private AppointmentConverter appointmentConverter;
+
+    @Autowired
     public PatientController(PatientService patientService, DoctorService doctorService, AppointmentService appointmentService, PatientConverter patientConverter) {
         this.patientService = patientService;
         this.doctorService = doctorService;
@@ -54,31 +67,27 @@ public class PatientController {
 
     @GetMapping("/appointmentForm")
     public String showAppointmentForm(@RequestParam("id") int id, Model model){
-        Appointment appointment = new Appointment();
-        appointment.setDoctorId(id);
-        model.addAttribute("appointment",appointment);
+        AppointmentDto appointmentDto = new AppointmentDto();
+        Doctor doctor = doctorService.findById(id);
+        Patient patient = patientService.loggedInUser();
+        appointmentDto.setPatient(patient);
+        appointmentDto.setDoctor(doctor);
+        model.addAttribute("appointment",appointmentDto);
         return "patient/appointment-form";
     }
 
     @PostMapping("/addAppointment")
-    public String addAppointment(@Valid @ModelAttribute("appointment") Appointment appointment,BindingResult bindingResult) {
-
-        if (bindingResult.hasErrors()){
+    public String addAppointment(@Valid @ModelAttribute("appointment") AppointmentDto appointmentDto,BindingResult bindingResult) throws ParseException {
+        if(bindingResult.hasErrors()){
             return "patient/appointment-form";
         }
-        Patient patient = patientService.loggedInUser();
-        int patientId = patient.getPatientId();
-        appointment.setPatientId(patientId);
-        patientService.addAppointment(patientId,appointment);
-        doctorService.addAppointment(appointment.getDoctorId(),appointment);
-        try {
-            if(!appointmentService.isSlotAvailable(appointment)){
-                throw new UnsupportedOperationException("Sorry slot is already booked..!");
-            }
-        } catch (ParseException e) {
-            e.printStackTrace();
+        Appointment appointment = appointmentConverter.dtoToEntity(appointmentDto);
+        if(!appointmentService.isSlotAvailable(appointment)){
+            throw new AppointmentNotPossibleException("Sorry slot is already booked..!");
         }
+        doctorService.addAppointment(appointment);
         appointmentService.save(appointment);
+
         return "redirect:/patient/home";
     }
 

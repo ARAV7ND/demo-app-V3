@@ -3,7 +3,6 @@
 import com.xyz.springdemo.appointmentmanagementsystem.entity.PatientManager;
 import com.xyz.springdemo.appointmentmanagementsystem.service.PatientService;
 import com.xyz.springdemo.appointmentmanagementsystem.service.UserService;
-import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
@@ -24,36 +23,36 @@ public class UserRegistrationController {
     private final UserService userService;
 
     @Autowired
-<span class="fc" id="L27">    public UserRegistrationController(PatientService patientService, UserService userService) {</span>
-<span class="fc" id="L28">        this.patientService = patientService;</span>
-<span class="fc" id="L29">        this.userService = userService;</span>
-<span class="fc" id="L30">    }</span>
+<span class="fc" id="L26">    public UserRegistrationController(PatientService patientService, UserService userService) {</span>
+<span class="fc" id="L27">        this.patientService = patientService;</span>
+<span class="fc" id="L28">        this.userService = userService;</span>
+<span class="fc" id="L29">    }</span>
 
     @InitBinder
     public void initBinder(WebDataBinder dataBinder){
-<span class="nc" id="L34">        StringTrimmerEditor trimmerEditor = new StringTrimmerEditor(true);</span>
-<span class="nc" id="L35">        dataBinder.registerCustomEditor(String.class,trimmerEditor);</span>
-<span class="nc" id="L36">    }</span>
+<span class="nc" id="L33">        StringTrimmerEditor trimmerEditor = new StringTrimmerEditor(true);</span>
+<span class="nc" id="L34">        dataBinder.registerCustomEditor(String.class,trimmerEditor);</span>
+<span class="nc" id="L35">    }</span>
     @GetMapping(&quot;/&quot;)
     public String home(){
-<span class="fc" id="L39">        return &quot;/home&quot;;</span>
+<span class="fc" id="L38">        return &quot;/home&quot;;</span>
     }
     @GetMapping
     public String showRegistrationForm(Model model){
-<span class="nc" id="L43">        model.addAttribute(&quot;user&quot;, new PatientManager());</span>
-<span class="nc" id="L44">        return &quot;registration&quot;;</span>
+<span class="nc" id="L42">        model.addAttribute(&quot;user&quot;, new PatientManager());</span>
+<span class="nc" id="L43">        return &quot;registration&quot;;</span>
     }
 
     @PostMapping
     public String registerUserAccount(@Valid @ModelAttribute(&quot;user&quot;) PatientManager registrationDto, BindingResult bindingResult){
-<span class="nc bnc" id="L49" title="All 2 branches missed.">        if(userService.usernameAlreadyExists(registrationDto.getUsername())){</span>
-<span class="nc" id="L50">            bindingResult.addError(new FieldError(&quot;user&quot;,&quot;username&quot;,&quot;username already exists&quot;));</span>
+<span class="nc bnc" id="L48" title="All 2 branches missed.">        if(userService.usernameAlreadyExists(registrationDto.getUsername())){</span>
+<span class="nc" id="L49">            bindingResult.addError(new FieldError(&quot;user&quot;,&quot;username&quot;,&quot;username already exists&quot;));</span>
         }
-<span class="nc bnc" id="L52" title="All 2 branches missed.">        if (bindingResult.hasErrors()){</span>
-<span class="nc" id="L53">            return &quot;registration&quot;;</span>
+<span class="nc bnc" id="L51" title="All 2 branches missed.">        if (bindingResult.hasErrors()){</span>
+<span class="nc" id="L52">            return &quot;registration&quot;;</span>
         }
-<span class="nc" id="L55">        patientService.save(registrationDto);</span>
-<span class="nc" id="L56">        return &quot;redirect:/registration?success&quot;;</span>
+<span class="nc" id="L54">        patientService.save(registrationDto);</span>
+<span class="nc" id="L55">        return &quot;redirect:/registration?success&quot;;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

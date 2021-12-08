@@ -16,8 +16,8 @@ public interface DoctorRepository extends JpaRepository<Doctor,Integer> {
     @Override
     Optional<Doctor> findById(Integer integer);
 
-    @Query(value = "select * from doctor where email = ?1",nativeQuery = true)
-    Doctor findByUsername(String username);
+    @Query(value = "select * from doctor where user_id = ?1",nativeQuery = true)
+    Doctor findByUserId(int id);
 
 
 }

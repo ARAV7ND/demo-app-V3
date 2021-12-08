@@ -17,15 +17,18 @@ public interface UserRepository extends JpaRepository<User,Integer> {
     @Override
     Optional<User> findById(Integer integer);
 
+
     @Override
     void deleteById(Integer integer);
 
-    @Modifying
-    @Query(value = "delete from users where username = ?1 ",nativeQuery = true)
+//    @Modifying
+//    @Query(value = "delete from users where username = ?1 ",nativeQuery = true)
     void deleteByUsername(String username);
 
     @Modifying
     @Query(value = "update users u set u.username = ?1, u.password = ?2 where u.id = ?3",nativeQuery = true)
     void setUserInfoById(String username, String password, Integer userId);
+
+
 
 }

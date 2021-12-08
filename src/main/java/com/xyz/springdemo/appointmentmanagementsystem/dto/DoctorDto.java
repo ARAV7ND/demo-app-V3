@@ -1,5 +1,6 @@
 package com.xyz.springdemo.appointmentmanagementsystem.dto;
 
+import com.xyz.springdemo.appointmentmanagementsystem.entity.User;
 import lombok.*;
 
 import javax.validation.constraints.Email;
@@ -25,9 +26,6 @@ public class DoctorDto {
     @Pattern(regexp = "[^0-9]*",message = "numbers are not allowed")
     private String lastName;
 
-    @Email
-    private String email;
-
     @NotNull(message = "Specialist Required")
     @Size(min = 5,message = "is required")
     @Pattern(regexp = "[^0-9]*",message = "numbers are not allowed")
@@ -37,4 +35,6 @@ public class DoctorDto {
     @Size(min = 3,message = "is required")
     @Pattern(regexp = "[^0-9]*",message = "numbers are not allowed")
     private String address;
+
+    private User user;
 }

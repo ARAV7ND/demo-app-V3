@@ -15,4 +15,5 @@ public interface AppointmentRepository extends JpaRepository<Appointment,Integer
 
     @Override
     void deleteById(Integer integer);
+
 }

@@ -14,6 +14,7 @@ public class AppointmentServiceImpl implements AppointmentService{
 
     private AppointmentRepository appointmentRepository;
 
+
     @Autowired
     public AppointmentServiceImpl(AppointmentRepository appointmentRepository) {
         this.appointmentRepository = appointmentRepository;
@@ -21,6 +22,7 @@ public class AppointmentServiceImpl implements AppointmentService{
 
     @Override
     public Appointment save(Appointment appointment) {
+
         return appointmentRepository.save(appointment);
     }
 
@@ -30,11 +32,9 @@ public class AppointmentServiceImpl implements AppointmentService{
     }
 
     @Override
-    public boolean isSlotAvailable(Appointment appointment){
-        List<Appointment> appointments = findAllByDoctorId(appointment.getDoctorId());
+    public boolean isSlotAvailable(Appointment appointment) throws ParseException {
+        List<Appointment> appointments = findAllByDoctorId(appointment.getDoctor().getId());
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm");
-
-        try {
             for (Appointment appointmentObj : appointments) {
                 String tempDate = appointmentObj.getDate() + " " + appointmentObj.getEndTime();
                 Date before = sdf.parse(tempDate);
@@ -43,9 +43,6 @@ public class AppointmentServiceImpl implements AppointmentService{
                     return false;
                 }
             }
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
         return true;
     }
 

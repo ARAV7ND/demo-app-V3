@@ -13,9 +13,10 @@ public interface DoctorService {
     List<Doctor> findAll();
     Doctor findById(int id);
     DoctorManager update(int id);
-    void addAppointment(int doctorId, Appointment appointment);
+    void addAppointment(Appointment appointment);
     Doctor findByUsername(String username);
     List<Appointment> appointmentList(int id);
     void saveNew(DoctorDto doctorDto);
     Doctor findLoggedInUser();
+
 }

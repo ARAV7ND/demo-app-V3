@@ -15,8 +15,9 @@ public interface PatientRepository extends JpaRepository<Patient,Integer> {
     @Override
     void deleteById(Integer integer);
 
-    @Query(value = "select * from patient where email = ?1",nativeQuery = true)
-    Patient findByEmail(String email);
+    @Query(value = "select * from patient where user_id = ?1",nativeQuery = true)
+    Patient findByUserId(int id);
+
 
 
 

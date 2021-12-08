@@ -20,7 +20,7 @@
             <form  th:action="@{/admin/doctorMerge}" method="post" th:object="${doctor}">
 
                 <input type="hidden" th:field="*{doctorId}" />
-                <input type="hidden" th:field="*{email}" />
+                <input type="hidden" th:field="*{user}" />
                 <div class="form-group">
                     <label class="control-label" for="firstName">First Name</label>
                     <input id="firstName" class="form-control" th:field="*{firstName}" th:errorClass="is-invalid"/>
