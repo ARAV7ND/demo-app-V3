@@ -1,69 +1,69 @@
 
 ¤com.xyz.springdemo.appointmentmanagementsystem.exception.ExceptionHandler#parseException(Ljava/text/ParseException;Lorg/springframework/ui/Model;)Ljava/lang/String;¢
-—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java ( "startingBlock*Á	
+—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java ( "startingBlock*Á	
 startingBlock¢
-—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java  (>™
+—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java  (>™
 –
 ¢
-—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java (=
-%3"
+—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java (=
+%4"
 __annotate*<:
 8org.springframework.web.bind.annotation.ExceptionHandler*
 
 ejava.text.ParseExceptionÝ
 Ú
 ¢
-—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java0 (1
+—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java0 (1
 ejava.text.ParseException"__annotation*
 
-%3¡
+%4¡
 ž
 ¢
-—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java (=
-%4"
+—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java (=
+%5"
 __annotate*<:
 8org.springframework.web.bind.annotation.ExceptionHandler*'
 %
 modelorg.springframework.ui.Modelå
 â
 ¢
-—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java8 (=%
+—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java8 (=%
 modelorg.springframework.ui.Model"__annotation*
 
-%4*
-1*Ã
+%5*
+1*è
 
 1¢
-—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java (Gý
-ú
-¢
-—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java (H
-msgjava.lang.String"__id*42
-0please enter the date and time in correct formatÎ
+—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java (Î
 Ë
 ¢
 —/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java ("
 %0java.lang.String"__id*
-""´
-±
+""£ 
 ¢
-—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java ('"
-%1org.springframework.ui.Model"__mapSet*'
+—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java# (1
+%1java.lang.String"2java.lang.Throwable#getMessage()Ljava/lang/String;*
+
+ejava.text.ParseException2getMessage()³
+°
+¢
+—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java (2"
+%2org.springframework.ui.Model"__mapSet*'
 %
 modelorg.springframework.ui.Model*
 
-%0java.lang.String*
-
-msgjava.lang.StringÎ
+%0java.lang.String*
+
+%1java.lang.StringÎ
 Ë
 ¢
-—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java (
-%2java.lang.String"__id*
+—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java (
+%3java.lang.String"__id*
 """¿
 ¢
-—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java (
+—/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/exception/ExceptionHandler.java (
 
-%2java.lang.String:
+%3java.lang.String:
 ejava.text.ParseException:%
 modelorg.springframework.ui.ModelBMK
 Icom.xyz.springdemo.appointmentmanagementsystem.exception.ExceptionHandler

@@ -8,39 +8,38 @@ import java.text.ParseException;
 @ControllerAdvice
 <span class="fc" id="L9">public class ExceptionHandler {</span>
 
-    private final static  String urlForError = &quot;error/error-page&quot;;
-    private final static String message = &quot;message&quot;;
+    private static final String ERROR_PAGE = &quot;error/error-page&quot;;
+    private static final String MESSAGE = &quot;message&quot;;
+
     @org.springframework.web.bind.annotation.ExceptionHandler
     public String parseException(ParseException e,Model model){
-<span class="nc" id="L15">        String msg = &quot;please enter the date and time in correct format&quot;;</span>
-<span class="nc" id="L16">        model.addAttribute(message,msg);</span>
-<span class="nc" id="L17">        return urlForError;</span>
+<span class="nc" id="L16">        model.addAttribute(MESSAGE,e.getMessage());</span>
+<span class="nc" id="L17">        return ERROR_PAGE;</span>
     }
 
     @org.springframework.web.bind.annotation.ExceptionHandler
     public String patientNotFoundExceptionHandler(PatientNotFoundException e, Model model) {
-<span class="nc" id="L22">        model.addAttribute(message, e.getMessage());</span>
-<span class="nc" id="L23">        return urlForError;</span>
+<span class="nc" id="L22">        model.addAttribute(MESSAGE, e.getMessage());</span>
+<span class="nc" id="L23">        return ERROR_PAGE;</span>
     }
 
     @org.springframework.web.bind.annotation.ExceptionHandler
     public String doctorNotFoundExceptionHandler(DoctorNotFoundException e, Model model) {
-<span class="nc" id="L28">        model.addAttribute(message, e.getMessage());</span>
-<span class="nc" id="L29">        return urlForError;</span>
+<span class="nc" id="L28">        model.addAttribute(MESSAGE, e.getMessage());</span>
+<span class="nc" id="L29">        return ERROR_PAGE;</span>
     }
-
 
     @org.springframework.web.bind.annotation.ExceptionHandler
     public String exceptionHandler(MyRuntimeException e, Model model) {
-<span class="nc" id="L35">        model.addAttribute(message, e.getMessage());</span>
-<span class="nc" id="L36">        return urlForError;</span>
+<span class="nc" id="L34">        model.addAttribute(MESSAGE, e.getMessage());</span>
+<span class="nc" id="L35">        return ERROR_PAGE;</span>
     }
 
 
     @org.springframework.web.bind.annotation.ExceptionHandler
     public String exceptionHandler(Exception e, Model model){
-<span class="nc" id="L42">        model.addAttribute(message,e.getMessage());</span>
-<span class="nc" id="L43">        return urlForError;</span>
+<span class="nc" id="L41">        model.addAttribute(MESSAGE,e.getMessage());</span>
+<span class="nc" id="L42">        return ERROR_PAGE;</span>
     }
 
 

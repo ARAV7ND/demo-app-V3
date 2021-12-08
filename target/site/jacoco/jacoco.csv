@@ -24,7 +24,7 @@ appointment-management-system,com.xyz.springdemo.appointmentmanagementsystem.dto
 appointment-management-system,com.xyz.springdemo.appointmentmanagementsystem.dto,AppointmentDto,66,0,0,0,9,0,14,0,14,0
 appointment-management-system,com.xyz.springdemo.appointmentmanagementsystem.exception,MyRuntimeException,4,0,0,0,2,0,1,0,1,0
 appointment-management-system,com.xyz.springdemo.appointmentmanagementsystem.exception,DoctorNotFoundException,4,0,0,0,2,0,1,0,1,0
-appointment-management-system,com.xyz.springdemo.appointmentmanagementsystem.exception,ExceptionHandler,41,3,0,0,11,1,5,1,5,1
+appointment-management-system,com.xyz.springdemo.appointmentmanagementsystem.exception,ExceptionHandler,40,3,0,0,10,1,5,1,5,1
 appointment-management-system,com.xyz.springdemo.appointmentmanagementsystem.exception,AppointmentNotPossibleException,4,0,0,0,2,0,1,0,1,0
 appointment-management-system,com.xyz.springdemo.appointmentmanagementsystem.exception,PatientNotFoundException,4,0,0,0,2,0,1,0,1,0
 appointment-management-system,com.xyz.springdemo.appointmentmanagementsystem.service,DoctorServiceImpl,116,112,3,1,25,25,8,6,6,6
