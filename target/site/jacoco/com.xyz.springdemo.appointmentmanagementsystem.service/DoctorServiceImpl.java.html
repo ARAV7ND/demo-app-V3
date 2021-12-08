@@ -51,9 +51,9 @@ public class DoctorServiceImpl implements DoctorService{
     public void save(DoctorManager doctorManager) {
 <span class="fc" id="L52">            Doctor doctor = new Doctor(doctorManager.getFirstName(),doctorManager.getLastName(),doctorManager.getSpecialist(),doctorManager.getAddress());</span>
 <span class="fc" id="L53">            User user = new User(doctorManager.getUsername(),bCryptPasswordEncoder.encode(doctorManager.getPassword()),Arrays.asList(new Role(&quot;ROLE_DOCTOR&quot;)));</span>
-<span class="fc" id="L54">            doctor.setUser(user);</span>
-<span class="fc" id="L55">            doctorRepository.save(doctor);</span>
-<span class="fc" id="L56">            userService.save(user);</span>
+<span class="fc" id="L54">            userService.save(user);</span>
+<span class="fc" id="L55">            doctor.setUser(user);</span>
+<span class="fc" id="L56">            doctorRepository.save(doctor);</span>
 <span class="fc" id="L57">    }</span>
 
     @Override
