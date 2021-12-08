@@ -1,6 +1,6 @@
 package com.xyz.springdemo.appointmentmanagementsystem.controller;
 
-import com.xyz.springdemo.appointmentmanagementsystem.dao.UserRepository;
+import com.xyz.springdemo.appointmentmanagementsystem.repository.UserRepository;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

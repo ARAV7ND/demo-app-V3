@@ -1,8 +1,8 @@
 package com.xyz.springdemo.appointmentmanagementsystem.service;
 
 import com.xyz.springdemo.appointmentmanagementsystem.converter.DoctorConverter;
-import com.xyz.springdemo.appointmentmanagementsystem.dao.AppointmentRepository;
-import com.xyz.springdemo.appointmentmanagementsystem.dao.DoctorRepository;
+import com.xyz.springdemo.appointmentmanagementsystem.repository.AppointmentRepository;
+import com.xyz.springdemo.appointmentmanagementsystem.repository.DoctorRepository;
 import com.xyz.springdemo.appointmentmanagementsystem.dto.DoctorDto;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.DoctorManager;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.Appointment;
@@ -51,9 +51,9 @@ public class DoctorServiceImpl implements DoctorService{
     public void save(DoctorManager doctorManager) {
             Doctor doctor = new Doctor(doctorManager.getFirstName(),doctorManager.getLastName(),doctorManager.getSpecialist(),doctorManager.getAddress());
             User user = new User(doctorManager.getUsername(),bCryptPasswordEncoder.encode(doctorManager.getPassword()),Arrays.asList(new Role("ROLE_DOCTOR")));
+            userService.save(user);
             doctor.setUser(user);
             doctorRepository.save(doctor);
-            userService.save(user);
     }
 
     @Override

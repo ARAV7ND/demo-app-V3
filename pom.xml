@@ -16,6 +16,13 @@
 	<properties>
 		<java.version>11</java.version>
 		<sonar.projectKey>arvndx_demo-app-V3</sonar.projectKey>
+		<sonar.exclusions>
+			**/dto/**,
+			**/resources/**,
+			**/entity/**,
+			**/AppointmentManagementSystemApplication.java
+		</sonar.exclusions>
+
 	</properties>
 	<dependencies>
 		<dependency>

@@ -1,6 +1,6 @@
 package com.xyz.springdemo.appointmentmanagementsystem.service;
 
-import com.xyz.springdemo.appointmentmanagementsystem.dao.UserRepository;
+import com.xyz.springdemo.appointmentmanagementsystem.repository.UserRepository;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.Role;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;

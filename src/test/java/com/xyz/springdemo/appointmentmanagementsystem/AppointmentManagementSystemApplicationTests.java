@@ -2,10 +2,10 @@ package com.xyz.springdemo.appointmentmanagementsystem;
 
 import com.xyz.springdemo.appointmentmanagementsystem.controller.MainController;
 import com.xyz.springdemo.appointmentmanagementsystem.controller.UserRegistrationController;
-import com.xyz.springdemo.appointmentmanagementsystem.dao.DoctorRepository;
-import com.xyz.springdemo.appointmentmanagementsystem.dao.PatientRepository;
-import com.xyz.springdemo.appointmentmanagementsystem.dao.RoleRepository;
-import com.xyz.springdemo.appointmentmanagementsystem.dao.UserRepository;
+import com.xyz.springdemo.appointmentmanagementsystem.repository.DoctorRepository;
+import com.xyz.springdemo.appointmentmanagementsystem.repository.PatientRepository;
+import com.xyz.springdemo.appointmentmanagementsystem.repository.RoleRepository;
+import com.xyz.springdemo.appointmentmanagementsystem.repository.UserRepository;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.*;
 import com.xyz.springdemo.appointmentmanagementsystem.service.AppointmentService;
 import com.xyz.springdemo.appointmentmanagementsystem.service.DoctorService;
@@ -21,7 +21,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.print.Doc;
 import java.util.*;
 
 @SpringBootTest

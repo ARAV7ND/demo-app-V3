@@ -1,7 +1,7 @@
 package com.xyz.springdemo.appointmentmanagementsystem.service;
 
 import com.xyz.springdemo.appointmentmanagementsystem.converter.PatientConverter;
-import com.xyz.springdemo.appointmentmanagementsystem.dao.PatientRepository;
+import com.xyz.springdemo.appointmentmanagementsystem.repository.PatientRepository;
 import com.xyz.springdemo.appointmentmanagementsystem.dto.PatientDto;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.PatientManager;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.Appointment;
