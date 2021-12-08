@@ -1031,19 +1031,19 @@ $deleteByUsername(Ljava/lang/String;)ncom.xyz.springdemo.appointmentmanagements
 	update(I)ócom.xyz.springdemo.appointmentmanagementsystem.service.DoctorServiceImpl#update(I)Lcom/xyz/springdemo/appointmentmanagementsystem/entity/DoctorManager;é
 Ccom.xyz.springdemo.appointmentmanagementsystem.dao.DoctorRepositoryjava.lang.Object5org.springframework.data.jpa.repository.JpaRepository˚
 Pcom.xyz.springdemo.appointmentmanagementsystem.exception.DoctorNotFoundExceptionjava.lang.RuntimeExceptionä
-<init>(Ljava/lang/String;)lcom.xyz.springdemo.appointmentmanagementsystem.exception.DoctorNotFoundException#<init>(Ljava/lang/String;)VÚ
+<init>(Ljava/lang/String;)lcom.xyz.springdemo.appointmentmanagementsystem.exception.DoctorNotFoundException#<init>(Ljava/lang/String;)VÎ
 Fcom.xyz.springdemo.appointmentmanagementsystem.service.UserServiceImplBcom.xyz.springdemo.appointmentmanagementsystem.service.UserServicejava.lang.Objectf
 deleteById(I)Ucom.xyz.springdemo.appointmentmanagementsystem.service.UserServiceImpl#deleteById(I)Vm
 	findAll()`com.xyz.springdemo.appointmentmanagementsystem.service.UserServiceImpl#findAll()Ljava/util/List;—
-Bsave(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/User;)äcom.xyz.springdemo.appointmentmanagementsystem.service.UserServiceImpl#save(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/User;)VÍ
-é<init>(Lcom/xyz/springdemo/appointmentmanagementsystem/dao/UserRepository;Lcom/xyz/springdemo/appointmentmanagementsystem/dao/RoleRepository;)÷com.xyz.springdemo.appointmentmanagementsystem.service.UserServiceImpl#<init>(Lcom/xyz/springdemo/appointmentmanagementsystem/dao/UserRepository;Lcom/xyz/springdemo/appointmentmanagementsystem/dao/RoleRepository;)Vû
+Bsave(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/User;)äcom.xyz.springdemo.appointmentmanagementsystem.service.UserServiceImpl#save(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/User;)Vû
 findById(I)écom.xyz.springdemo.appointmentmanagementsystem.service.UserServiceImpl#findById(I)Lcom/xyz/springdemo/appointmentmanagementsystem/entity/User;©
 'mapRolesToAuthorities(Ljava/util/List;)~com.xyz.springdemo.appointmentmanagementsystem.service.UserServiceImpl#mapRolesToAuthorities(Ljava/util/List;)Ljava/util/List;Ã
 "findByUsername(Ljava/lang/String;)•com.xyz.springdemo.appointmentmanagementsystem.service.UserServiceImpl#findByUsername(Ljava/lang/String;)Lcom/xyz/springdemo/appointmentmanagementsystem/entity/User;è
 findLoggedInUserDetails()rcom.xyz.springdemo.appointmentmanagementsystem.service.UserServiceImpl#findLoggedInUserDetails()Ljava/lang/Object;î
 $deleteByUsername(Ljava/lang/String;)lcom.xyz.springdemo.appointmentmanagementsystem.service.UserServiceImpl#deleteByUsername(Ljava/lang/String;)Vû
 )usernameAlreadyExists(Ljava/lang/String;)qcom.xyz.springdemo.appointmentmanagementsystem.service.UserServiceImpl#usernameAlreadyExists(Ljava/lang/String;)Z”
-&loadUserByUsername(Ljava/lang/String;)®com.xyz.springdemo.appointmentmanagementsystem.service.UserServiceImpl#loadUserByUsername(Ljava/lang/String;)Lorg/springframework/security/core/userdetails/UserDetails;Ï
+&loadUserByUsername(Ljava/lang/String;)®com.xyz.springdemo.appointmentmanagementsystem.service.UserServiceImpl#loadUserByUsername(Ljava/lang/String;)Lorg/springframework/security/core/userdetails/UserDetails;„
+K<init>(Lcom/xyz/springdemo/appointmentmanagementsystem/dao/UserRepository;)ìcom.xyz.springdemo.appointmentmanagementsystem.service.UserServiceImpl#<init>(Lcom/xyz/springdemo/appointmentmanagementsystem/dao/UserRepository;)VÏ
 9org.springframework.security.core.AuthenticationExceptionjava.lang.RuntimeExceptions
 <init>(Ljava/lang/String;)Uorg.springframework.security.core.AuthenticationException#<init>(Ljava/lang/String;)Vù
 /<init>(Ljava/lang/String;Ljava/lang/Throwable;)jorg.springframework.security.core.AuthenticationException#<init>(Ljava/lang/String;Ljava/lang/Throwable;)V∂
