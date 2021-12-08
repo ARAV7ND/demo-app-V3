@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Appointment.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">appointment-management-system</a> &gt; <a href="index.source.html" class="el_package">com.xyz.springdemo.appointmentmanagementsystem.entity</a> &gt; <span class="el_source">Appointment.java</span></div><h1>Appointment.java</h1><pre class="source lang-java linenums">package com.xyz.springdemo.appointmentmanagementsystem.entity;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
 
 
 @Entity
@@ -18,109 +14,79 @@ public class Appointment {
 
 
     @Column(name = &quot;date&quot;)
-    @NotBlank(message = &quot;date cannot be null&quot;)
-//    @DateTimeFormat(pattern = &quot;dd/MM/yyyy&quot;)
-    @Pattern(regexp = &quot;^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\\d\\d$&quot;,message = &quot;input should in dd/MM/yyyy format&quot;)
     private String date;
 
-    @NotBlank(message = &quot;startTime cannot be null&quot;)
-    @Pattern(regexp = &quot;^(0?[1-9]|1[0-2]):[0-5][0-9]$&quot;,message = &quot;format is hh:mm&quot;)
     @Column(name = &quot;appointment_start_time&quot;)
     private String startTime;
 
-    @NotBlank(message = &quot;endTime cannot be null&quot;)
-    @DateTimeFormat(pattern = &quot;hh:mm&quot;)
-    @Pattern(regexp = &quot;^(0?[1-9]|1[0-2]):[0-5][0-9]$&quot;,message = &quot;format is hh:mm&quot;)
     @Column(name = &quot;appointment_end_time&quot;)
     private String endTime;
 
-    @Column(name = &quot;patient_id&quot;)
-    private int patientId;
-    @Column(name = &quot;doctor_Id&quot;)
-    private int doctorId;
-
 
     @ManyToOne
-    @JoinColumn(name = &quot;patient_id&quot;,insertable = false,updatable = false)
+    @JoinColumn(name = &quot;patient_id&quot;)
     private Patient patient;
 
     @ManyToOne
-    @JoinColumn(name = &quot;doctor_id&quot;,insertable = false,updatable = false)
+    @JoinColumn(name = &quot;doctor_id&quot;)
     private Doctor doctor;
 
-<span class="fc" id="L51">    public Appointment() {</span>
-<span class="fc" id="L52">    }</span>
+<span class="fc" id="L34">    public Appointment() {</span>
+<span class="fc" id="L35">    }</span>
 
-<span class="fc" id="L54">    public Appointment(String date, String startTime, String endTime, int patientId, int doctorId) {</span>
-<span class="fc" id="L55">        this.date = date;</span>
-<span class="fc" id="L56">        this.startTime = startTime;</span>
-<span class="fc" id="L57">        this.endTime = endTime;</span>
-<span class="fc" id="L58">        this.patientId = patientId;</span>
-<span class="fc" id="L59">        this.doctorId = doctorId;</span>
-<span class="fc" id="L60">    }</span>
+<span class="fc" id="L37">    public Appointment(String date, String startTime, String endTime) {</span>
+<span class="fc" id="L38">        this.date = date;</span>
+<span class="fc" id="L39">        this.startTime = startTime;</span>
+<span class="fc" id="L40">        this.endTime = endTime;</span>
+<span class="fc" id="L41">    }</span>
 
     public int getId() {
-<span class="fc" id="L63">        return id;</span>
+<span class="fc" id="L44">        return id;</span>
     }
 
     public void setId(int id) {
-<span class="nc" id="L67">        this.id = id;</span>
-<span class="nc" id="L68">    }</span>
+<span class="nc" id="L48">        this.id = id;</span>
+<span class="nc" id="L49">    }</span>
 
     public String getDate() {
-<span class="nc" id="L71">        return date;</span>
+<span class="nc" id="L52">        return date;</span>
     }
 
     public void setDate(String date) {
-<span class="nc" id="L75">        this.date = date;</span>
-<span class="nc" id="L76">    }</span>
+<span class="nc" id="L56">        this.date = date;</span>
+<span class="nc" id="L57">    }</span>
 
     public String getStartTime() {
-<span class="nc" id="L79">        return startTime;</span>
+<span class="nc" id="L60">        return startTime;</span>
     }
 
     public void setStartTime(String startTime) {
-<span class="nc" id="L83">        this.startTime = startTime;</span>
-<span class="nc" id="L84">    }</span>
+<span class="nc" id="L64">        this.startTime = startTime;</span>
+<span class="nc" id="L65">    }</span>
 
     public String getEndTime() {
-<span class="nc" id="L87">        return endTime;</span>
+<span class="nc" id="L68">        return endTime;</span>
     }
 
     public void setEndTime(String endTime) {
-<span class="nc" id="L91">        this.endTime = endTime;</span>
-<span class="nc" id="L92">    }</span>
-
-    public int getPatientId() {
-<span class="nc" id="L95">        return patientId;</span>
-    }
-
-    public void setPatientId(int patientId) {
-<span class="nc" id="L99">        this.patientId = patientId;</span>
-<span class="nc" id="L100">    }</span>
-
-    public int getDoctorId() {
-<span class="nc" id="L103">        return doctorId;</span>
-    }
-
-    public void setDoctorId(int doctorId) {
-<span class="nc" id="L107">        this.doctorId = doctorId;</span>
-<span class="nc" id="L108">    }</span>
+<span class="nc" id="L72">        this.endTime = endTime;</span>
+<span class="nc" id="L73">    }</span>
 
     public Patient getPatient() {
-<span class="nc" id="L111">        return patient;</span>
+<span class="fc" id="L76">        return patient;</span>
     }
 
     public void setPatient(Patient patient) {
-<span class="nc" id="L115">        this.patient = patient;</span>
-<span class="nc" id="L116">    }</span>
+<span class="fc" id="L80">        this.patient = patient;</span>
+<span class="fc" id="L81">    }</span>
 
     public Doctor getDoctor() {
-<span class="nc" id="L119">        return doctor;</span>
+<span class="fc" id="L84">        return doctor;</span>
     }
 
     public void setDoctor(Doctor doctor) {
-<span class="nc" id="L123">        this.doctor = doctor;</span>
-<span class="nc" id="L124">    }</span>
+<span class="fc" id="L88">        this.doctor = doctor;</span>
+<span class="fc" id="L89">    }</span>
+
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

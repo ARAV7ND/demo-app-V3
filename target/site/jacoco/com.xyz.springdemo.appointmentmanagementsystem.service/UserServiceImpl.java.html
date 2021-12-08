@@ -34,8 +34,8 @@ public class UserServiceImpl implements UserService{
     @Override
     public void save(User user) {
 <span class="fc" id="L36">            User theUser = findById(user.getId());</span>
-<span class="pc bpc" id="L37" title="1 of 2 branches missed.">            if (theUser!=null) {</span>
-<span class="nc" id="L38">                userRepository.setUserInfoById(user.getUsername(),user.getPassword(), user.getId());</span>
+<span class="fc bfc" id="L37" title="All 2 branches covered.">            if (theUser!=null) {</span>
+<span class="fc" id="L38">                userRepository.setUserInfoById(user.getUsername(),user.getPassword(), user.getId());</span>
             }else {
 <span class="fc" id="L40">                userRepository.save(user);</span>
             }
@@ -46,8 +46,8 @@ public class UserServiceImpl implements UserService{
     public User findById(int id) {
 <span class="fc" id="L47">        Optional&lt;User&gt; result = userRepository.findById(id);</span>
 <span class="fc" id="L48">        User user=null;</span>
-<span class="pc bpc" id="L49" title="1 of 2 branches missed.">        if(result.isPresent()){</span>
-<span class="nc" id="L50">            user = result.get();</span>
+<span class="fc bfc" id="L49" title="All 2 branches covered.">        if(result.isPresent()){</span>
+<span class="fc" id="L50">            user = result.get();</span>
         }
 <span class="fc" id="L52">        return user;</span>
     }
@@ -62,7 +62,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User findByUsername(String username) {
-<span class="nc" id="L65">        return userRepository.findByUsername(username);</span>
+<span class="fc" id="L65">        return userRepository.findByUsername(username);</span>
     }
 
     @Override

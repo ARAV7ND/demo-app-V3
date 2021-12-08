@@ -13,41 +13,31 @@ public class Role {
     @Column(name = &quot;authority&quot;)
     private String authority;
 
-    @Column(name = &quot;username&quot;)
-    private String username;
+<span class="fc" id="L16">    public Role() {</span>
 
-<span class="fc" id="L19">    public Role() {</span>
-
-<span class="fc" id="L21">    }</span>
+<span class="fc" id="L18">    }</span>
 
 
-<span class="fc" id="L24">    public Role(String authority, String username) {</span>
-<span class="fc" id="L25">        this.authority = authority;</span>
-<span class="fc" id="L26">        this.username = username;</span>
-<span class="fc" id="L27">    }</span>
+<span class="fc" id="L21">    public Role(String authority) {</span>
+<span class="fc" id="L22">        this.authority = authority;</span>
+<span class="fc" id="L23">    }</span>
 
     public int getId() {
-<span class="fc" id="L30">        return id;</span>
+<span class="nc" id="L26">        return id;</span>
     }
 
     public void setId(int id) {
-<span class="nc" id="L34">        this.id = id;</span>
-<span class="nc" id="L35">    }</span>
+<span class="nc" id="L30">        this.id = id;</span>
+<span class="nc" id="L31">    }</span>
 
     public String getAuthority() {
-<span class="nc" id="L38">        return authority;</span>
+<span class="nc" id="L34">        return authority;</span>
     }
 
     public void setAuthority(String authority) {
-<span class="nc" id="L42">        this.authority = authority;</span>
-<span class="nc" id="L43">    }</span>
+<span class="nc" id="L38">        this.authority = authority;</span>
+<span class="nc" id="L39">    }</span>
 
-    public String getUsername() {
-<span class="nc" id="L46">        return username;</span>
-    }
 
-    public void setUsername(String username) {
-<span class="nc" id="L50">        this.username = username;</span>
-<span class="nc" id="L51">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

@@ -8,8 +8,8 @@ import com.xyz.springdemo.appointmentmanagementsystem.entity.Appointment;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.Patient;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.Role;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.User;
+import com.xyz.springdemo.appointmentmanagementsystem.exception.PatientNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.querydsl.binding.OptionalValueBinding;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -51,13 +51,6 @@ public class PatientServiceImpl implements PatientService{
 
     @Override
     public void save(PatientManager patientDto) {
-//        Patient patient = new Patient(patientDto.getFirstName(),patientDto.getLastName(),patientDto.getUsername(),patientDto.getPhone());
-//        patient.setPatientId(patientDto.getId());
-//        User user = new User(patientDto.getUsername(), bCryptPasswordEncoder.encode(patientDto.getPassword()),Arrays.asList(new Role("ROLE_USER", patientDto.getUsername())));
-//        user.setId(patientDto.getTemp());
-//        userService.save(user);
-//        patientRepository.save(patient);
-
         Patient patient = new Patient(patientDto.getFirstName(),patientDto.getLastName(),patientDto.getPhone());
         User user = new User(patientDto.getUsername(),bCryptPasswordEncoder.encode(patientDto.getPassword()),Arrays.asList(new Role("ROLE_USER")));
         patient.setUser(user);
@@ -110,7 +103,7 @@ public class PatientServiceImpl implements PatientService{
         User user = userService.findByUsername(username);
         Patient patient = patientRepository.findByUserId(user.getId());
         if(patient==null){
-            throw new RuntimeException("No user find with id : "+user.getId());
+            throw new PatientNotFoundException("No user find with id : "+user.getId());
         }
         return patient;
     }

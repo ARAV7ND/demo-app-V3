@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PatientController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">appointment-management-system</a> &gt; <a href="index.source.html" class="el_package">com.xyz.springdemo.appointmentmanagementsystem.controller</a> &gt; <span class="el_source">PatientController.java</span></div><h1>PatientController.java</h1><pre class="source lang-java linenums">package com.xyz.springdemo.appointmentmanagementsystem.controller;
+import com.xyz.springdemo.appointmentmanagementsystem.converter.AppointmentConverter;
 import com.xyz.springdemo.appointmentmanagementsystem.converter.PatientConverter;
+import com.xyz.springdemo.appointmentmanagementsystem.dao.DoctorRepository;
+import com.xyz.springdemo.appointmentmanagementsystem.dao.PatientRepository;
+import com.xyz.springdemo.appointmentmanagementsystem.dto.AppointmentDto;
 import com.xyz.springdemo.appointmentmanagementsystem.dto.PatientDto;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.Appointment;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.Doctor;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.Patient;
+import com.xyz.springdemo.appointmentmanagementsystem.exception.AppointmentNotPossibleException;
 import com.xyz.springdemo.appointmentmanagementsystem.service.AppointmentService;
 import com.xyz.springdemo.appointmentmanagementsystem.service.DoctorService;
 import com.xyz.springdemo.appointmentmanagementsystem.service.PatientService;
@@ -30,73 +35,77 @@ public class PatientController {
     private final PatientConverter patientConverter;
 
     @Autowired
-<span class="fc" id="L33">    public PatientController(PatientService patientService, DoctorService doctorService, AppointmentService appointmentService, PatientConverter patientConverter) {</span>
-<span class="fc" id="L34">        this.patientService = patientService;</span>
-<span class="fc" id="L35">        this.doctorService = doctorService;</span>
-<span class="fc" id="L36">        this.appointmentService = appointmentService;</span>
-<span class="fc" id="L37">        this.patientConverter = patientConverter;</span>
-<span class="fc" id="L38">    }</span>
+    private PatientRepository patientRepository;
+    @Autowired
+    private DoctorRepository doctorRepository;
+
+    @Autowired
+    private AppointmentConverter appointmentConverter;
+
+    @Autowired
+<span class="fc" id="L46">    public PatientController(PatientService patientService, DoctorService doctorService, AppointmentService appointmentService, PatientConverter patientConverter) {</span>
+<span class="fc" id="L47">        this.patientService = patientService;</span>
+<span class="fc" id="L48">        this.doctorService = doctorService;</span>
+<span class="fc" id="L49">        this.appointmentService = appointmentService;</span>
+<span class="fc" id="L50">        this.patientConverter = patientConverter;</span>
+<span class="fc" id="L51">    }</span>
 
     @GetMapping(&quot;/home&quot;)
     public String home(Model model){
-<span class="nc" id="L42">        Patient patient = patientService.loggedInUser();</span>
-<span class="nc" id="L43">        model.addAttribute(&quot;user&quot;,patient);</span>
-<span class="nc" id="L44">        return &quot;patient/patient-home&quot;;</span>
+<span class="nc" id="L55">        Patient patient = patientService.loggedInUser();</span>
+<span class="nc" id="L56">        model.addAttribute(&quot;user&quot;,patient);</span>
+<span class="nc" id="L57">        return &quot;patient/patient-home&quot;;</span>
     }
 
     @GetMapping(&quot;/doctorList&quot;)
     public String getDoctorsList(Model model) {
-<span class="nc" id="L49">        List&lt;Doctor&gt; doctorList = doctorService.findAll();</span>
-<span class="nc" id="L50">        model.addAttribute(&quot;size&quot;,doctorList.size());</span>
-<span class="nc" id="L51">        model.addAttribute(&quot;users&quot;, doctorList);</span>
-<span class="nc" id="L52">        return &quot;patient/doctor-list&quot;;</span>
+<span class="nc" id="L62">        List&lt;Doctor&gt; doctorList = doctorService.findAll();</span>
+<span class="nc" id="L63">        model.addAttribute(&quot;size&quot;,doctorList.size());</span>
+<span class="nc" id="L64">        model.addAttribute(&quot;users&quot;, doctorList);</span>
+<span class="nc" id="L65">        return &quot;patient/doctor-list&quot;;</span>
     }
 
     @GetMapping(&quot;/appointmentForm&quot;)
     public String showAppointmentForm(@RequestParam(&quot;id&quot;) int id, Model model){
-<span class="nc" id="L57">        Appointment appointment = new Appointment();</span>
-<span class="nc" id="L58">        appointment.setDoctorId(id);</span>
-<span class="nc" id="L59">        model.addAttribute(&quot;appointment&quot;,appointment);</span>
-<span class="nc" id="L60">        return &quot;patient/appointment-form&quot;;</span>
+<span class="nc" id="L70">        AppointmentDto appointmentDto = new AppointmentDto();</span>
+<span class="nc" id="L71">        Doctor doctor = doctorService.findById(id);</span>
+<span class="nc" id="L72">        Patient patient = patientService.loggedInUser();</span>
+<span class="nc" id="L73">        appointmentDto.setPatient(patient);</span>
+<span class="nc" id="L74">        appointmentDto.setDoctor(doctor);</span>
+<span class="nc" id="L75">        model.addAttribute(&quot;appointment&quot;,appointmentDto);</span>
+<span class="nc" id="L76">        return &quot;patient/appointment-form&quot;;</span>
     }
 
     @PostMapping(&quot;/addAppointment&quot;)
-    public String addAppointment(@Valid @ModelAttribute(&quot;appointment&quot;) Appointment appointment,BindingResult bindingResult) {
-
-<span class="nc bnc" id="L66" title="All 2 branches missed.">        if (bindingResult.hasErrors()){</span>
-<span class="nc" id="L67">            return &quot;patient/appointment-form&quot;;</span>
+    public String addAppointment(@Valid @ModelAttribute(&quot;appointment&quot;) AppointmentDto appointmentDto,BindingResult bindingResult) throws ParseException {
+<span class="nc bnc" id="L81" title="All 2 branches missed.">        if(bindingResult.hasErrors()){</span>
+<span class="nc" id="L82">            return &quot;patient/appointment-form&quot;;</span>
         }
-<span class="nc" id="L69">        Patient patient = patientService.loggedInUser();</span>
-<span class="nc" id="L70">        int patientId = patient.getPatientId();</span>
-<span class="nc" id="L71">        appointment.setPatientId(patientId);</span>
-<span class="nc" id="L72">        patientService.addAppointment(patientId,appointment);</span>
-<span class="nc" id="L73">        doctorService.addAppointment(appointment.getDoctorId(),appointment);</span>
-        try {
-<span class="nc bnc" id="L75" title="All 2 branches missed.">            if(!appointmentService.isSlotAvailable(appointment)){</span>
-<span class="nc" id="L76">                throw new UnsupportedOperationException(&quot;Sorry slot is already booked..!&quot;);</span>
-            }
-<span class="nc" id="L78">        } catch (ParseException e) {</span>
-<span class="nc" id="L79">            e.printStackTrace();</span>
-<span class="nc" id="L80">        }</span>
-<span class="nc" id="L81">        appointmentService.save(appointment);</span>
-<span class="nc" id="L82">        return &quot;redirect:/patient/home&quot;;</span>
+<span class="nc" id="L84">        Appointment appointment = appointmentConverter.dtoToEntity(appointmentDto);</span>
+<span class="nc bnc" id="L85" title="All 2 branches missed.">        if(!appointmentService.isSlotAvailable(appointment)){</span>
+<span class="nc" id="L86">            throw new AppointmentNotPossibleException(&quot;Sorry slot is already booked..!&quot;);</span>
+        }
+<span class="nc" id="L88">        doctorService.addAppointment(appointment);</span>
+<span class="nc" id="L89">        appointmentService.save(appointment);</span>
+
+<span class="nc" id="L91">        return &quot;redirect:/patient/home&quot;;</span>
     }
 
     @GetMapping(&quot;/update&quot;)
     public String update(@RequestParam(&quot;id&quot;) int id,Model model){
-<span class="nc" id="L87">        Patient patient = patientService.findById(id);</span>
-<span class="nc" id="L88">        PatientDto patientDto = patientConverter.entityToDto(patient);</span>
-<span class="nc" id="L89">        model.addAttribute(&quot;user&quot;,patientDto);</span>
-<span class="nc" id="L90">        return &quot;patient/patient-update-form&quot;;</span>
+<span class="nc" id="L96">        Patient patient = patientService.findById(id);</span>
+<span class="nc" id="L97">        PatientDto patientDto = patientConverter.entityToDto(patient);</span>
+<span class="nc" id="L98">        model.addAttribute(&quot;user&quot;,patientDto);</span>
+<span class="nc" id="L99">        return &quot;patient/patient-update-form&quot;;</span>
     }
 
     @PostMapping(&quot;/save&quot;)
     public String save(@Valid @ModelAttribute(&quot;user&quot;) PatientDto patientDto, BindingResult bindingResult){
-<span class="nc bnc" id="L95" title="All 2 branches missed.">        if(bindingResult.hasErrors()){</span>
-<span class="nc" id="L96">           return &quot;patient/patient-update-form&quot;;</span>
+<span class="nc bnc" id="L104" title="All 2 branches missed.">        if(bindingResult.hasErrors()){</span>
+<span class="nc" id="L105">           return &quot;patient/patient-update-form&quot;;</span>
         }
-<span class="nc" id="L98">        patientService.save(patientDto);</span>
-<span class="nc" id="L99">        return &quot;redirect:/patient/home&quot;;</span>
+<span class="nc" id="L107">        patientService.save(patientDto);</span>
+<span class="nc" id="L108">        return &quot;redirect:/patient/home&quot;;</span>
     }
 }
 

@@ -8,6 +8,7 @@ import com.xyz.springdemo.appointmentmanagementsystem.entity.Appointment;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.Patient;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.Role;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.User;
+import com.xyz.springdemo.appointmentmanagementsystem.exception.PatientNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -34,28 +35,27 @@ public class PatientServiceImpl implements PatientService{
     public PatientServiceImpl(PatientRepository patientRepository,
                                     UserService userService,
                                     BCryptPasswordEncoder bCryptPasswordEncoder,
-<span class="fc" id="L37">                                    PatientConverter patientConverter) {</span>
-<span class="fc" id="L38">        this.patientRepository = patientRepository;</span>
-<span class="fc" id="L39">        this.userService = userService;</span>
-<span class="fc" id="L40">        this.bCryptPasswordEncoder = bCryptPasswordEncoder;</span>
-<span class="fc" id="L41">        this.patientConverter = patientConverter;</span>
-<span class="fc" id="L42">    }</span>
+<span class="fc" id="L38">                                    PatientConverter patientConverter) {</span>
+<span class="fc" id="L39">        this.patientRepository = patientRepository;</span>
+<span class="fc" id="L40">        this.userService = userService;</span>
+<span class="fc" id="L41">        this.bCryptPasswordEncoder = bCryptPasswordEncoder;</span>
+<span class="fc" id="L42">        this.patientConverter = patientConverter;</span>
+<span class="fc" id="L43">    }</span>
 
     public Patient loggedInUser() {
-<span class="nc" id="L45">        Object obj = userService.findLoggedInUserDetails();</span>
-<span class="nc" id="L46">        String username = ((UserDetails)obj).getUsername();</span>
-<span class="nc" id="L47">        return findByUsername(username);</span>
+<span class="nc" id="L46">        Object obj = userService.findLoggedInUserDetails();</span>
+<span class="nc" id="L47">        String username = ((UserDetails)obj).getUsername();</span>
+<span class="nc" id="L48">        User user = userService.findByUsername(username);</span>
+<span class="nc" id="L49">        return patientRepository.findByUserId(user.getId());</span>
     }
 
     @Override
     public void save(PatientManager patientDto) {
-<span class="fc" id="L52">        Patient patient = new Patient(patientDto.getFirstName(),patientDto.getLastName(),patientDto.getUsername(),patientDto.getPhone());</span>
-<span class="fc" id="L53">        patient.setPatientId(patientDto.getId());</span>
-<span class="fc" id="L54">        User user = new User(patientDto.getUsername(), bCryptPasswordEncoder.encode(patientDto.getPassword()),Arrays.asList(new Role(&quot;ROLE_USER&quot;, patientDto.getUsername())));</span>
-<span class="fc" id="L55">        user.setId(patientDto.getTemp());</span>
-<span class="fc" id="L56">        userService.save(user);</span>
+<span class="fc" id="L54">        Patient patient = new Patient(patientDto.getFirstName(),patientDto.getLastName(),patientDto.getPhone());</span>
+<span class="fc" id="L55">        User user = new User(patientDto.getUsername(),bCryptPasswordEncoder.encode(patientDto.getPassword()),Arrays.asList(new Role(&quot;ROLE_USER&quot;)));</span>
+<span class="fc" id="L56">        patient.setUser(user);</span>
 <span class="fc" id="L57">        patientRepository.save(patient);</span>
-
+<span class="fc" id="L58">        userService.save(user);</span>
 <span class="fc" id="L59">    }</span>
 
     @Override
@@ -64,7 +64,7 @@ public class PatientServiceImpl implements PatientService{
 <span class="nc bnc" id="L64" title="All 2 branches missed.">        if(!patient.getAppointments().isEmpty()){</span>
 <span class="nc" id="L65">            throw new UnsupportedOperationException(&quot;Can't delete when there is an active appointment booked&quot;);</span>
         }
-<span class="nc" id="L67">        User user = userService.findByUsername(patient.getEmail());</span>
+<span class="nc" id="L67">        User user = userService.findById(patient.getUser().getId());</span>
 <span class="nc" id="L68">        userService.deleteById(user.getId());</span>
 <span class="nc" id="L69">        patientRepository.deleteById(id);</span>
 
@@ -90,7 +90,7 @@ public class PatientServiceImpl implements PatientService{
     @Override
     public PatientManager update(int id) {
 <span class="nc" id="L92">        Patient patient = findById(id);</span>
-<span class="nc" id="L93">        User user = userService.findByUsername(patient.getEmail());</span>
+<span class="nc" id="L93">        User user = userService.findById(patient.getUser().getId());</span>
 <span class="nc" id="L94">        PatientManager patientManager = new PatientManager(patient.getFirstName(),patient.getLastName(),</span>
 <span class="nc" id="L95">                                     patient.getPhone(),user.getUsername(), user.getPassword());</span>
 <span class="nc" id="L96">            patientManager.setId(patient.getPatientId());</span>
@@ -100,24 +100,26 @@ public class PatientServiceImpl implements PatientService{
 
     @Override
     public Patient findByUsername(String username) {
-<span class="fc" id="L103">        return patientRepository.findByEmail(username);</span>
+<span class="fc" id="L103">        User user = userService.findByUsername(username);</span>
+<span class="fc" id="L104">        Patient patient = patientRepository.findByUserId(user.getId());</span>
+<span class="pc bpc" id="L105" title="1 of 2 branches missed.">        if(patient==null){</span>
+<span class="nc" id="L106">            throw new PatientNotFoundException(&quot;No user find with id : &quot;+user.getId());</span>
+        }
+<span class="fc" id="L108">        return patient;</span>
     }
 
     @Override
-    public void addAppointment(int patientId,Appointment appointment) {
-<span class="nc" id="L108">        Optional&lt;Patient&gt; patient = patientRepository.findById(patientId);</span>
-<span class="nc" id="L109">        Patient patientObj = null;</span>
-<span class="nc bnc" id="L110" title="All 2 branches missed.">        if(patient.isPresent()){</span>
-<span class="nc" id="L111">            patientObj = patient.get();</span>
-<span class="nc" id="L112">            patientObj.addAppointment(appointment);</span>
-        }
-<span class="nc" id="L114">    }</span>
-    @Override
     public void save(PatientDto patientDto){
-<span class="nc" id="L117">        Patient patient = patientConverter.dtoToEntity(patientDto);</span>
-<span class="nc" id="L118">        patientRepository.save(patient);</span>
-<span class="nc" id="L119">    }</span>
+<span class="nc" id="L113">        Patient patient = patientConverter.dtoToEntity(patientDto);</span>
+<span class="nc" id="L114">        patientRepository.save(patient);</span>
+<span class="nc" id="L115">    }</span>
 
+    @Override
+    public void addAppointment(Appointment appointment){
+<span class="fc" id="L119">        Patient patient = findById(appointment.getPatient().getPatientId());</span>
+<span class="fc" id="L120">        patient.addAppointment(appointment);</span>
+<span class="fc" id="L121">        patientRepository.save(patient);</span>
+<span class="fc" id="L122">    }</span>
 
 
 }

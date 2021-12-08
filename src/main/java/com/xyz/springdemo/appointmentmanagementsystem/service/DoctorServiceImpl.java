@@ -9,6 +9,7 @@ import com.xyz.springdemo.appointmentmanagementsystem.entity.Appointment;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.Doctor;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.Role;
 import com.xyz.springdemo.appointmentmanagementsystem.entity.User;
+import com.xyz.springdemo.appointmentmanagementsystem.exception.DoctorNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -48,12 +49,6 @@ public class DoctorServiceImpl implements DoctorService{
     @Override
     @Transactional
     public void save(DoctorManager doctorManager) {
-//        Doctor doctor = new Doctor(doctorManager.getFirstName(),doctorManager.getLastName(),doctorManager.getUsername(),doctorManager.getSpecialist(),doctorManager.getAddress());
-//        doctor.setId(doctorManager.getId());
-//        User user = new User(doctorManager.getUsername(), bCryptPasswordEncoder.encode(doctorManager.getPassword()), Arrays.asList(new Role("ROLE_DOCTOR",doctorManager.getUsername())));
-//        user.setId(doctorManager.getTemp());
-//        userService.save(user);
-//        doctorRepository.save(doctor);
             Doctor doctor = new Doctor(doctorManager.getFirstName(),doctorManager.getLastName(),doctorManager.getSpecialist(),doctorManager.getAddress());
             User user = new User(doctorManager.getUsername(),bCryptPasswordEncoder.encode(doctorManager.getPassword()),Arrays.asList(new Role("ROLE_DOCTOR")));
             doctor.setUser(user);
@@ -85,7 +80,7 @@ public class DoctorServiceImpl implements DoctorService{
         if(result.isPresent()){
             doctor = result.get();
         }else{
-            throw new NullPointerException("Doctor not found with id "+id);
+            throw new DoctorNotFoundException("Doctor not found with id "+id);
         }
         return doctor;
     }

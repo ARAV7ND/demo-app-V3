@@ -26,5 +26,10 @@ import java.security.Principal;
 <span class="nc" id="L26">        model.addAttribute(&quot;user&quot;,user);</span>
 <span class="nc" id="L27">       return &quot;/home&quot;;</span>
     }
+
+    @GetMapping(&quot;/access-denied&quot;)
+    public String error(){
+<span class="nc" id="L32">        return &quot;access-denied&quot;;</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

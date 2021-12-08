@@ -18,7 +18,7 @@ public class User {
     @Column(name = &quot;password&quot;)
     private String password;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH,CascadeType.REMOVE})
     @JoinTable(
             name = &quot;users_roles&quot;,
             joinColumns = @JoinColumn(
@@ -43,8 +43,8 @@ public class User {
     }
 
     public void setId(int id) {
-<span class="fc" id="L46">        this.id = id;</span>
-<span class="fc" id="L47">    }</span>
+<span class="nc" id="L46">        this.id = id;</span>
+<span class="nc" id="L47">    }</span>
 
     public String getUsername() {
 <span class="fc" id="L50">        return username;</span>
@@ -55,7 +55,7 @@ public class User {
 <span class="nc" id="L55">    }</span>
 
     public String getPassword() {
-<span class="nc" id="L58">        return password;</span>
+<span class="fc" id="L58">        return password;</span>
     }
 
     public void setPassword(String password) {

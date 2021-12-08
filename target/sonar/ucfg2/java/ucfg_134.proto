@@ -1,25 +1,27 @@
 
-rcom.xyz.springdemo.appointmentmanagementsystem.service.UserServiceImpl#findLoggedInUserDetails()Ljava/lang/Object;Ÿ
-”/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.javaf f()"1*²
+W__sonar_lambda_0$com.xyz.springdemo.appointmentmanagementsystem.service.UserServiceImplŸ
+”/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.javaO" O(Y"1*³
 1Ÿ
-”/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.javag g($µ
-²
+”/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.javaOE O(Iðí
 Ÿ
-”/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.javag g(1?
-%09org.springframework.security.core.context.SecurityContext"‡org.springframework.security.core.context.SecurityContextHolder#getContext()Lorg/springframework/security/core/context/SecurityContext;*C"A
-?org.springframework.security.core.context.SecurityContextHolder¶³
+”/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.javaOE O(X
+%2java.lang.String"[com.xyz.springdemo.appointmentmanagementsystem.entity.Role#getAuthority()Ljava/lang/String;*D
+B
+role:com.xyz.springdemo.appointmentmanagementsystem.entity.Role2getAuthority()³°
 Ÿ
-”/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.javag g(E6
-%10org.springframework.security.core.Authentication"org.springframework.security.core.context.SecurityContext#getAuthentication()Lorg/springframework/security/core/Authentication;*A
-?
-%09org.springframework.security.core.context.SecurityContext2getAuthentication()Ú×
+”/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.javaO. O(DH
+%3Borg.springframework.security.core.authority.SimpleGrantedAuthority"Borg.springframework.security.core.authority.SimpleGrantedAuthorityñ
+î
 Ÿ
-”/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.javag g(T
-%2java.lang.Object"Qorg.springframework.security.core.Authentication#getPrincipal()Ljava/lang/Object;*8
-6
-%10org.springframework.security.core.Authentication2getPrincipal()"¼
-Ÿ
-”/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.javag g(U
+”/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.javaO* O(Y
+%4"^org.springframework.security.core.authority.SimpleGrantedAuthority#<init>(Ljava/lang/String;)V*J
+H
+%3Borg.springframework.security.core.authority.SimpleGrantedAuthority*
 
-%2java.lang.ObjectBJH
-Fcom.xyz.springdemo.appointmentmanagementsystem.service.UserServiceImpl
+%2java.lang.String"î
+Ÿ
+”/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/service/UserServiceImpl.javaO* O(YJ
+H
+%3Borg.springframework.security.core.authority.SimpleGrantedAuthority:B
+role:com.xyz.springdemo.appointmentmanagementsystem.entity.RoleB
+java.util.function.Function

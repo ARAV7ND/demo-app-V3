@@ -13,9 +13,6 @@ public class Role {
     @Column(name = "authority")
     private String authority;
 
-//    @Column(name = "username")
-//    private String username;
-
     public Role() {
 
     }

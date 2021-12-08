@@ -156,7 +156,9 @@ Lof(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)ij
 javax.servlet.ServletResponsejava.lang.Object‘
 &javax.servlet.http.HttpServletResponsejavax.servlet.ServletResponsejava.lang.Objectä
 /setTrailerFields(Ljava/util/function/Supplier;)Wjavax.servlet.http.HttpServletResponse#setTrailerFields(Ljava/util/function/Supplier;)Vl
-getTrailerFields()Vjavax.servlet.http.HttpServletResponse#getTrailerFields()Ljava/util/function/Supplier;Ê
+getTrailerFields()Vjavax.servlet.http.HttpServletResponse#getTrailerFields()Ljava/util/function/Supplier;˝
+Qcom.xyz.springdemo.appointmentmanagementsystem.exception.PatientNotFoundExceptionjava.lang.RuntimeExceptionã
+<init>(Ljava/lang/String;)mcom.xyz.springdemo.appointmentmanagementsystem.exception.PatientNotFoundException#<init>(Ljava/lang/String;)VÊ
 Ucom.xyz.springdemo.appointmentmanagementsystem.AppointmentManagementSystemApplicationjava.lang.Objectk
 <init>()_com.xyz.springdemo.appointmentmanagementsystem.AppointmentManagementSystemApplication#<init>()Vç
 main([Ljava/lang/String;)pcom.xyz.springdemo.appointmentmanagementsystem.AppointmentManagementSystemApplication#main([Ljava/lang/String;)VÏÇ
@@ -439,31 +441,46 @@ w<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;Z[Ljava/lang/Strin
 getSuppressedFields()Uorg.springframework.validation.BindingResult#getSuppressedFields()[Ljava/lang/String;¿
 GrecordFieldValue(Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;)uorg.springframework.validation.BindingResult#recordFieldValue(Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;)VY
 Ecom.xyz.springdemo.appointmentmanagementsystem.service.PatientServicejava.lang.ObjectX
-Dcom.xyz.springdemo.appointmentmanagementsystem.service.DoctorServicejava.lang.ObjectŒ
+Dcom.xyz.springdemo.appointmentmanagementsystem.service.DoctorServicejava.lang.ObjectÃ
 Icom.xyz.springdemo.appointmentmanagementsystem.service.PatientServiceImpljava.lang.ObjectEcom.xyz.springdemo.appointmentmanagementsystem.service.PatientServicep
 	findAll()ccom.xyz.springdemo.appointmentmanagementsystem.service.PatientServiceImpl#findAll()Ljava/util/List;Ë
 Lsave(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/PatientManager;)ócom.xyz.springdemo.appointmentmanagementsystem.service.PatientServiceImpl#save(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/PatientManager;)V™
 loggedInUser()ócom.xyz.springdemo.appointmentmanagementsystem.service.PatientServiceImpl#loggedInUser()Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Patient;è
-ü<init>(Lcom/xyz/springdemo/appointmentmanagementsystem/dao/PatientRepository;Lcom/xyz/springdemo/appointmentmanagementsystem/service/UserService;Lorg/springframework/security/crypto/bcrypt/BCryptPasswordEncoder;Lcom/xyz/springdemo/appointmentmanagementsystem/converter/PatientConverter;)Ícom.xyz.springdemo.appointmentmanagementsystem.service.PatientServiceImpl#<init>(Lcom/xyz/springdemo/appointmentmanagementsystem/dao/PatientRepository;Lcom/xyz/springdemo/appointmentmanagementsystem/service/UserService;Lorg/springframework/security/crypto/bcrypt/BCryptPasswordEncoder;Lcom/xyz/springdemo/appointmentmanagementsystem/converter/PatientConverter;)V§
-findById(I)îcom.xyz.springdemo.appointmentmanagementsystem.service.PatientServiceImpl#findById(I)Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Patient;¯
-TaddAppointment(ILcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;)ücom.xyz.springdemo.appointmentmanagementsystem.service.PatientServiceImpl#addAppointment(ILcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;)Vç
+ü<init>(Lcom/xyz/springdemo/appointmentmanagementsystem/dao/PatientRepository;Lcom/xyz/springdemo/appointmentmanagementsystem/service/UserService;Lorg/springframework/security/crypto/bcrypt/BCryptPasswordEncoder;Lcom/xyz/springdemo/appointmentmanagementsystem/converter/PatientConverter;)Ícom.xyz.springdemo.appointmentmanagementsystem.service.PatientServiceImpl#<init>(Lcom/xyz/springdemo/appointmentmanagementsystem/dao/PatientRepository;Lcom/xyz/springdemo/appointmentmanagementsystem/service/UserService;Lorg/springframework/security/crypto/bcrypt/BCryptPasswordEncoder;Lcom/xyz/springdemo/appointmentmanagementsystem/converter/PatientConverter;)Vˆ
+SaddAppointment(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;)ûcom.xyz.springdemo.appointmentmanagementsystem.service.PatientServiceImpl#addAppointment(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;)V§
+findById(I)îcom.xyz.springdemo.appointmentmanagementsystem.service.PatientServiceImpl#findById(I)Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Patient;ç
 deleteById(Ljava/lang/Integer;)jcom.xyz.springdemo.appointmentmanagementsystem.service.PatientServiceImpl#deleteById(Ljava/lang/Integer;)V“
 "findByUsername(Ljava/lang/String;)´com.xyz.springdemo.appointmentmanagementsystem.service.PatientServiceImpl#findByUsername(Ljava/lang/String;)Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Patient;⁄
 Esave(Lcom/xyz/springdemo/appointmentmanagementsystem/dto/PatientDto;)êcom.xyz.springdemo.appointmentmanagementsystem.service.PatientServiceImpl#save(Lcom/xyz/springdemo/appointmentmanagementsystem/dto/PatientDto;)Vß
 	update(I)ôcom.xyz.springdemo.appointmentmanagementsystem.service.PatientServiceImpl#update(I)Lcom/xyz/springdemo/appointmentmanagementsystem/entity/PatientManager;c
-9org.springframework.security.core.userdetails.UserDetailsjava.lang.Objectjava.io.Serializableˆ
-=com.xyz.springdemo.appointmentmanagementsystem.entity.Patientjava.lang.Objectt
-getAppointments()_com.xyz.springdemo.appointmentmanagementsystem.entity.Patient#getAppointments()Ljava/util/List;p
-getFirstName()^com.xyz.springdemo.appointmentmanagementsystem.entity.Patient#getFirstName()Ljava/lang/String;h
+9org.springframework.security.core.userdetails.UserDetailsjava.lang.Objectjava.io.Serializableô
 
-getEmail()Zcom.xyz.springdemo.appointmentmanagementsystem.entity.Patient#getEmail()Ljava/lang/String;‰
-P<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)ècom.xyz.springdemo.appointmentmanagementsystem.entity.Patient#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V_
-getPatientId()Mcom.xyz.springdemo.appointmentmanagementsystem.entity.Patient#getPatientId()I{
-setEmail(Ljava/lang/String;)[com.xyz.springdemo.appointmentmanagementsystem.entity.Patient#setEmail(Ljava/lang/String;)Vn
+:com.xyz.springdemo.appointmentmanagementsystem.entity.Userjava.lang.Object~
+setPassword(Ljava/lang/String;)[com.xyz.springdemo.appointmentmanagementsystem.entity.User#setPassword(Ljava/lang/String;)VN
+getId()Ccom.xyz.springdemo.appointmentmanagementsystem.entity.User#getId()I∏
+<<init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)xcom.xyz.springdemo.appointmentmanagementsystem.entity.User#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Vk
+getPassword()Zcom.xyz.springdemo.appointmentmanagementsystem.entity.User#getPassword()Ljava/lang/String;P
+<init>()Dcom.xyz.springdemo.appointmentmanagementsystem.entity.User#<init>()Ve
+
+toString()Wcom.xyz.springdemo.appointmentmanagementsystem.entity.User#toString()Ljava/lang/String;t
+setRoles(Ljava/util/List;)Vcom.xyz.springdemo.appointmentmanagementsystem.entity.User#setRoles(Ljava/util/List;)Vk
+getUsername()Zcom.xyz.springdemo.appointmentmanagementsystem.entity.User#getUsername()Ljava/lang/String;c
+
+getRoles()Ucom.xyz.springdemo.appointmentmanagementsystem.entity.User#getRoles()Ljava/util/List;P
+setId(I)Dcom.xyz.springdemo.appointmentmanagementsystem.entity.User#setId(I)V~
+setUsername(Ljava/lang/String;)[com.xyz.springdemo.appointmentmanagementsystem.entity.User#setUsername(Ljava/lang/String;)Vè
+Dcom.xyz.springdemo.appointmentmanagementsystem.dao.PatientRepositoryjava.lang.Object5org.springframework.data.jpa.repository.JpaRepositoryœ
+=com.xyz.springdemo.appointmentmanagementsystem.entity.Patientjava.lang.Objectë
+	getUser()Écom.xyz.springdemo.appointmentmanagementsystem.entity.Patient#getUser()Lcom/xyz/springdemo/appointmentmanagementsystem/entity/User;t
+getAppointments()_com.xyz.springdemo.appointmentmanagementsystem.entity.Patient#getAppointments()Ljava/util/List;Œ
+EsetUser(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/User;)Ñcom.xyz.springdemo.appointmentmanagementsystem.entity.Patient#setUser(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/User;)Vp
+getFirstName()^com.xyz.springdemo.appointmentmanagementsystem.entity.Patient#getFirstName()Ljava/lang/String;_
+getPatientId()Mcom.xyz.springdemo.appointmentmanagementsystem.entity.Patient#getPatientId()In
 getLastName()]com.xyz.springdemo.appointmentmanagementsystem.entity.Patient#getLastName()Ljava/lang/String;{
 setPhone(Ljava/lang/String;)[com.xyz.springdemo.appointmentmanagementsystem.entity.Patient#setPhone(Ljava/lang/String;)VÖ
 !setAppointments(Ljava/util/List;)`com.xyz.springdemo.appointmentmanagementsystem.entity.Patient#setAppointments(Ljava/util/List;)VS
-<init>()Gcom.xyz.springdemo.appointmentmanagementsystem.entity.Patient#<init>()Va
+<init>()Gcom.xyz.springdemo.appointmentmanagementsystem.entity.Patient#<init>()Vø
+><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)}com.xyz.springdemo.appointmentmanagementsystem.entity.Patient#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Va
 setPatientId(I)Ncom.xyz.springdemo.appointmentmanagementsystem.entity.Patient#setPatientId(I)Vh
 
 getPhone()Zcom.xyz.springdemo.appointmentmanagementsystem.entity.Patient#getPhone()Ljava/lang/String;Í
@@ -483,16 +500,14 @@ u<init>(Lorg/springframework/security/crypto/bcrypt/BCryptPasswordEncoder$BCrypt
 3matches(Ljava/lang/CharSequence;Ljava/lang/String;)uorg.springframework.security.crypto.bcrypt.BCryptPasswordEncoder#matches(Ljava/lang/CharSequence;Ljava/lang/String;)ZX
 	<init>(I)Korg.springframework.security.crypto.bcrypt.BCryptPasswordEncoder#<init>(I)VØ
 t<init>(Lorg/springframework/security/crypto/bcrypt/BCryptPasswordEncoder$BCryptVersion;Ljava/security/SecureRandom;)∂org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder#<init>(Lorg/springframework/security/crypto/bcrypt/BCryptPasswordEncoder$BCryptVersion;Ljava/security/SecureRandom;)V˘
-Y<init>(Lorg/springframework/security/crypto/bcrypt/BCryptPasswordEncoder$BCryptVersion;I)õorg.springframework.security.crypto.bcrypt.BCryptPasswordEncoder#<init>(Lorg/springframework/security/crypto/bcrypt/BCryptPasswordEncoder$BCryptVersion;I)Vº
+Y<init>(Lorg/springframework/security/crypto/bcrypt/BCryptPasswordEncoder$BCryptVersion;I)õorg.springframework.security.crypto.bcrypt.BCryptPasswordEncoder#<init>(Lorg/springframework/security/crypto/bcrypt/BCryptPasswordEncoder$BCryptVersion;I)V™
 :com.xyz.springdemo.appointmentmanagementsystem.entity.Rolejava.lang.ObjectN
 getId()Ccom.xyz.springdemo.appointmentmanagementsystem.entity.Role#getId()IP
-<init>()Dcom.xyz.springdemo.appointmentmanagementsystem.entity.Role#<init>()Vk
-getUsername()Zcom.xyz.springdemo.appointmentmanagementsystem.entity.Role#getUsername()Ljava/lang/String;P
+<init>()Dcom.xyz.springdemo.appointmentmanagementsystem.entity.Role#<init>()Vt
+<init>(Ljava/lang/String;)Vcom.xyz.springdemo.appointmentmanagementsystem.entity.Role#<init>(Ljava/lang/String;)VP
 setId(I)Dcom.xyz.springdemo.appointmentmanagementsystem.entity.Role#setId(I)VÄ
- setAuthority(Ljava/lang/String;)\com.xyz.springdemo.appointmentmanagementsystem.entity.Role#setAuthority(Ljava/lang/String;)Vò
-,<init>(Ljava/lang/String;Ljava/lang/String;)hcom.xyz.springdemo.appointmentmanagementsystem.entity.Role#<init>(Ljava/lang/String;Ljava/lang/String;)Vm
-getAuthority()[com.xyz.springdemo.appointmentmanagementsystem.entity.Role#getAuthority()Ljava/lang/String;~
-setUsername(Ljava/lang/String;)[com.xyz.springdemo.appointmentmanagementsystem.entity.Role#setUsername(Ljava/lang/String;)V≤é
+ setAuthority(Ljava/lang/String;)\com.xyz.springdemo.appointmentmanagementsystem.entity.Role#setAuthority(Ljava/lang/String;)Vm
+getAuthority()[com.xyz.springdemo.appointmentmanagementsystem.entity.Role#getAuthority()Ljava/lang/String;≤é
 java.util.Arraysjava.lang.Object¶
 Hequals([Ljava/lang/Object;II[Ljava/lang/Object;IILjava/util/Comparator;)Zjava.util.Arrays#equals([Ljava/lang/Object;II[Ljava/lang/Object;IILjava/util/Comparator;)Z2
 mismatch([J[J) java.util.Arrays#mismatch([J[J)I9
@@ -738,23 +753,7 @@ LbinarySearch0([Ljava/lang/Object;IILjava/lang/Object;Ljava/util/Comparator;)^j
 +fill([Ljava/lang/Object;Ljava/lang/Object;)=java.util.Arrays#fill([Ljava/lang/Object;Ljava/lang/Object;)V?
 toString([D)/java.util.Arrays#toString([D)Ljava/lang/String;*
 
-sort([JII)java.util.Arrays#sort([JII)Vô
-
-:com.xyz.springdemo.appointmentmanagementsystem.entity.Userjava.lang.Object~
-setPassword(Ljava/lang/String;)[com.xyz.springdemo.appointmentmanagementsystem.entity.User#setPassword(Ljava/lang/String;)VN
-getId()Ccom.xyz.springdemo.appointmentmanagementsystem.entity.User#getId()I∏
-<<init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)xcom.xyz.springdemo.appointmentmanagementsystem.entity.User#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Vk
-getPassword()Zcom.xyz.springdemo.appointmentmanagementsystem.entity.User#getPassword()Ljava/lang/String;P
-<init>()Dcom.xyz.springdemo.appointmentmanagementsystem.entity.User#<init>()Ve
-
-toString()Wcom.xyz.springdemo.appointmentmanagementsystem.entity.User#toString()Ljava/lang/String;t
-setRoles(Ljava/util/List;)Vcom.xyz.springdemo.appointmentmanagementsystem.entity.User#setRoles(Ljava/util/List;)Vk
-getUsername()Zcom.xyz.springdemo.appointmentmanagementsystem.entity.User#getUsername()Ljava/lang/String;c
-
-getRoles()Ucom.xyz.springdemo.appointmentmanagementsystem.entity.User#getRoles()Ljava/util/List;P
-setId(I)Dcom.xyz.springdemo.appointmentmanagementsystem.entity.User#setId(I)V~
-setUsername(Ljava/lang/String;)[com.xyz.springdemo.appointmentmanagementsystem.entity.User#setUsername(Ljava/lang/String;)Vè
-Dcom.xyz.springdemo.appointmentmanagementsystem.dao.PatientRepositoryjava.lang.Object5org.springframework.data.jpa.repository.JpaRepositoryÆ
+sort([JII)java.util.Arrays#sort([JII)VÆ
 java.util.Listjava.util.Collectionjava.lang.ObjectÕ
 îof(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)≥java.util.List#of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/List;Q
 of([Ljava/lang/Object;)6java.util.List#of([Ljava/lang/Object;)Ljava/util/List;O
@@ -808,7 +807,22 @@ hashCode()java.util.Optional#hashCode()IL
 Icom.xyz.springdemo.appointmentmanagementsystem.converter.PatientConverterjava.lang.Object_
 <init>()Scom.xyz.springdemo.appointmentmanagementsystem.converter.PatientConverter#<init>()V¶
 LdtoToEntity(Lcom/xyz/springdemo/appointmentmanagementsystem/dto/PatientDto;)’com.xyz.springdemo.appointmentmanagementsystem.converter.PatientConverter#dtoToEntity(Lcom/xyz/springdemo/appointmentmanagementsystem/dto/PatientDto;)Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Patient;¶
-LentityToDto(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Patient;)’com.xyz.springdemo.appointmentmanagementsystem.converter.PatientConverter#entityToDto(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Patient;)Lcom/xyz/springdemo/appointmentmanagementsystem/dto/PatientDto;≈
+LentityToDto(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Patient;)’com.xyz.springdemo.appointmentmanagementsystem.converter.PatientConverter#entityToDto(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Patient;)Lcom/xyz/springdemo/appointmentmanagementsystem/dto/PatientDto;Ö
+Acom.xyz.springdemo.appointmentmanagementsystem.entity.Appointmentjava.lang.Objectﬁ
+KsetPatient(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Patient;)écom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#setPatient(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Patient;)Vû
+getPatient()çcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#getPatient()Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Patient;É
+setEndTime(Ljava/lang/String;)acom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#setEndTime(Ljava/lang/String;)Vt
+getStartTime()bcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#getStartTime()Ljava/lang/String;W
+setId(I)Kcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#setId(I)Vj
+	getDate()]com.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#getDate()Ljava/lang/String;U
+getId()Jcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#getId()Iá
+ setStartTime(Ljava/lang/String;)ccom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#setStartTime(Ljava/lang/String;)VW
+<init>()Kcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#<init>()Vƒ
+><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Åcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V⁄
+IsetDoctor(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Doctor;)åcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#setDoctor(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Doctor;)V}
+setDate(Ljava/lang/String;)^com.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#setDate(Ljava/lang/String;)Vp
+getEndTime()`com.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#getEndTime()Ljava/lang/String;õ
+getDoctor()ãcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#getDoctor()Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Doctor;≈
 Icom.xyz.springdemo.appointmentmanagementsystem.controller.AdminControllerjava.lang.Objectﬂ
 saveDoctor(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/DoctorManager;Lorg/springframework/validation/BindingResult;)€com.xyz.springdemo.appointmentmanagementsystem.controller.AdminController#saveDoctor(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/DoctorManager;Lorg/springframework/validation/BindingResult;)Ljava/lang/String;¿
 8initBinder(Lorg/springframework/web/bind/WebDataBinder;)Écom.xyz.springdemo.appointmentmanagementsystem.controller.AdminController#initBinder(Lorg/springframework/web/bind/WebDataBinder;)Vá
@@ -845,16 +859,15 @@ t<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;
  setFirstName(Ljava/lang/String;)ecom.xyz.springdemo.appointmentmanagementsystem.entity.DoctorManager#setFirstName(Ljava/lang/String;)Vá
 setLastName(Ljava/lang/String;)dcom.xyz.springdemo.appointmentmanagementsystem.entity.DoctorManager#setLastName(Ljava/lang/String;)V¶
 =com.xyz.springdemo.appointmentmanagementsystem.dto.PatientDtojava.lang.ObjectS
-<init>()Gcom.xyz.springdemo.appointmentmanagementsystem.dto.PatientDto#<init>()V
-<com.xyz.springdemo.appointmentmanagementsystem.entity.Doctorjava.lang.ObjectÑ
+<init>()Gcom.xyz.springdemo.appointmentmanagementsystem.dto.PatientDto#<init>()V 
+<com.xyz.springdemo.appointmentmanagementsystem.entity.Doctorjava.lang.Objectê
+	getUser()Çcom.xyz.springdemo.appointmentmanagementsystem.entity.Doctor#getUser()Lcom/xyz/springdemo/appointmentmanagementsystem/entity/User;Ñ
 !setSpecialist(Ljava/lang/String;)_com.xyz.springdemo.appointmentmanagementsystem.entity.Doctor#setSpecialist(Ljava/lang/String;)Vs
-getAppointments()^com.xyz.springdemo.appointmentmanagementsystem.entity.Doctor#getAppointments()Ljava/util/List;á
-b<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)†com.xyz.springdemo.appointmentmanagementsystem.entity.Doctor#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)VR
+getAppointments()^com.xyz.springdemo.appointmentmanagementsystem.entity.Doctor#getAppointments()Ljava/util/List;Õ
+EsetUser(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/User;)Écom.xyz.springdemo.appointmentmanagementsystem.entity.Doctor#setUser(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/User;)VR
 setId(I)Fcom.xyz.springdemo.appointmentmanagementsystem.entity.Doctor#setId(I)Vo
-getFirstName()]com.xyz.springdemo.appointmentmanagementsystem.entity.Doctor#getFirstName()Ljava/lang/String;g
-
-getEmail()Ycom.xyz.springdemo.appointmentmanagementsystem.entity.Doctor#getEmail()Ljava/lang/String;z
-setEmail(Ljava/lang/String;)Zcom.xyz.springdemo.appointmentmanagementsystem.entity.Doctor#setEmail(Ljava/lang/String;)Vm
+getFirstName()]com.xyz.springdemo.appointmentmanagementsystem.entity.Doctor#getFirstName()Ljava/lang/String;„
+P<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)écom.xyz.springdemo.appointmentmanagementsystem.entity.Doctor#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Vm
 getLastName()\com.xyz.springdemo.appointmentmanagementsystem.entity.Doctor#getLastName()Ljava/lang/String;P
 getId()Ecom.xyz.springdemo.appointmentmanagementsystem.entity.Doctor#getId()Ik
 getAddress()[com.xyz.springdemo.appointmentmanagementsystem.entity.Doctor#getAddress()Ljava/lang/String;Ñ
@@ -972,52 +985,53 @@ iterator()2java.util.ArrayList#iterator()Ljava/util/Iterator;I
 spliterator()8java.util.ArrayList#spliterator()Ljava/util/Spliterator;1
 isClear([JI)!java.util.ArrayList#isClear([JI)Zk
 )writeObject(Ljava/io/ObjectOutputStream;)>java.util.ArrayList#writeObject(Ljava/io/ObjectOutputStream;)V%
-size()java.util.ArrayList#size()I≤
+size()java.util.ArrayList#size()Iã
+Xcom.xyz.springdemo.appointmentmanagementsystem.exception.AppointmentNotPossibleExceptionjava.lang.RuntimeExceptioní
+<init>(Ljava/lang/String;)tcom.xyz.springdemo.appointmentmanagementsystem.exception.AppointmentNotPossibleException#<init>(Ljava/lang/String;)V≤
 Kcom.xyz.springdemo.appointmentmanagementsystem.controller.PatientControllerjava.lang.Object©
-´<init>(Lcom/xyz/springdemo/appointmentmanagementsystem/service/PatientService;Lcom/xyz/springdemo/appointmentmanagementsystem/service/DoctorService;Lcom/xyz/springdemo/appointmentmanagementsystem/service/AppointmentService;Lcom/xyz/springdemo/appointmentmanagementsystem/converter/PatientConverter;)¯com.xyz.springdemo.appointmentmanagementsystem.controller.PatientController#<init>(Lcom/xyz/springdemo/appointmentmanagementsystem/service/PatientService;Lcom/xyz/springdemo/appointmentmanagementsystem/service/DoctorService;Lcom/xyz/springdemo/appointmentmanagementsystem/service/AppointmentService;Lcom/xyz/springdemo/appointmentmanagementsystem/converter/PatientConverter;)V…
+´<init>(Lcom/xyz/springdemo/appointmentmanagementsystem/service/PatientService;Lcom/xyz/springdemo/appointmentmanagementsystem/service/DoctorService;Lcom/xyz/springdemo/appointmentmanagementsystem/service/AppointmentService;Lcom/xyz/springdemo/appointmentmanagementsystem/converter/PatientConverter;)¯com.xyz.springdemo.appointmentmanagementsystem.controller.PatientController#<init>(Lcom/xyz/springdemo/appointmentmanagementsystem/service/PatientService;Lcom/xyz/springdemo/appointmentmanagementsystem/service/DoctorService;Lcom/xyz/springdemo/appointmentmanagementsystem/service/AppointmentService;Lcom/xyz/springdemo/appointmentmanagementsystem/converter/PatientConverter;)VÊ
+ÅaddAppointment(Lcom/xyz/springdemo/appointmentmanagementsystem/dto/AppointmentDto;Lorg/springframework/validation/BindingResult;)ﬂcom.xyz.springdemo.appointmentmanagementsystem.controller.PatientController#addAppointment(Lcom/xyz/springdemo/appointmentmanagementsystem/dto/AppointmentDto;Lorg/springframework/validation/BindingResult;)Ljava/lang/String;…
 ssave(Lcom/xyz/springdemo/appointmentmanagementsystem/dto/PatientDto;Lorg/springframework/validation/BindingResult;)—com.xyz.springdemo.appointmentmanagementsystem.controller.PatientController#save(Lcom/xyz/springdemo/appointmentmanagementsystem/dto/PatientDto;Lorg/springframework/validation/BindingResult;)Ljava/lang/String;´
-$home(Lorg/springframework/ui/Model;)Çcom.xyz.springdemo.appointmentmanagementsystem.controller.PatientController#home(Lorg/springframework/ui/Model;)Ljava/lang/String;Ê
-ÅaddAppointment(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;Lorg/springframework/validation/BindingResult;)ﬂcom.xyz.springdemo.appointmentmanagementsystem.controller.PatientController#addAppointment(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;Lorg/springframework/validation/BindingResult;)Ljava/lang/String;±
+$home(Lorg/springframework/ui/Model;)Çcom.xyz.springdemo.appointmentmanagementsystem.controller.PatientController#home(Lorg/springframework/ui/Model;)Ljava/lang/String;±
 'update(ILorg/springframework/ui/Model;)Öcom.xyz.springdemo.appointmentmanagementsystem.controller.PatientController#update(ILorg/springframework/ui/Model;)Ljava/lang/String;À
 4showAppointmentForm(ILorg/springframework/ui/Model;)ícom.xyz.springdemo.appointmentmanagementsystem.controller.PatientController#showAppointmentForm(ILorg/springframework/ui/Model;)Ljava/lang/String;ø
-.getDoctorsList(Lorg/springframework/ui/Model;)åcom.xyz.springdemo.appointmentmanagementsystem.controller.PatientController#getDoctorsList(Lorg/springframework/ui/Model;)Ljava/lang/String;ù
-Acom.xyz.springdemo.appointmentmanagementsystem.entity.Appointmentjava.lang.Objectﬁ
-KsetPatient(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Patient;)écom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#setPatient(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Patient;)Vû
-getPatient()çcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#getPatient()Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Patient;»
-@<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;II)Écom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;II)Va
-getDoctorId()Pcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#getDoctorId()IÉ
-setEndTime(Ljava/lang/String;)acom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#setEndTime(Ljava/lang/String;)Vt
-getStartTime()bcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#getStartTime()Ljava/lang/String;W
-setId(I)Kcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#setId(I)Vj
-	getDate()]com.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#getDate()Ljava/lang/String;c
-getPatientId()Qcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#getPatientId()IU
-getId()Jcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#getId()Iá
- setStartTime(Ljava/lang/String;)ccom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#setStartTime(Ljava/lang/String;)VW
-<init>()Kcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#<init>()Ve
-setPatientId(I)Rcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#setPatientId(I)V⁄
-IsetDoctor(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Doctor;)åcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#setDoctor(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Doctor;)Vc
-setDoctorId(I)Qcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#setDoctorId(I)V}
-setDate(Ljava/lang/String;)^com.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#setDate(Ljava/lang/String;)Vp
-getEndTime()`com.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#getEndTime()Ljava/lang/String;õ
-getDoctor()ãcom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment#getDoctor()Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Doctor;]
-Icom.xyz.springdemo.appointmentmanagementsystem.service.AppointmentServicejava.lang.Object≈
-java.text.ParseExceptionjava.lang.Exception>
-getErrorOffset()*java.text.ParseException#getErrorOffset()IT
-<init>(Ljava/lang/String;I)5java.text.ParseException#<init>(Ljava/lang/String;I)Vı
+.getDoctorsList(Lorg/springframework/ui/Model;)åcom.xyz.springdemo.appointmentmanagementsystem.controller.PatientController#getDoctorsList(Lorg/springframework/ui/Model;)Ljava/lang/String;Ç
+Acom.xyz.springdemo.appointmentmanagementsystem.dto.AppointmentDtojava.lang.Objectﬁ
+KsetPatient(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Patient;)écom.xyz.springdemo.appointmentmanagementsystem.dto.AppointmentDto#setPatient(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Patient;)Vû
+getPatient()çcom.xyz.springdemo.appointmentmanagementsystem.dto.AppointmentDto#getPatient()Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Patient;É
+setEndTime(Ljava/lang/String;)acom.xyz.springdemo.appointmentmanagementsystem.dto.AppointmentDto#setEndTime(Ljava/lang/String;)Vt
+getStartTime()bcom.xyz.springdemo.appointmentmanagementsystem.dto.AppointmentDto#getStartTime()Ljava/lang/String;¡
+º<init>(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Doctor;Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Patient;)ˇcom.xyz.springdemo.appointmentmanagementsystem.dto.AppointmentDto#<init>(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Doctor;Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Patient;)VW
+setId(I)Kcom.xyz.springdemo.appointmentmanagementsystem.dto.AppointmentDto#setId(I)Vj
+	getDate()]com.xyz.springdemo.appointmentmanagementsystem.dto.AppointmentDto#getDate()Ljava/lang/String;U
+getId()Jcom.xyz.springdemo.appointmentmanagementsystem.dto.AppointmentDto#getId()Iá
+ setStartTime(Ljava/lang/String;)ccom.xyz.springdemo.appointmentmanagementsystem.dto.AppointmentDto#setStartTime(Ljava/lang/String;)VW
+<init>()Kcom.xyz.springdemo.appointmentmanagementsystem.dto.AppointmentDto#<init>()V⁄
+IsetDoctor(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Doctor;)åcom.xyz.springdemo.appointmentmanagementsystem.dto.AppointmentDto#setDoctor(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Doctor;)V}
+setDate(Ljava/lang/String;)^com.xyz.springdemo.appointmentmanagementsystem.dto.AppointmentDto#setDate(Ljava/lang/String;)Vp
+getEndTime()`com.xyz.springdemo.appointmentmanagementsystem.dto.AppointmentDto#getEndTime()Ljava/lang/String;õ
+getDoctor()ãcom.xyz.springdemo.appointmentmanagementsystem.dto.AppointmentDto#getDoctor()Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Doctor;∏
+Mcom.xyz.springdemo.appointmentmanagementsystem.converter.AppointmentConverterjava.lang.Objectc
+<init>()Wcom.xyz.springdemo.appointmentmanagementsystem.converter.AppointmentConverter#<init>()V∂
+PdtoToEntity(Lcom/xyz/springdemo/appointmentmanagementsystem/dto/AppointmentDto;)·com.xyz.springdemo.appointmentmanagementsystem.converter.AppointmentConverter#dtoToEntity(Lcom/xyz/springdemo/appointmentmanagementsystem/dto/AppointmentDto;)Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;∂
+PentityToDto(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;)·com.xyz.springdemo.appointmentmanagementsystem.converter.AppointmentConverter#entityToDto(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;)Lcom/xyz/springdemo/appointmentmanagementsystem/dto/AppointmentDto;]
+Icom.xyz.springdemo.appointmentmanagementsystem.service.AppointmentServicejava.lang.ObjectÛ
 Hcom.xyz.springdemo.appointmentmanagementsystem.service.DoctorServiceImplDcom.xyz.springdemo.appointmentmanagementsystem.service.DoctorServicejava.lang.Object∞
 findLoggedInUser()ôcom.xyz.springdemo.appointmentmanagementsystem.service.DoctorServiceImpl#findLoggedInUser()Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Doctor;o
 	findAll()bcom.xyz.springdemo.appointmentmanagementsystem.service.DoctorServiceImpl#findAll()Ljava/util/List;Å
 appointmentList(I)kcom.xyz.springdemo.appointmentmanagementsystem.service.DoctorServiceImpl#appointmentList(I)Ljava/util/List;›
 GsaveNew(Lcom/xyz/springdemo/appointmentmanagementsystem/dto/DoctorDto;)ëcom.xyz.springdemo.appointmentmanagementsystem.service.DoctorServiceImpl#saveNew(Lcom/xyz/springdemo/appointmentmanagementsystem/dto/DoctorDto;)VÂ
 Ksave(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/DoctorManager;)ïcom.xyz.springdemo.appointmentmanagementsystem.service.DoctorServiceImpl#save(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/DoctorManager;)Vû
-Á<init>(Lcom/xyz/springdemo/appointmentmanagementsystem/dao/DoctorRepository;Lcom/xyz/springdemo/appointmentmanagementsystem/service/UserService;Lorg/springframework/security/crypto/bcrypt/BCryptPasswordEncoder;Lcom/xyz/springdemo/appointmentmanagementsystem/dao/AppointmentRepository;Lcom/xyz/springdemo/appointmentmanagementsystem/converter/DoctorConverter;)±com.xyz.springdemo.appointmentmanagementsystem.service.DoctorServiceImpl#<init>(Lcom/xyz/springdemo/appointmentmanagementsystem/dao/DoctorRepository;Lcom/xyz/springdemo/appointmentmanagementsystem/service/UserService;Lorg/springframework/security/crypto/bcrypt/BCryptPasswordEncoder;Lcom/xyz/springdemo/appointmentmanagementsystem/dao/AppointmentRepository;Lcom/xyz/springdemo/appointmentmanagementsystem/converter/DoctorConverter;)V¢
-findById(I)ícom.xyz.springdemo.appointmentmanagementsystem.service.DoctorServiceImpl#findById(I)Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Doctor;˜
-TaddAppointment(ILcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;)ûcom.xyz.springdemo.appointmentmanagementsystem.service.DoctorServiceImpl#addAppointment(ILcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;)Vå
+Á<init>(Lcom/xyz/springdemo/appointmentmanagementsystem/dao/DoctorRepository;Lcom/xyz/springdemo/appointmentmanagementsystem/service/UserService;Lorg/springframework/security/crypto/bcrypt/BCryptPasswordEncoder;Lcom/xyz/springdemo/appointmentmanagementsystem/dao/AppointmentRepository;Lcom/xyz/springdemo/appointmentmanagementsystem/converter/DoctorConverter;)±com.xyz.springdemo.appointmentmanagementsystem.service.DoctorServiceImpl#<init>(Lcom/xyz/springdemo/appointmentmanagementsystem/dao/DoctorRepository;Lcom/xyz/springdemo/appointmentmanagementsystem/service/UserService;Lorg/springframework/security/crypto/bcrypt/BCryptPasswordEncoder;Lcom/xyz/springdemo/appointmentmanagementsystem/dao/AppointmentRepository;Lcom/xyz/springdemo/appointmentmanagementsystem/converter/DoctorConverter;)Vı
+SaddAppointment(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;)ùcom.xyz.springdemo.appointmentmanagementsystem.service.DoctorServiceImpl#addAppointment(Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;)V¢
+findById(I)ícom.xyz.springdemo.appointmentmanagementsystem.service.DoctorServiceImpl#findById(I)Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Doctor;å
 deleteById(Ljava/lang/Integer;)icom.xyz.springdemo.appointmentmanagementsystem.service.DoctorServiceImpl#deleteById(Ljava/lang/Integer;)V–
 "findByUsername(Ljava/lang/String;)©com.xyz.springdemo.appointmentmanagementsystem.service.DoctorServiceImpl#findByUsername(Ljava/lang/String;)Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Doctor;ñ
 $deleteByUsername(Ljava/lang/String;)ncom.xyz.springdemo.appointmentmanagementsystem.service.DoctorServiceImpl#deleteByUsername(Ljava/lang/String;)V•
 	update(I)ócom.xyz.springdemo.appointmentmanagementsystem.service.DoctorServiceImpl#update(I)Lcom/xyz/springdemo/appointmentmanagementsystem/entity/DoctorManager;é
-Ccom.xyz.springdemo.appointmentmanagementsystem.dao.DoctorRepositoryjava.lang.Object5org.springframework.data.jpa.repository.JpaRepositoryÚ
+Ccom.xyz.springdemo.appointmentmanagementsystem.dao.DoctorRepositoryjava.lang.Object5org.springframework.data.jpa.repository.JpaRepository˚
+Pcom.xyz.springdemo.appointmentmanagementsystem.exception.DoctorNotFoundExceptionjava.lang.RuntimeExceptionä
+<init>(Ljava/lang/String;)lcom.xyz.springdemo.appointmentmanagementsystem.exception.DoctorNotFoundException#<init>(Ljava/lang/String;)VÚ
 Fcom.xyz.springdemo.appointmentmanagementsystem.service.UserServiceImplBcom.xyz.springdemo.appointmentmanagementsystem.service.UserServicejava.lang.Objectf
 deleteById(I)Ucom.xyz.springdemo.appointmentmanagementsystem.service.UserServiceImpl#deleteById(I)Vm
 	findAll()`com.xyz.springdemo.appointmentmanagementsystem.service.UserServiceImpl#findAll()Ljava/util/List;—
@@ -1528,8 +1542,9 @@ $accessDeniedPage(Ljava/lang/String;)€org.springframework.security.config.anno
 dcreateDefaultDeniedHandler(Lorg/springframework/security/config/annotation/web/HttpSecurityBuilder;)¸org.springframework.security.config.annotation.web.configurers.ExceptionHandlingConfigurer#createDefaultDeniedHandler(Lorg/springframework/security/config/annotation/web/HttpSecurityBuilder;)Lorg/springframework/security/web/access/AccessDeniedHandler;p
 <init>()dorg.springframework.security.config.annotation.web.configurers.ExceptionHandlingConfigurer#<init>()VÕ
 getAccessDeniedHandler()∞org.springframework.security.config.annotation.web.configurers.ExceptionHandlingConfigurer#getAccessDeniedHandler()Lorg/springframework/security/web/access/AccessDeniedHandler;Ê
-UauthenticationEntryPoint(Lorg/springframework/security/web/AuthenticationEntryPoint;)åorg.springframework.security.config.annotation.web.configurers.ExceptionHandlingConfigurer#authenticationEntryPoint(Lorg/springframework/security/web/AuthenticationEntryPoint;)Lorg/springframework/security/config/annotation/web/configurers/ExceptionHandlingConfigurer;à
-Hcom.xyz.springdemo.appointmentmanagementsystem.controller.MainControllerjava.lang.Object^
+UauthenticationEntryPoint(Lorg/springframework/security/web/AuthenticationEntryPoint;)åorg.springframework.security.config.annotation.web.configurers.ExceptionHandlingConfigurer#authenticationEntryPoint(Lorg/springframework/security/web/AuthenticationEntryPoint;)Lorg/springframework/security/config/annotation/web/configurers/ExceptionHandlingConfigurer;˜
+Hcom.xyz.springdemo.appointmentmanagementsystem.controller.MainControllerjava.lang.Objectm
+error()bcom.xyz.springdemo.appointmentmanagementsystem.controller.MainController#error()Ljava/lang/String;^
 <init>()Rcom.xyz.springdemo.appointmentmanagementsystem.controller.MainController#<init>()V⁄
 =home(Lorg/springframework/ui/Model;Ljava/security/Principal;)òcom.xyz.springdemo.appointmentmanagementsystem.controller.MainController#home(Lorg/springframework/ui/Model;Ljava/security/Principal;)Ljava/lang/String;m
 login()bcom.xyz.springdemo.appointmentmanagementsystem.controller.MainController#login()Ljava/lang/String;“
@@ -1688,10 +1703,13 @@ setDate(I)java.util.Date#setDate(I)V3
 setSeconds(I)java.util.Date#setSeconds(I)Vf
 )writeObject(Ljava/io/ObjectOutputStream;)9java.util.Date#writeObject(Ljava/io/ObjectOutputStream;)V(
 
-getHours()java.util.Date#getHours()Iä
-Icom.xyz.springdemo.appointmentmanagementsystem.exception.ExceptionHandlerjava.lang.Object_
+getHours()java.util.Date#getHours()Iå
+Icom.xyz.springdemo.appointmentmanagementsystem.exception.ExceptionHandlerjava.lang.ObjectÜ
+ípatientNotFoundExceptionHandler(Lcom/xyz/springdemo/appointmentmanagementsystem/exception/PatientNotFoundException;Lorg/springframework/ui/Model;)Ócom.xyz.springdemo.appointmentmanagementsystem.exception.ExceptionHandler#patientNotFoundExceptionHandler(Lcom/xyz/springdemo/appointmentmanagementsystem/exception/PatientNotFoundException;Lorg/springframework/ui/Model;)Ljava/lang/String;Ò
+HparseException(Ljava/text/ParseException;Lorg/springframework/ui/Model;)§com.xyz.springdemo.appointmentmanagementsystem.exception.ExceptionHandler#parseException(Ljava/text/ParseException;Lorg/springframework/ui/Model;)Ljava/lang/String;_
 <init>()Scom.xyz.springdemo.appointmentmanagementsystem.exception.ExceptionHandler#<init>()VÎ
-EexceptionHandler(Ljava/lang/Exception;Lorg/springframework/ui/Model;)°com.xyz.springdemo.appointmentmanagementsystem.exception.ExceptionHandler#exceptionHandler(Ljava/lang/Exception;Lorg/springframework/ui/Model;)Ljava/lang/String;€
+EexceptionHandler(Ljava/lang/Exception;Lorg/springframework/ui/Model;)°com.xyz.springdemo.appointmentmanagementsystem.exception.ExceptionHandler#exceptionHandler(Ljava/lang/Exception;Lorg/springframework/ui/Model;)Ljava/lang/String;Ç
+êdoctorNotFoundExceptionHandler(Lcom/xyz/springdemo/appointmentmanagementsystem/exception/DoctorNotFoundException;Lorg/springframework/ui/Model;)Ïcom.xyz.springdemo.appointmentmanagementsystem.exception.ExceptionHandler#doctorNotFoundExceptionHandler(Lcom/xyz/springdemo/appointmentmanagementsystem/exception/DoctorNotFoundException;Lorg/springframework/ui/Model;)Ljava/lang/String;€
 }exceptionHandler(Lcom/xyz/springdemo/appointmentmanagementsystem/exception/MyRuntimeException;Lorg/springframework/ui/Model;)Ÿcom.xyz.springdemo.appointmentmanagementsystem.exception.ExceptionHandler#exceptionHandler(Lcom/xyz/springdemo/appointmentmanagementsystem/exception/MyRuntimeException;Lorg/springframework/ui/Model;)Ljava/lang/String;§
 <com.xyz.springdemo.appointmentmanagementsystem.dto.DoctorDtojava.lang.ObjectR
 <init>()Fcom.xyz.springdemo.appointmentmanagementsystem.dto.DoctorDto#<init>()V

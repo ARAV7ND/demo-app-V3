@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AppointmentDto.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">appointment-management-system</a> &gt; <a href="index.source.html" class="el_package">com.xyz.springdemo.appointmentmanagementsystem.dto</a> &gt; <span class="el_source">AppointmentDto.java</span></div><h1>AppointmentDto.java</h1><pre class="source lang-java linenums">package com.xyz.springdemo.appointmentmanagementsystem.dto;
+
+import com.xyz.springdemo.appointmentmanagementsystem.entity.Doctor;
+import com.xyz.springdemo.appointmentmanagementsystem.entity.Patient;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+
+
+@Getter
+<span class="nc" id="L17">@Setter</span>
+<span class="nc" id="L18">@NoArgsConstructor</span>
+<span class="nc" id="L19">@AllArgsConstructor</span>
+public class AppointmentDto {
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+<span class="nc" id="L23">    private int id;</span>
+
+
+    @NotBlank(message = &quot;date cannot be null&quot;)
+    @Pattern(regexp = &quot;^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\\d\\d$&quot;,message = &quot;input should in dd/MM/yyyy format&quot;)
+<span class="nc" id="L28">    private String date;</span>
+
+    @NotBlank(message = &quot;startTime cannot be null&quot;)
+    @Pattern(regexp = &quot;^(0?[1-9]|1[0-2]):[0-5][0-9]$&quot;,message = &quot;format is hh:mm&quot;)
+<span class="nc" id="L32">    private String startTime;</span>
+
+    @NotBlank(message = &quot;endTime cannot be null&quot;)
+    @DateTimeFormat(pattern = &quot;hh:mm&quot;)
+    @Pattern(regexp = &quot;^(0?[1-9]|1[0-2]):[0-5][0-9]$&quot;,message = &quot;format is hh:mm&quot;)
+<span class="nc" id="L37">    private String endTime;</span>
+
+<span class="nc" id="L39">    private Doctor doctor;</span>
+
+<span class="nc" id="L41">    private Patient patient;</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

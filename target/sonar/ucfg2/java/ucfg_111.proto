@@ -1,16 +1,34 @@
 
-ecom.xyz.springdemo.appointmentmanagementsystem.entity.PatientManager#getFirstName()Ljava/lang/String;ù
-í/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/PatientManager.java4 4("1*˝
-1ù
-í/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/PatientManager.java5 5(ö
-ó
-ù
-í/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/PatientManager.java5 5(
-%0java.lang.String"__id*W*UF
-Dcom.xyz.springdemo.appointmentmanagementsystem.entity.PatientManager"
-	firstName"∫
-ù
-í/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/entity/PatientManager.java5 5(
-
-%0java.lang.StringBHF
-Dcom.xyz.springdemo.appointmentmanagementsystem.entity.PatientManager
+·com.xyz.springdemo.appointmentmanagementsystem.converter.AppointmentConverter#dtoToEntity(Lcom/xyz/springdemo/appointmentmanagementsystem/dto/AppointmentDto;)Lcom/xyz/springdemo/appointmentmanagementsystem/entity/Appointment;¶
+õ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/converter/AppointmentConverter.java (""1*ñ
+1¶
+õ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/converter/AppointmentConverter.java (.ÏÈ
+¶
+õ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/converter/AppointmentConverter.java! (,!
+%0org.modelmapper.ModelMapper"org.modelmapper.ModelMapper˛
+˚
+¶
+õ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/converter/AppointmentConverter.java (.
+%1"%org.modelmapper.ModelMapper#<init>()V*#
+!
+%0org.modelmapper.ModelMapper˛
+˚
+¶
+õ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/converter/AppointmentConverter.java (/%
+mapperorg.modelmapper.ModelMapper"__id*#
+!
+%0org.modelmapper.ModelMapperˇ¸
+¶
+õ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/converter/AppointmentConverter.java (;G
+%2Acom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment"Vorg.modelmapper.ModelMapper#map(Ljava/lang/Object;Ljava/lang/Class;)Ljava/lang/Object;*'
+%
+mapperorg.modelmapper.ModelMapper*U
+S
+appointmentDtoAcom.xyz.springdemo.appointmentmanagementsystem.dto.AppointmentDto*
+""2(map(Ljava/lang/Object;Ljava/lang/Class;)"Ù
+¶
+õ/home/arvinc/zemoso-training/version-2.0/demo_/demo-app-v3/src/main/java/com/xyz/springdemo/appointmentmanagementsystem/converter/AppointmentConverter.java (<I
+G
+%2Acom.xyz.springdemo.appointmentmanagementsystem.entity.Appointment:S
+appointmentDtoAcom.xyz.springdemo.appointmentmanagementsystem.dto.AppointmentDtoBQO
+Mcom.xyz.springdemo.appointmentmanagementsystem.converter.AppointmentConverter
